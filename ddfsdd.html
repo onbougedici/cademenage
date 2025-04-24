@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On Bouge d'Ici - Déménagement partout en France</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #f2f6ff;
+      color: #333;
+    }
+    header {
+      background: #4d7cff;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .btn {
+      background: #ffb347;
+      padding: 1rem 2rem;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #4d7cff;
+    }
+    .service {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    #carte {
+      text-align: center;
+    }
+    #carte img {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>On Bouge d'Ici</h1>
+    <p>Déménagement simple, sympa et partout en France 🇫🇷</p>
+    <a class="btn" href="#devis">Demander un devis gratuit</a>
+  </header>
+
+  <section>
+    <h2>Nos services</h2>
+    <div class="service">
+      <h3>Formule Éco 📦</h3>
+      <p>On charge, tu déballes — la solution budget malin !</p>
+      <ul>
+        <li>Tarif attractif pour un déménagement rapide.</li>
+        <li>Équipe professionnelle pour charger vos biens.</li>
+        <li>Idéale pour les petits déménagements ou les budgets serrés.</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h3>Formule Standard 🚛</h3>
+      <p>On s'occupe du gros, tu gères l'essentiel. Zen attitude !</p>
+      <ul>
+        <li>Chargement et transport de vos biens par des professionnels.</li>
+        <li>Option de déchargement et installation dans la nouvelle maison.</li>
+        <li>Un déménagement sans tracas, tout est pris en charge.</li>
+      </ul>
+    </div>
+    <div class="service">
+      <h3>Formule Zen 🧘‍♂️</h3>
+      <p>On emballe, on transporte, on installe. Tu profites.</p>
+      <ul>
+        <li>Prise en charge complète : emballage, chargement, transport et installation.</li>
+        <li>Des experts pour tout emballer en toute sécurité.</li>
+        <li>Un service tout inclus pour un déménagement sans stress.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="carte">
+    <h2>Où nous intervenons</h2>
+    <p>Nous couvrons toute la France pour vos déménagements !</p>
+    <!-- Remplacez l'URL de l'image par l'URL de l'image de la carte de la France -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Map_of_France_2020.svg/2000px-Map_of_France_2020.svg.png" alt="Carte de la France" />
+  </section>
+
+  <section id="devis">
+    <h2>Demande de devis</h2>
+    <p>Dis-nous tout (ou presque) :</p>
+    <form action="mailto:onbougedici@laposte.net" method="post" enctype="text/plain">
+      <label>Ville de départ : <input type="text" name="Ville de départ" /></label><br /><br />
+      <label>Ville d'arrivée : <input type="text" name="Ville d'arrivée" /></label><br /><br />
+      <label>Date de déménagement : <input type="date" name="Date" /></label><br /><br />
+      <label>Volume approximatif (m³) : <input type="number" name="Volume" /></label><br /><br />
+      <label>Message / précisions :<br /><textarea name="Message" rows="5"></textarea></label><br /><br />
+      <button class="btn" type="submit">Envoyer ma demande</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>📞 06 51 32 34 94 | 📩 onbougedici@laposte.net</p>
+    <p>© 2025 On Bouge d'Ici - Tous droits réservés</p>
+  </footer>
+</body>
+</html>
