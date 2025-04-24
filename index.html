@@ -31,7 +31,6 @@
       text-decoration: none;
       display: inline-block;
       margin-top: 1rem;
-      cursor: pointer;
     }
     section {
       padding: 2rem;
@@ -62,10 +61,17 @@
       max-width: 600px;
       margin-top: 20px;
     }
-    #form-message {
-      text-align: center;
-      font-weight: bold;
-      margin-top: 20px;
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -113,63 +119,45 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Map_of_France_2020.svg/2000px-Map_of_France_2020.svg.png" alt="Carte de la France" />
   </section>
 
+  <section>
+    <h2>Avis clients</h2>
+    <p>⭐⭐⭐⭐⭐ "Super équipe, ponctuelle et efficace. Je recommande à 100% !" – Julie (Lyon)</p>
+    <p>⭐⭐⭐⭐⭐ "Déménagement Paris-Marseille au top, rien à redire." – Karim</p>
+    <p>⭐⭐⭐⭐⭐ "Merci pour votre gentillesse et votre professionnalisme." – Chloé</p>
+  </section>
+
+  <section>
+    <h2>FAQ</h2>
+    <h4>Quels sont vos délais d'intervention ?</h4>
+    <p>Nous intervenons généralement sous 48 à 72h partout en France.</p>
+    <h4>Est-ce que vous proposez des cartons ?</h4>
+    <p>Oui, nous pouvons fournir du matériel de déménagement en option.</p>
+    <h4>Est-ce que mes affaires sont assurées ?</h4>
+    <p>Oui, tous nos services incluent une assurance de base. Options renforcées disponibles.</p>
+  </section>
+
   <section id="devis">
     <h2>Demande de devis</h2>
     <p>Dis-nous tout (ou presque) :</p>
-    <form id="contact-form">
+    <form action="https://formspree.io/f/xwpokdkp" method="post">
       <label>Votre email : <input type="email" name="email" required /></label><br /><br />
-      <label>Ville de départ : <input type="text" name="ville_depart" required /></label><br /><br />
-      <label>Ville d'arrivée : <input type="text" name="ville_arrivee" required /></label><br /><br />
-      <label>Date de déménagement : <input type="date" name="date" required /></label><br /><br />
-      <label>Volume approximatif (m³) : <input type="number" name="volume" /></label><br /><br />
-      <label>Message / précisions :<br /><textarea name="message" rows="5"></textarea></label><br /><br />
+      <label>Ville de départ : <input type="text" name="Ville de départ" /></label><br /><br />
+      <label>Ville d'arrivée : <input type="text" name="Ville d'arrivée" /></label><br /><br />
+      <label>Date de déménagement : <input type="date" name="Date" /></label><br /><br />
+      <label>Volume approximatif (m³) : <input type="number" name="Volume" /></label><br /><br />
+      <label>Message / précisions :<br /><textarea name="Message" rows="5"></textarea></label><br /><br />
       <button class="btn" type="submit">Envoyer ma demande</button>
     </form>
-    <p id="form-message"></p>
   </section>
 
   <footer>
     <p>📞 06 51 32 34 94 | 📩 mehdi-lami@laposte.net</p>
+    <p><a href="mentions-legales.html" style="color: #fff; text-decoration: underline;">Mentions légales</a></p>
     <p>© 2025 On Bouge d'Ici - Tous droits réservés</p>
   </footer>
 
-  <script>
-    const form = document.getElementById('contact-form');
-    const message = document.getElementById('form-message');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
-
-      try {
-        const response = await fetch('https://formspree.io/f/xwpokdkp', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-          message.textContent = "Merci, votre demande a été envoyée avec succès !";
-          message.style.color = "green";
-          form.reset();
-        } else {
-          message.textContent = "Une erreur est survenue. Veuillez réessayer.";
-          message.style.color = "red";
-        }
-      } catch (error) {
-        message.textContent = "Erreur de réseau ou de serveur.";
-        message.style.color = "red";
-      }
-    });
-  </script>
+  <a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 WhatsApp</a>
 </body>
 </html>
+
 
