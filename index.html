@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Lato', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
@@ -22,26 +22,32 @@
       color: white;
       padding: 2rem;
       text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3); /* Overlay pour améliorer la lisibilité du texte */
     }
 
     header h1 {
       margin: 0;
       font-size: 2.5rem;
+      z-index: 2;
     }
 
     header p {
       font-size: 1.2rem;
+      z-index: 2;
     }
 
-    header img {
-      max-width: 10px;
-      max-height: 10px;
-      width: auto;
-      height: auto;
-    }
-
-    .btn {
-      background: #607d8b; /* Gris béton */
+    header .btn {
+      background: #607d8b;
       padding: 1rem 2rem;
       border: none;
       color: #fff;
@@ -51,10 +57,11 @@
       display: inline-block;
       margin-top: 1rem;
       transition: background 0.3s;
+      z-index: 2;
     }
 
-    .btn:hover {
-      background: #455a64; /* Gris béton plus foncé */
+    header .btn:hover {
+      background: #455a64;
     }
 
     main {
@@ -70,7 +77,7 @@
     }
 
     h2 {
-      color: #2d3b2f; /* Vert forêt */
+      color: #2d3b2f;
     }
 
     footer {
@@ -90,7 +97,7 @@
       border-radius: 50px;
       font-size: 18px;
       text-decoration: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .testimonials {
@@ -146,9 +153,8 @@
       background-color: #455a64;
     }
 
-    /* Nouvelle règle pour réduire la taille de la carte */
     #carte img {
-      max-width: 80%; /* La carte sera réduite à 80% de la largeur de l'écran */
+      max-width: 80%;
       height: auto;
       margin: auto;
       display: block;
@@ -159,14 +165,13 @@
 <body>
   <header>
     <p>Déménagement simple, rapide, partout en France et en Europe</p>
-    <a class="btn" href="services.html">Voir nos services</a> <!-- Nouveau bouton pour la page des services -->
+    <a class="btn" href="services.html">Voir nos services</a>
     <a class="btn" href="#devis">Demander un devis gratuit</a>
   </header>
 
   <main>
     <section>
-      <img src="logo.alliance.jpeg.jpg" alt="Logo Alliance Déménagement" classe="logo">
-      
+      <img src="logo.alliance.jpeg.jpg" alt="Logo Alliance Déménagement" class="logo">
       <p>En choisissant notre entreprise pour votre déménagement, vous pouvez être sûr que vous êtes entre de bonnes mains. Nous nous engageons à vous offrir un service de qualité, fiable et sans souci. Faites-nous confiance pour rendre votre déménagement une expérience positive et sans stress.</p>
       <p>Nous sommes des professionnels du secteur et nous mettons un point d’honneur à proposer à l’ensemble de notre clientèle des déménagements sur mesure au meilleur prix. Pour être les meilleurs, pas besoin d’être les plus chers.</p>
     </section>
@@ -198,7 +203,6 @@
 
     <section id="devis">
       <h2>Demande de devis</h2>
-
       <form action="https://formspree.io/f/xwpokdkp" method="post">
         <div class="form-group">
           <label for="email">Votre email :</label>
@@ -244,5 +248,6 @@
   <a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 WhatsApp</a>
 </body>
 </html>
+
 
 
