@@ -6,10 +6,13 @@
   <title>On Bouge d'Ici - Déménagement partout en France</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background: #f2f6ff;
+      background: #f9fbff;
       color: #333;
     }
     header {
@@ -18,8 +21,16 @@
       padding: 2rem;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
+    nav {
+      background: #3b5edb;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
     }
     .btn {
       background: #ffb347;
@@ -46,6 +57,18 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin-bottom: 1rem;
+    }
+    .formulaire label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .formulaire input, .formulaire textarea, .formulaire select {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 0.5rem;
     }
     footer {
       background: #333;
@@ -82,34 +105,27 @@
     <a class="btn" href="#devis">Demander un devis gratuit</a>
   </header>
 
-  <section>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#carte">Carte</a>
+    <a href="#avis">Avis</a>
+    <a href="#faq">FAQ</a>
+    <a href="#devis">Devis</a>
+  </nav>
+
+  <section id="services">
     <h2>Nos services</h2>
     <div class="service">
       <h3>Formule Éco 📦</h3>
       <p>On charge, tu déballes — la solution budget malin !</p>
-      <ul>
-        <li>Tarif attractif pour un déménagement rapide.</li>
-        <li>Équipe professionnelle pour charger vos biens.</li>
-        <li>Idéale pour les petits déménagements ou les budgets serrés.</li>
-      </ul>
     </div>
     <div class="service">
       <h3>Formule Standard 🚛</h3>
       <p>On s'occupe du gros, tu gères l'essentiel. Zen attitude !</p>
-      <ul>
-        <li>Chargement et transport de vos biens par des professionnels.</li>
-        <li>Option de déchargement et installation dans la nouvelle maison.</li>
-        <li>Un déménagement sans tracas, tout est pris en charge.</li>
-      </ul>
     </div>
     <div class="service">
       <h3>Formule Zen 🧘‍♂️</h3>
       <p>On emballe, on transporte, on installe. Tu profites.</p>
-      <ul>
-        <li>Prise en charge complète : emballage, chargement, transport et installation.</li>
-        <li>Des experts pour tout emballer en toute sécurité.</li>
-        <li>Un service tout inclus pour un déménagement sans stress.</li>
-      </ul>
     </div>
   </section>
 
@@ -119,14 +135,14 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Map_of_France_2020.svg/2000px-Map_of_France_2020.svg.png" alt="Carte de la France" />
   </section>
 
-  <section>
+  <section id="avis">
     <h2>Avis clients</h2>
     <p>⭐⭐⭐⭐⭐ "Super équipe, ponctuelle et efficace. Je recommande à 100% !" – Julie et Mickaël (Lyon)</p>
     <p>⭐⭐⭐⭐⭐ "Déménagement Paris-Aix au top, rien à redire." – Sylvie</p>
     <p>⭐⭐⭐⭐⭐ "Merci pour votre gentillesse et votre professionnalisme." – Chloé</p>
   </section>
 
-  <section>
+  <section id="faq">
     <h2>FAQ</h2>
     <h4>Quels sont vos délais d'intervention ?</h4>
     <p>Nous intervenons généralement sous 48 à 72h partout en France.</p>
@@ -138,14 +154,31 @@
 
   <section id="devis">
     <h2>Demande de devis</h2>
-    <p>Dis-nous tout (ou presque) :</p>
-    <form action="https://formspree.io/f/xwpokdkp" method="post">
-      <label>Votre email : <input type="email" name="email" required /></label><br /><br />
-      <label>Ville de départ : <input type="text" name="Ville de départ" /></label><br /><br />
-      <label>Ville d'arrivée : <input type="text" name="Ville d'arrivée" /></label><br /><br />
-      <label>Date de déménagement : <input type="date" name="Date" /></label><br /><br />
-      <label>Volume approximatif (m³) : <input type="number" name="Volume" /></label><br /><br />
-      <label>Message / précisions :<br /><textarea name="Message" rows="5"></textarea></label><br /><br />
+    <form class="formulaire" action="https://formspree.io/f/xwpokdkp" method="post">
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="nom">Nom complet :</label>
+      <input type="text" id="nom" name="Nom" required>
+
+      <label for="tel">Numéro de téléphone :</label>
+      <input type="tel" id="tel" name="Telephone">
+
+      <label for="depart">Ville de départ :</label>
+      <input type="text" id="depart" name="Ville de départ">
+
+      <label for="arrivee">Ville d'arrivée :</label>
+      <input type="text" id="arrivee" name="Ville d'arrivée">
+
+      <label for="date">Date de déménagement :</label>
+      <input type="date" id="date" name="Date">
+
+      <label for="volume">Volume approximatif (m³) :</label>
+      <input type="number" id="volume" name="Volume">
+
+      <label for="details">Message ou précisions :</label>
+      <textarea id="details" name="Message" rows="5"></textarea>
+
       <button class="btn" type="submit">Envoyer ma demande</button>
     </form>
   </section>
@@ -159,5 +192,4 @@
   <a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 WhatsApp</a>
 </body>
 </html>
-
 
