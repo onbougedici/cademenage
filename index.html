@@ -9,11 +9,11 @@
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background: #f2f6ff;
+      background: #f1f1f1; /* Gris clair pour le fond */
       color: #333;
     }
     header {
-      background: #4d7cff;
+      background: #003366; /* Bleu foncé pour le header */
       color: white;
       padding: 2rem;
       text-align: center;
@@ -22,7 +22,7 @@
       margin: 0;
     }
     .btn {
-      background: #ffb347;
+      background: #FFD700; /* Jaune pour les boutons */
       padding: 1rem 2rem;
       border: none;
       color: #fff;
@@ -38,7 +38,7 @@
       margin: auto;
     }
     h2 {
-      color: #4d7cff;
+      color: #003366; /* Bleu foncé pour les titres */
     }
     .service {
       background: white;
@@ -48,7 +48,7 @@
       margin-bottom: 1rem;
     }
     footer {
-      background: #333;
+      background: #333; /* Gris foncé pour le footer */
       color: white;
       text-align: center;
       padding: 2rem 1rem;
@@ -72,31 +72,6 @@
       font-size: 18px;
       text-decoration: none;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-    form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    form label {
-      font-weight: bold;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    form button {
-      background: #4d7cff;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      grid-column: span 2;
     }
   </style>
 </head>
@@ -163,26 +138,14 @@
 
   <section id="devis">
     <h2>Demande de devis</h2>
-    <p>Veuillez remplir le formulaire ci-dessous pour obtenir un devis gratuit :</p>
+    <p>Dis-nous tout (ou presque) :</p>
     <form action="https://formspree.io/f/xwpokdkp" method="post">
-      <label for="email">Votre email :</label>
-      <input type="email" name="email" required id="email" />
-      
-      <label for="ville_depart">Ville de départ :</label>
-      <input type="text" name="ville_depart" id="ville_depart" />
-      
-      <label for="ville_arrivee">Ville d'arrivée :</label>
-      <input type="text" name="ville_arrivee" id="ville_arrivee" />
-      
-      <label for="date_dem">Date de déménagement :</label>
-      <input type="date" name="date_dem" id="date_dem" />
-      
-      <label for="volume">Volume approximatif (m³) :</label>
-      <input type="number" name="volume" id="volume" />
-      
-      <label for="message">Message / Précisions :</label>
-      <textarea name="message" id="message" rows="5"></textarea>
-      
+      <label>Votre email : <input type="email" name="email" required /></label><br /><br />
+      <label>Ville de départ : <input type="text" name="Ville de départ" /></label><br /><br />
+      <label>Ville d'arrivée : <input type="text" name="Ville d'arrivée" /></label><br /><br />
+      <label>Date de déménagement : <input type="date" name="Date" /></label><br /><br />
+      <label>Volume approximatif (m³) : <input type="number" name="Volume" /></label><br /><br />
+      <label>Message / précisions :<br /><textarea name="Message" rows="5"></textarea></label><br /><br />
       <button class="btn" type="submit">Envoyer ma demande</button>
     </form>
   </section>
@@ -190,10 +153,9 @@
   <footer>
     <p>📞 06 51 32 34 94 | 📩 mehdi-lami@laposte.net</p>
     <p><a href="mentions-legales.html" style="color: #fff; text-decoration: underline;">Mentions légales</a></p>
-    <p>© 2025 On Bouge d'Ici - Tous droits réservés</p>
+    <p>© 2023 On Bouge d'Ici - Tous droits réservés</p>
   </footer>
 
   <a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 WhatsApp</a>
 </body>
 </html>
-
