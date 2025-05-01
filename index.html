@@ -9,12 +9,12 @@
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background: #f2f6ff;
+      background: #f7f7f7; /* Gris clair */
       color: #333;
     }
 
     header {
-      background: #4d7cff;
+      background: #2d3b2f; /* Vert forêt */
       color: white;
       padding: 2rem;
       text-align: center;
@@ -22,10 +22,15 @@
 
     header h1 {
       margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
     }
 
     .btn {
-      background: #ffb347;
+      background: #607d8b; /* Gris béton */
       padding: 1rem 2rem;
       border: none;
       color: #fff;
@@ -34,16 +39,22 @@
       text-decoration: none;
       display: inline-block;
       margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #455a64; /* Gris béton plus foncé */
     }
 
     section {
-      padding: 2rem;
+      padding: 3rem 1rem;
       max-width: 900px;
       margin: auto;
+      text-align: center;
     }
 
     h2 {
-      color: #4d7cff;
+      color: #2d3b2f; /* Vert forêt */
     }
 
     footer {
@@ -96,7 +107,7 @@
     .form-group label {
       font-size: 1.1rem;
       font-weight: bold;
-      color: #003366; /* Bleu foncé */
+      color: #2d3b2f; /* Vert forêt */
     }
 
     .form-group input, .form-group textarea {
@@ -116,7 +127,7 @@
     button.btn {
       width: 100%;
       padding: 1rem;
-      background-color: #FFD700; /* Jaune pour les boutons */
+      background-color: #607d8b; /* Gris béton */
       color: white;
       border: none;
       border-radius: 5px;
@@ -127,7 +138,7 @@
     }
 
     button.btn:hover {
-      background-color: #ffcc00;
+      background-color: #455a64;
     }
 
     /* Style de la page services */
@@ -140,7 +151,7 @@
     }
 
     .service h3 {
-      color: #4d7cff;
+      color: #2d3b2f;
     }
 
     .service ul {
@@ -189,7 +200,7 @@
 
   <section id="devis">
     <h2>Demande de devis</h2>
-    <p>Dis-nous tout (ou presque) :</p>
+
     <form action="https://formspree.io/f/xwpokdkp" method="post">
       <div class="form-group">
         <label for="email">Votre email :</label>
