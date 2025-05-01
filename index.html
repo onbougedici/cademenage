@@ -9,29 +9,19 @@
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
       background-image: url('demenagement.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
-      color: #333;
-    }
-
-    /* Ajout d'un fond blanc semi-transparent derrière le contenu pour améliorer la lisibilité */
-    main {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 2rem;
-    }
-
-    header {
-      background-image: url('demenagement.jpg'); /* Ajout de l'image dans le header */
-      background-size: cover;
-      background-position: center;
       color: white;
       padding: 2rem;
       text-align: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
     }
 
     header h1 {
@@ -41,6 +31,13 @@
 
     header p {
       font-size: 1.2rem;
+    }
+
+    header img {
+      max-width: 100px;
+      max-height: 100px;
+      width: auto;
+      height: auto;
     }
 
     .btn {
@@ -60,6 +57,11 @@
       background: #455a64; /* Gris béton plus foncé */
     }
 
+    main {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+    }
+
     section {
       padding: 3rem 1rem;
       max-width: 900px;
@@ -76,16 +78,6 @@
       color: white;
       text-align: center;
       padding: 2rem 1rem;
-    }
-
-    #carte {
-      text-align: center;
-    }
-
-    #carte img {
-      width: 100%;
-      max-width: 600px;
-      margin-top: 20px;
     }
 
     .whatsapp {
@@ -113,7 +105,6 @@
       font-style: italic;
     }
 
-    /* Style du formulaire */
     .form-group {
       margin-bottom: 1.5rem;
     }
@@ -121,7 +112,7 @@
     .form-group label {
       font-size: 1.1rem;
       font-weight: bold;
-      color: #2d3b2f; /* Vert forêt */
+      color: #2d3b2f;
     }
 
     .form-group input, .form-group textarea {
@@ -141,7 +132,7 @@
     button.btn {
       width: 100%;
       padding: 1rem;
-      background-color: #607d8b; /* Gris béton */
+      background-color: #607d8b;
       color: white;
       border: none;
       border-radius: 5px;
@@ -155,101 +146,85 @@
       background-color: #455a64;
     }
 
-    /* Style de la page services */
-    .service {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-    }
-
-    .service h3 {
-      color: #2d3b2f;
-    }
-
-    .service ul {
-      padding-left: 20px;
-    }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.alliance.jpeg.jpg" alt="Logo Alliance Déménagement" style="max-width: 100px; max-height: 100px; width: auto; height: auto;">
+    <img src="logo.alliance.jpeg.jpg" alt="Logo Alliance Déménagement">
     <p>Déménagement simple, rapide, partout en France et en Europe</p>
     <a class="btn" href="#devis">Demander un devis gratuit</a>
     <a class="btn" href="services.html">Voir nos services</a> <!-- Nouveau bouton pour la page des services -->
   </header>
 
-  <section>
-    <p>En choisissant notre entreprise pour votre déménagement, vous pouvez être sûr que vous êtes entre de bonnes mains. Nous nous engageons à vous offrir un service de qualité, fiable et sans souci. Faites-nous confiance pour rendre votre déménagement une expérience positive et sans stress.</p>
-    <p>Nous sommes des professionnels du secteur et nous mettons un point d’honneur à proposer à l’ensemble de notre clientèle des déménagements sur mesure au meilleur prix. Pour être les meilleurs, pas besoin d’être les plus chers.</p>
-  </section>
-  
-  <section id="carte">
-    <h2>Où nous intervenons</h2>
-    <p>Nous couvrons toute la France pour vos déménagements !</p>
-    <img src="https://mundomapa.com/wp-content/uploads/Mapa-de-Francia-con-nombres-scaled.jpg" alt="Carte des principales villes de France" />
-  </section>
+  <main>
+    <section>
+      <p>En choisissant notre entreprise pour votre déménagement, vous pouvez être sûr que vous êtes entre de bonnes mains. Nous nous engageons à vous offrir un service de qualité, fiable et sans souci. Faites-nous confiance pour rendre votre déménagement une expérience positive et sans stress.</p>
+      <p>Nous sommes des professionnels du secteur et nous mettons un point d’honneur à proposer à l’ensemble de notre clientèle des déménagements sur mesure au meilleur prix. Pour être les meilleurs, pas besoin d’être les plus chers.</p>
+    </section>
+    
+    <section id="carte">
+      <h2>Où nous intervenons</h2>
+      <p>Nous couvrons toute la France pour vos déménagements !</p>
+      <img src="https://mundomapa.com/wp-content/uploads/Mapa-de-Francia-con-nombres-scaled.jpg" alt="Carte des principales villes de France" />
+    </section>
 
-  <section>
-    <h2>Avis clients</h2>
-    <div class="testimonials">
-      <p>⭐⭐⭐⭐⭐ "Super équipe, ponctuelle et efficace. Je recommande à 100% !" – Julie et Mickaël (Lyon)</p>
-      <p>⭐⭐⭐⭐⭐ "Déménagement Paris-Aix au top, rien à redire." – Sylvie</p>
-      <p>⭐⭐⭐⭐⭐ "Merci pour votre gentillesse et votre professionnalisme." – Chloé</p>
-      <p>⭐⭐⭐⭐   "Equipe pro, bonne ambiance" – Stéphanie</p>
-      <p>⭐⭐⭐⭐⭐ "Good Job!" – Steven</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>FAQ</h2>
-    <h4>Quels sont vos délais d'intervention ?</h4>
-    <p>Nous intervenons généralement sous 48 à 72h partout en France et sous 96h en Europe.</p>
-    <h4>Est-ce que vous proposez des cartons ?</h4>
-    <p>Oui, nous pouvons fournir du matériel de déménagement en option.</p>
-    <h4>Est-ce que mes affaires sont assurées ?</h4>
-    <p>Oui, tous nos services incluent une assurance de base. Options renforcées disponibles.</p>
-  </section>
-
-  <section id="devis">
-    <h2>Demande de devis</h2>
-
-    <form action="https://formspree.io/f/xwpokdkp" method="post">
-      <div class="form-group">
-        <label for="email">Votre email :</label>
-        <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+    <section>
+      <h2>Avis clients</h2>
+      <div class="testimonials">
+        <p>⭐⭐⭐⭐⭐ "Super équipe, ponctuelle et efficace. Je recommande à 100% !" – Julie et Mickaël (Lyon)</p>
+        <p>⭐⭐⭐⭐⭐ "Déménagement Paris-Aix au top, rien à redire." – Sylvie</p>
+        <p>⭐⭐⭐⭐⭐ "Merci pour votre gentillesse et votre professionnalisme." – Chloé</p>
       </div>
+    </section>
 
-      <div class="form-group">
-        <label for="ville_depart">Ville de départ :</label>
-        <input type="text" id="ville_depart" name="Ville de départ" placeholder="Votre ville" />
-      </div>
+    <section>
+      <h2>FAQ</h2>
+      <h4>Quels sont vos délais d'intervention ?</h4>
+      <p>Nous intervenons généralement sous 48 à 72h partout en France et sous 96h en Europe.</p>
+      <h4>Est-ce que vous proposez des cartons ?</h4>
+      <p>Oui, nous pouvons fournir du matériel de déménagement en option.</p>
+      <h4>Est-ce que mes affaires sont assurées ?</h4>
+      <p>Oui, tous nos services incluent une assurance de base. Options renforcées disponibles.</p>
+    </section>
 
-      <div class="form-group">
-        <label for="ville_arrivee">Ville d'arrivée :</label>
-        <input type="text" id="ville_arrivee" name="Ville d'arrivée" placeholder="Destination" />
-      </div>
+    <section id="devis">
+      <h2>Demande de devis</h2>
 
-      <div class="form-group">
-        <label for="date_dem">Date de déménagement souhaitée :</label>
-        <input type="date" id="date_dem" name="Date" />
-      </div>
+      <form action="https://formspree.io/f/xwpokdkp" method="post">
+        <div class="form-group">
+          <label for="email">Votre email :</label>
+          <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+        </div>
 
-      <div class="form-group">
-        <label for="volume">Volume approximatif (m³) :</label>
-        <input type="number" id="volume" name="Volume" placeholder="En m³" />
-      </div>
+        <div class="form-group">
+          <label for="ville_depart">Ville de départ :</label>
+          <input type="text" id="ville_depart" name="Ville de départ" placeholder="Votre ville" />
+        </div>
 
-      <div class="form-group">
-        <label for="message">Message / précisions :</label>
-        <textarea id="message" name="Message" rows="5" placeholder="Expliquez-nous votre déménagement..."></textarea>
-      </div>
+        <div class="form-group">
+          <label for="ville_arrivee">Ville d'arrivée :</label>
+          <input type="text" id="ville_arrivee" name="Ville d'arrivée" placeholder="Destination" />
+        </div>
 
-      <button class="btn" type="submit">Envoyer ma demande</button>
-    </form>
-  </section>
+        <div class="form-group">
+          <label for="date_dem">Date de déménagement souhaitée :</label>
+          <input type="date" id="date_dem" name="Date" />
+        </div>
+
+        <div class="form-group">
+          <label for="volume">Volume approximatif (m³) :</label>
+          <input type="number" id="volume" name="Volume" placeholder="En m³" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message / précisions :</label>
+          <textarea id="message" name="Message" rows="5" placeholder="Expliquez-nous votre déménagement..."></textarea>
+        </div>
+
+        <button class="btn" type="submit">Envoyer ma demande</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     <p>📞 06 51 32 34 94 | 📩 mehdi-lami@laposte.net</p>
