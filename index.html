@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Déménagement Pro - Déménagement partout en France</title>
+  <title>On Bouge d'Ici - Déménagement partout en France</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background: #f1f1f1; /* Gris clair pour le fond */
+      background: #f2f6ff;
       color: #333;
     }
+
     header {
-      background: #003366; /* Bleu foncé pour le header */
+      background: #4d7cff;
       color: white;
       padding: 2rem;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
     }
+
     .btn {
-      background: #FFD700; /* Jaune pour les boutons */
+      background: #ffb347;
       padding: 1rem 2rem;
       border: none;
       color: #fff;
@@ -32,14 +35,17 @@
       display: inline-block;
       margin-top: 1rem;
     }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
+
     h2 {
-      color: #003366; /* Bleu foncé pour les titres */
+      color: #4d7cff;
     }
+
     .service {
       background: white;
       padding: 1rem;
@@ -47,20 +53,24 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin-bottom: 1rem;
     }
+
     footer {
-      background: #333; /* Gris foncé pour le footer */
+      background: #333;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
+
     #carte {
       text-align: center;
     }
+
     #carte img {
       width: 100%;
       max-width: 600px;
       margin-top: 20px;
     }
+
     .whatsapp {
       position: fixed;
       bottom: 20px;
@@ -73,12 +83,54 @@
       text-decoration: none;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
+
+    /* Style du formulaire */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #003366; /* Bleu foncé */
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    button.btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #FFD700; /* Jaune pour les boutons */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button.btn:hover {
+      background-color: #ffcc00;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Déménagement Pro</h1>
-    <p>Déménagement simple, sympa et partout en France </p>
+    <h1>On Bouge d'Ici</h1>
+    <p>Déménagement simple, sympa et partout en France 🇫🇷</p>
     <a class="btn" href="#devis">Demander un devis gratuit</a>
   </header>
 
@@ -140,12 +192,36 @@
     <h2>Demande de devis</h2>
     <p>Dis-nous tout (ou presque) :</p>
     <form action="https://formspree.io/f/xwpokdkp" method="post">
-      <label>Votre email : <input type="email" name="email" required /></label><br /><br />
-      <label>Ville de départ : <input type="text" name="Ville de départ" /></label><br /><br />
-      <label>Ville d'arrivée : <input type="text" name="Ville d'arrivée" /></label><br /><br />
-      <label>Date de déménagement : <input type="date" name="Date" /></label><br /><br />
-      <label>Volume approximatif (m³) : <input type="number" name="Volume" /></label><br /><br />
-      <label>Message / précisions :<br /><textarea name="Message" rows="5"></textarea></label><br /><br />
+      <div class="form-group">
+        <label for="email">Votre email :</label>
+        <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="ville_depart">Ville de départ :</label>
+        <input type="text" id="ville_depart" name="Ville de départ" placeholder="Votre ville" />
+      </div>
+
+      <div class="form-group">
+        <label for="ville_arrivee">Ville d'arrivée :</label>
+        <input type="text" id="ville_arrivee" name="Ville d'arrivée" placeholder="Destination" />
+      </div>
+
+      <div class="form-group">
+        <label for="date_dem">Date de déménagement :</label>
+        <input type="date" id="date_dem" name="Date" />
+      </div>
+
+      <div class="form-group">
+        <label for="volume">Volume approximatif (m³) :</label>
+        <input type="number" id="volume" name="Volume" placeholder="En m³" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message / précisions :</label>
+        <textarea id="message" name="Message" rows="5" placeholder="Expliquez-nous votre déménagement..."></textarea>
+      </div>
+
       <button class="btn" type="submit">Envoyer ma demande</button>
     </form>
   </section>
@@ -153,7 +229,7 @@
   <footer>
     <p>📞 06 51 32 34 94 | 📩 mehdi-lami@laposte.net</p>
     <p><a href="mentions-legales.html" style="color: #fff; text-decoration: underline;">Mentions légales</a></p>
-    <p>© 2023 Déménagement Pro - Tous droits réservés</p>
+    <p>© 2025 On Bouge d'Ici - Tous droits réservés</p>
   </footer>
 
   <a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 WhatsApp</a>
