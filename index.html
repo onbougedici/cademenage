@@ -36,12 +36,12 @@
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2rem;
       margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 1.5rem;
     }
 
@@ -73,10 +73,19 @@
       margin-bottom: 3rem;
     }
 
+    /* Modifications des titres */
     h2 {
-      font-size: 1.8rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600; /* Poids normal pour plus de sobriété */
+      color: #2c3e50; /* Couleur plus neutre */
       margin-bottom: 1rem;
-      color: #2c3e50;
+      font-size: 1.5rem; /* Taille modérée pour plus de sobriété */
+      text-transform: uppercase; /* Pour donner un aspect plus professionnel */
+      letter-spacing: 1px; /* Espacement entre les lettres pour une meilleure lisibilité */
+    }
+
+    section h2 {
+      font-size: 1.8rem; /* Pour conserver une taille visible tout en restant sobre */
     }
 
     .logo {
@@ -205,35 +214,6 @@
     }
   </style>
 </head>
-   <meta charset="UTF-8">
-  <title>Alliance Déménagement</title>
-  <style>
-    @keyframes slideLoop {
-      0% {
-        transform: translateX(-150px);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(100vw);
-        opacity: 0;
-      }
-    }
-
-    .logo {
-      width: 150px;
-      height: auto;
-      position: absolute;
-      top: 20px;
-      left: 0;
-      animation: slideLoop 5s linear infinite;
-    }
-  </style>
 <body>
 
 <header>
@@ -246,7 +226,7 @@
   <a class="btn" href="#zone">Zone d’intervention</a>
   <a class="btn" href="#devis">Demander un devis</a>
 </header>
-  </style>
+
 <main>
   <section id="about">
     <h2>À propos d'Alliance Déménagement</h2>
@@ -255,7 +235,6 @@
   </section>
 
   <section id="services">
-    
     <h2>Nos services</h2>
     <ul>
       <li>🌍 Déménagement national & international</li>
@@ -281,61 +260,53 @@
       <p>⭐⭐⭐⭐⭐ "Équipe efficace et très sympathique. Mon déménagement s'est super bien passé." – Julie (Lyon)</p>
       <p>⭐⭐⭐⭐⭐ "Rapides, organisés et à l'écoute. Merci pour le service." – Sylvie (Paris-Aix)</p>
       <p>⭐⭐⭐⭐⭐ "Rien à redire, tout était parfait du devis à la livraison." – Chloé (Nice)</p>
-      <p>⭐⭐⭐⭐⭐ "Good Job!" – Fred</p>
+      <p>⭐⭐⭐⭐⭐ "Good Job!" – Ahmed (Marseille)</p>
     </div>
   </section>
 
   <section id="faq">
     <h2>FAQ</h2>
-    <h4>Quel est votre délai d'intervention ?</h4>
-    <p>⚡48 à 72h pour la France, 96h pour l'Europe.</p>
-    <h4>Fournissez-vous du matériel de déménagement ?</h4>
-    <p>Oui, en option : 📦 cartons, 🏷️ adhésif,🛏️ couvertures...</p>
-    <h4>Mes biens sont-ils assurés ?</h4>
-    <p>Oui, 🛡️ une assurance est incluse. Possibilité d'extension.</p>
+    <ul>
+      <li><strong>Q : Combien de temps avant mon déménagement dois-je réserver ?</strong><br>R : Nous recommandons de réserver au moins 3 semaines à l'avance, mais nous pouvons nous adapter à vos urgences.</li>
+      <li><strong>Q : Quels services sont inclus dans un déménagement ?</strong><br>R : Notre offre inclut le transport, l'emballage, le montage/démontage de meubles, et un service personnalisé en fonction de vos besoins.</li>
+      <li><strong>Q : Proposez-vous une assurance pour mes biens ?</strong><br>R : Oui, tous nos déménagements sont couverts par une assurance de base. Nous proposons aussi des options d’assurance étendues pour une couverture complète.</li>
+    </ul>
   </section>
 
   <section id="devis">
-    <h2>Demande de devis gratuit</h2>
-    <form action="https://formspree.io/f/xwpokdkp" method="post">
+    <h2>Demander un devis gratuit</h2>
+    <form action="submit_devis.php" method="POST">
+      <div class="form-group">
+        <label for="name">Nom complet :</label>
+        <input type="text" id="name" name="name" required>
+      </div>
       <div class="form-group">
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+        <input type="email" id="email" name="email" required>
       </div>
       <div class="form-group">
-        <label for="ville_depart">Ville de départ :</label>
-        <input type="text" id="ville_depart" name="Ville de départ" required />
+        <label for="phone">Téléphone :</label>
+        <input type="tel" id="phone" name="phone" required>
       </div>
       <div class="form-group">
-        <label for="ville_arrivee">Ville d'arrivée :</label>
-        <input type="text" id="ville_arrivee" name="Ville d'arrivée" required />
-      </div>
-      <div class="form-group">
-        <label for="date_dem">Date souhaitée :</label>
-        <input type="date" id="date_dem" name="Date" />
-      </div>
-      <div class="form-group">
-        <label for="volume">Volume (m³) :</label>
-        <input type="number" id="volume" name="Volume" placeholder="Ex. : 20" />
-      </div>
-      <div class="form-group">
-        <label for="message">Détails ou contraintes :</label>
-        <textarea id="message" name="Message" rows="4" placeholder="Indiquez tout détail utile (ascenseur, accès difficile, etc.)"></textarea>
+        <label for="details">Détails du déménagement :</label>
+        <textarea id="details" name="details" rows="5" required></textarea>
       </div>
       <button type="submit" class="submit-btn">Envoyer la demande</button>
     </form>
   </section>
 </main>
 
-<a class="whatsapp" href="https://wa.me/33612345678" target="_blank">📱 Discuter sur WhatsApp</a>
-
 <footer>
   <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
-  <p><a href="mailto:contact@alliance-demenagement.eu">contact@alliance-demenagement.eu</a></p>
+  <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
 </footer>
+
+<a href="https://wa.me/+33XXXXXXXXX" class="whatsapp" target="_blank">Contactez-nous sur WhatsApp</a>
 
 </body>
 </html>
+
 
 
 
