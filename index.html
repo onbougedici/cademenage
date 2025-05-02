@@ -1,131 +1,271 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alliance Déménagement, votre partenaire pour un déménagement facile et sécurisé partout en France et en Europe. Devis gratuits et sans engagement.">
-    <meta name="keywords" content="déménagement, déménageurs, services de déménagement, France, Europe, déménagement particulier, déménagement entreprise">
-    <meta name="author" content="Alliance Déménagement">
-    <title>Alliance Déménagement</title>
-    <link rel="stylesheet" href="styles.css">
+ <link rel="icon" href="favicon.png" type="image/png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alliance Déménagement : déménagements professionnels partout en France et en Europe, avec des solutions adaptées à tous les budgets.">
+  <title>Alliance Déménagement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: url('demenagement.jpg') center/cover no-repeat;
+      padding: 4rem 1rem;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    header h1, header p, header .btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      margin: 0.3rem;
+      background-color: #ffffffcc;
+      color: #333;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e0e0e0;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .logo {
+      max-width: 250px;
+      display: block;
+      margin: auto;
+    }
+
+    .testimonials {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .testimonials p {
+      font-style: italic;
+      margin: 0.8rem 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #1a252f;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      font-size: 16px;
+      padding: 10px 14px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#services">Nos Services</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Main Section -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home">
-            <div class="hero">
-                <h1>Bienvenue chez Alliance Déménagement</h1>
-                <p>Votre partenaire pour un déménagement sans stress, rapide et sécurisé.</p>
-                <a href="#contact" class="cta-btn">Demandez un devis gratuit</a>
-            </div>
-        </section>
+<header>
+  <h1>Alliance Déménagement</h1>
+  <p>Déménagez partout en France avec des pros de confiance</p>
+  <a class="btn" href="#services">Nos services</a>
+  <a class="btn" href="#zone">Zone d’intervention</a>
+  <a class="btn" href="#devis">Demander un devis</a>
+</header>
 
-        <!-- Services Section -->
-        <section id="services">
-            <h2>Nos Services</h2>
-            <p>Découvrez nos prestations de déménagement adaptées à tous vos besoins.</p>
-            <ul>
-                <li>Déménagement local, national et international</li>
-                <li>Transport d'objets fragiles ou lourds (piano, électroménager, etc.)</li>
-                <li>Location de camions avec chauffeur</li>
-                <li>Fourniture de matériel d’emballage</li>
-                <li>Service clé en main incluant l'emballage et le montage/démontage de meubles</li>
-                <li>Solutions de garde-meubles</li>
-            </ul>
-        </section>
+<main>
+  <section id="services">
+    <img src="logo.alliance.jpeg.jpg" alt="Logo Alliance Déménagement" class="logo">
+    <h2>Nos services</h2>
+    <ul>
+      <li>Déménagement national & international</li>
+      <li>Transport longue distance</li>
+      <li>Fourniture de cartons et matériel</li>
+      <li>Option garde-meubles</li>
+      <li>Assurance incluse, options étendues disponibles</li>
+    </ul>
+    <p>Professionnels à l'écoute, nous proposons des solutions adaptées à tous les budgets.</p>
+  </section>
 
-        <!-- À propos Section -->
-        <section id="about">
-            <h2>À propos d'Alliance Déménagement</h2>
-            <p>Alliance Déménagement est une entreprise spécialisée dans les services de déménagement professionnels partout en France et en Europe. Que vous soyez un particulier ou une entreprise, nous vous proposons des solutions de déménagement sur mesure, adaptées à vos besoins et à votre budget.</p>
-            <p>Notre mission est simple : rendre votre déménagement plus facile, plus rapide et plus économique, tout en assurant un haut niveau de sécurité et de fiabilité. Grâce à notre réseau de déménageurs expérimentés, nous vous garantissons une prise en charge complète, du simple transport au service clé en main incluant l'emballage, le démontage, le montage de meubles et la mise en carton.</p>
+  <section id="zone">
+    <h2>Zone d’intervention</h2>
+    <p>Nous couvrons toute la France, y compris les grandes villes et zones rurales.</p>
+    <p>Nous proposons également nos services depuis la France vers toute l'Europe avec les démarches adminsitratives si nécessaire</p>
+    <img src="carte france.png" alt="Carte des villes desservies" style="max-width:100%; border-radius: 8px;">
+  </section>
 
-            <h3>🚛 Nos prestations de déménagement :</h3>
-            <ul>
-                <li>Déménagements locaux, nationaux et internationaux</li>
-                <li>Déménagements de particuliers et professionnels</li>
-                <li>Transport d’objets lourds ou fragiles (pianos, électroménager, etc.)</li>
-                <li>Location de camion avec chauffeur</li>
-                <li>Fourniture de matériel d’emballage</li>
-                <li>Solutions de garde-meubles et stockage sécurisé</li>
-            </ul>
+  <section id="avis">
+    <h2>Avis clients</h2>
+    <div class="testimonials">
+      <p>⭐⭐⭐⭐⭐ "Équipe efficace et très sympathique. Mon déménagement s'est super bien passé." – Julie (Lyon)</p>
+      <p>⭐⭐⭐⭐⭐ "Rapides, organisés et à l'écoute. Merci pour le service." – Sylvie (Paris-Aix)</p>
+      <p>⭐⭐⭐⭐⭐ "Rien à redire, tout était parfait du devis à la livraison." – Chloé (Nice)</p>
+      <p>⭐⭐⭐⭐⭐ "Good Job!" – Fred</p>
+    </div>
+  </section>
 
-            <h3>✅ Pourquoi choisir Alliance Déménagement ?</h3>
-            <ul>
-                <li>Tarifs transparents et compétitifs</li>
-                <li>Devis gratuits et sans engagement</li>
-                <li>Équipe professionnelle, ponctuelle et expérimentée</li>
-                <li>Assurance incluse</li>
-                <li>Service client réactif</li>
-            </ul>
+  <section id="faq">
+    <h2>FAQ</h2>
+    <h4>Quel est votre délai d'intervention ?</h4>
+    <p>48 à 72h pour la France, 96h pour l'Europe.</p>
+    <h4>Fournissez-vous du matériel de déménagement ?</h4>
+    <p>Oui, en option : cartons, adhésif, couvertures...</p>
+    <h4>Mes biens sont-ils assurés ?</h4>
+    <p>Oui, une assurance est incluse. Possibilité d'extension.</p>
+  </section>
 
-            <h3>📍 Zones d’intervention :</h3>
-            <p>Basée en France, Alliance Déménagement intervient dans toutes les régions : Île-de-France, Rhône-Alpes, PACA, Grand Est, Hauts-de-France, Nouvelle-Aquitaine, Occitanie, Bretagne, Normandie… et même au-delà des frontières françaises pour vos déménagements en Belgique, Suisse, Espagne, Italie, Allemagne, Luxembourg, etc.</p>
+  <section id="devis">
+    <h2>Demande de devis gratuit</h2>
+    <form action="https://formspree.io/f/xwpokdkp" method="post">
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+      </div>
+      <div class="form-group">
+        <label for="ville_depart">Ville de départ :</label>
+        <input type="text" id="ville_depart" name="Ville de départ" required />
+      </div>
+      <div class="form-group">
+        <label for="ville_arrivee">Ville d'arrivée :</label>
+        <input type="text" id="ville_arrivee" name="Ville d'arrivée" required />
+      </div>
+      <div class="form-group">
+        <label for="date_dem">Date souhaitée :</label>
+        <input type="date" id="date_dem" name="Date" />
+      </div>
+      <div class="form-group">
+        <label for="volume">Volume (m³) :</label>
+        <input type="number" id="volume" name="Volume" placeholder="Ex. : 20" />
+      </div>
+      <div class="form-group">
+        <label for="message">Détails ou contraintes :</label>
+        <textarea id="message" name="Message" rows="4" placeholder="Étage, ascenseur, fragilité, etc."></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Envoyer la demande</button>
+    </form>
+  </section>
+</main>
 
-            <h3>💼 Confiez-nous votre déménagement, on s’occupe de tout.</h3>
-            <p>Alliance Déménagement est votre partenaire de confiance pour un déménagement réussi, sans stress.</p>
-        </section>
+<footer>
+  <p>📞 06 51 32 34 94 | 📩 contact@alliance-demenagement.eu</p>
+  <p><a href="mentions-legales.html">Mentions légales</a></p>
+  <p>© 2025 Alliance Déménagement – Tous droits réservés</p>
+</footer>
 
-        <!-- FAQ Section -->
-        <section id="faq">
-            <h2>FAQ - Questions fréquentes</h2>
-            <div class="faq-item">
-                <h3>Comment obtenir un devis ?</h3>
-                <p>Vous pouvez obtenir un devis gratuit et sans engagement en remplissant notre formulaire en ligne ou en nous appelant directement.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Est-ce que mes biens sont assurés pendant le déménagement ?</h3>
-                <p>Oui, une assurance est incluse pour garantir la sécurité de vos biens pendant le transport.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Faites-vous des déménagements à l'international ?</h3>
-                <p>Oui, nous effectuons des déménagements dans toute l'Europe et au-delà. Contactez-nous pour plus de détails sur nos services internationaux.</p>
-            </div>
-        </section>
+<a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 WhatsApp</a>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contactez-nous</h2>
-            <p>Pour toute demande de devis ou d'information supplémentaire, n'hésitez pas à nous contacter !</p>
-            <form action="submit_form.php" method="post">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Alliance Déménagement. Tous droits réservés.</p>
-        <nav>
-            <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#services">Nos Services</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-        </nav>
-    </footer>
 </body>
 </html>
 
