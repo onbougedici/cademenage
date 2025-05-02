@@ -1,267 +1,301 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alliance Déménagement</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f4f4f4;
       color: #333;
     }
 
     header {
-      background: url('demenagement.jpg') center/cover no-repeat;
-      padding: 4rem 1rem;
-      text-align: center;
+      background-image: url('demenagement.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
       color: white;
+      padding: 2rem;
+      text-align: center;
       position: relative;
     }
 
     header::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    header h1, header p, header .btn {
-      position: relative;
-      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3); /* Overlay pour améliorer la lisibilité du texte */
     }
 
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+      margin: 0;
+      font-size: 2.5rem;
+      z-index: 2;
     }
 
     header p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+      z-index: 2;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      margin: 0.3rem;
-      background-color: #ffffffcc;
-      color: #333;
-      font-size: 0.95rem;
-      font-weight: 600;
+    header .btn {
+      background: #607d8b;
+      padding: 1rem 2rem;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 10px;
       text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.3s;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s;
+      z-index: 2;
     }
 
-    .btn:hover {
-      background-color: #e0e0e0;
+    header .btn:hover {
+      background: #455a64;
     }
 
     main {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
     }
 
     section {
-      margin-bottom: 3rem;
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: #2c3e50;
-    }
-
-    .logo {
-      max-width: 250px;
-      display: block;
-      margin: auto;
-    }
-
-    .testimonials {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-
-    .testimonials p {
-      font-style: italic;
-      margin: 0.8rem 0;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .submit-btn {
-      background-color: #2c3e50;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover {
-      background-color: #1a252f;
+      color: #2d3b2f;
     }
 
     footer {
-      background-color: #2c3e50;
+      background: #333;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: underline;
     }
 
     .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25d366;
+      background-color: #25d366;
       color: white;
-      font-size: 16px;
-      padding: 10px 14px;
-      border-radius: 30px;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 18px;
       text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
-      }
+    .testimonials {
+      background: #fefefe;
+      padding: 1rem;
+      margin-top: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
     }
+
+    .testimonials p {
+      font-style: italic;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2d3b2f;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    button.btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #607d8b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button.btn:hover {
+      background-color: #455a64;
+    }
+
+    #carte img {
+      max-width: 80%;
+      height: auto;
+      margin: auto;
+      display: block;
+    }
+
+    .logo {
+      max-width: 50%; /* Réduit la taille du logo à 50% de sa taille originale */
+      height: auto; /* Maintient les proportions de l'image */
+      margin: auto;
+      display: block;
+    }
+
+    .info-form {
+      background-color: #f7f7f7;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .info-form input {
+      padding: 0.8rem;
+      width: 200px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .info-form button {
+      padding: 1rem 2rem;
+      background-color: #607d8b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .info-form button:hover {
+      background-color: #455a64;
+    }
+
   </style>
 </head>
 <body>
-
 <header>
-  <h1>Alliance Déménagement</h1>
-  <p>Déménagez partout en France avec des pros de confiance</p>
   <a class="btn" href="#services">Nos services</a>
-  <a class="btn" href="#zone">Zone d’intervention</a>
-  <a class="btn" href="#devis">Demander un devis</a>
+  <a class="btn" href="#faq">FAQ</a>
+  <a class="btn" href="#devis">Demander un devis gratuit</a>
 </header>
 
 <main>
   <section id="services">
     <img src="logo.alliance.jpeg.jpg" alt="Logo Alliance Déménagement" class="logo">
-    <h2>Nos services</h2>
-    <ul>
-      <li>Déménagement local & national</li>
-      <li>Transport longue distance</li>
-      <li>Fourniture de cartons et matériel</li>
-      <li>Option garde-meubles</li>
-      <li>Assurance incluse, options étendues disponibles</li>
-    </ul>
-    <p>Professionnels à l'écoute, nous proposons des solutions adaptées à tous les budgets.</p>
+    <p>En choisissant notre entreprise pour votre déménagement, vous pouvez être sûr que vous êtes entre de bonnes mains. Nous nous engageons à vous offrir un service de qualité, fiable et sans souci. Faites-nous confiance pour rendre votre déménagement une expérience positive et sans stress.</p>
+    <p>Nous sommes des professionnels du secteur et nous mettons un point d’honneur à proposer à l’ensemble de notre clientèle des déménagements sur mesure au meilleur prix. Pour être les meilleurs, pas besoin d’être les plus chers.</p>
   </section>
 
-  <section id="zone">
-    <h2>Zone d’intervention</h2>
-    <p>Nous couvrons toute la France, y compris les grandes villes et zones rurales.</p>
-    <img src="carte france.png" alt="Carte des villes desservies" style="max-width:100%; border-radius: 8px;">
+  <!-- Bande horizontale avec les champs et bouton -->
+  <section class="info-form">
+    <input type="text" id="ville_depart" placeholder="Ville de départ" />
+    <input type="text" id="ville_arrivee" placeholder="Ville d'arrivée" />
+    <input type="date" id="date_depart" />
+    <input type="number" id="surface" placeholder="Surface (m²)" />
+    <a href="#devis"><button>C'est parti</button></a>
+  </section>
+
+  <section id="carte">
+    <h2>Où nous intervenons</h2>
+    <p>Nous couvrons toute la France pour vos déménagements !</p>
+    <img src="carte france.png" alt="Carte des principales villes de France" />
   </section>
 
   <section id="avis">
     <h2>Avis clients</h2>
     <div class="testimonials">
-      <p>⭐⭐⭐⭐⭐ "Équipe efficace et très sympathique. Mon déménagement s'est super bien passé." – Julie (Lyon)</p>
-      <p>⭐⭐⭐⭐⭐ "Rapides, organisés et à l'écoute. Merci pour le service." – Sylvie (Paris-Aix)</p>
-      <p>⭐⭐⭐⭐⭐ "Rien à redire, tout était parfait du devis à la livraison." – Chloé (Nice)</p>
+      <p>⭐⭐⭐⭐⭐ "Super équipe, ponctuelle et efficace. Je recommande à 100% !" – Julie et Mickaël (Lyon)</p>
+      <p>⭐⭐⭐⭐⭐ "Déménagement Paris-Aix au top, rien à redire." – Sylvie</p>
+      <p>⭐⭐⭐⭐⭐ "Merci pour votre gentillesse et votre professionnalisme." – Chloé</p>
     </div>
   </section>
 
   <section id="faq">
     <h2>FAQ</h2>
-    <h4>Quel est votre délai d'intervention ?</h4>
-    <p>48 à 72h pour la France, 96h pour l'Europe.</p>
-    <h4>Fournissez-vous du matériel de déménagement ?</h4>
-    <p>Oui, en option : cartons, adhésif, couvertures...</p>
-    <h4>Mes biens sont-ils assurés ?</h4>
-    <p>Oui, une assurance est incluse. Possibilité d'extension.</p>
+    <h4>Quels sont vos délais d'intervention ?</h4>
+    <p>Nous intervenons généralement sous 48 à 72h partout en France et sous 96h en Europe.</p>
+    <h4>Est-ce que vous proposez des cartons ?</h4>
+    <p>Oui, nous pouvons fournir du matériel de déménagement en option.</p>
+    <h4>Est-ce que mes affaires sont assurées ?</h4>
+    <p>Oui, tous nos services incluent une assurance de base. Options renforcées disponibles.</p>
   </section>
 
   <section id="devis">
-    <h2>Demande de devis gratuit</h2>
+    <h2>Demande de devis</h2>
     <form action="https://formspree.io/f/xwpokdkp" method="post">
       <div class="form-group">
-        <label for="email">Email :</label>
+        <label for="email">Votre email :</label>
         <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
       </div>
+
       <div class="form-group">
         <label for="ville_depart">Ville de départ :</label>
-        <input type="text" id="ville_depart" name="Ville de départ" required />
+        <input type="text" id="ville_depart" name="Ville de départ" placeholder="Votre ville" />
       </div>
+
       <div class="form-group">
         <label for="ville_arrivee">Ville d'arrivée :</label>
-        <input type="text" id="ville_arrivee" name="Ville d'arrivée" required />
+        <input type="text" id="ville_arrivee" name="Ville d'arrivée" placeholder="Destination" />
       </div>
+
       <div class="form-group">
-        <label for="date_dem">Date souhaitée :</label>
+        <label for="date_dem">Date de déménagement souhaitée :</label>
         <input type="date" id="date_dem" name="Date" />
       </div>
+
       <div class="form-group">
-        <label for="volume">Volume (m³) :</label>
-        <input type="number" id="volume" name="Volume" placeholder="Ex. : 20" />
+        <label for="volume">Volume approximatif (m³) :</label>
+        <input type="number" id="volume" name="Volume" placeholder="En m³" />
       </div>
+
       <div class="form-group">
-        <label for="message">Détails ou contraintes :</label>
-        <textarea id="message" name="Message" rows="4" placeholder="Étage, ascenseur, fragilité, etc."></textarea>
+        <label for="message">Message / précisions :</label>
+        <textarea id="message" name="Message" rows="5" placeholder="Expliquez-nous votre déménagement..."></textarea>
       </div>
-      <button class="submit-btn" type="submit">Envoyer la demande</button>
+
+      <button class="btn" type="submit">Envoyer ma demande</button>
     </form>
   </section>
 </main>
 
 <footer>
   <p>📞 06 51 32 34 94 | 📩 mehdi-lami@laposte.net</p>
-  <p><a href="mentions-legales.html">Mentions légales</a></p>
-  <p>© 2025 Alliance Déménagement – Tous droits réservés</p>
+  <p><a href="mentions-legales.html" style="color: #fff; text-decoration: underline;">Mentions légales</a></p>
+  <p>© 2023 Alliance Déménagement - Tous droits réservés</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 WhatsApp</a>
+<a class="whatsapp" href="https
 
-</body>
-</html>
 
 
 
