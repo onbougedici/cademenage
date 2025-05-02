@@ -214,7 +214,22 @@
   <a class="btn" href="#zone">Zone d’intervention</a>
   <a class="btn" href="#devis">Demander un devis</a>
 </header>
+ <style>
+    @keyframes slideLeftRight {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100px);
+      }
+    }
 
+    .logo {
+      width: 150px;
+      height: auto;
+      animation: slideLeftRight 2s ease-in-out infinite alternate;
+    }
+  </style>
 <main>
   <section id="about">
     <h2>À propos d'Alliance Déménagement</h2>
