@@ -254,6 +254,38 @@
 #formules {
   overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
 }
+    <div className="overflow-x-auto">
+  <table className="min-w-[600px] border-collapse border border-gray-300 text-sm">
+    <thead>
+      <tr>
+        <th className="border border-gray-300 p-2">Formule</th>
+        <th className="border border-gray-300 p-2">Chargement</th>
+        <th className="border border-gray-300 p-2">Transport</th>
+        <th className="border border-gray-300 p-2">Déchargement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="border border-gray-300 p-2">Éco</td>
+        <td className="border border-gray-300 p-2">Client</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Client</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">Standard</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Client</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 p-2">Premium</td>
+        <td className="border border-gray-300 p-2">Équipe</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Équipe</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 /* Responsivité pour les petits écrans */
 @media (max-width: 600px) {
