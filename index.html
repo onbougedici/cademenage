@@ -386,6 +386,84 @@
 <body>
   <h1>Nos Formules de Déménagement</h1>
 
+#formules {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+#formules table {
+  width: 100%;
+  table-layout: auto;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+#formules th, #formules td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#formules thead {
+  background-color: #444;
+  color: white;
+}
+
+#formules tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.legend {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Responsivité : gestion de l'affichage sur mobile */
+@media (max-width: 768px) {
+  #formules table {
+    font-size: 0.8rem;
+    border: none;
+  }
+
+  #formules th, #formules td {
+    padding: 8px;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #formules th {
+    background-color: #444;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #formules td {
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  #formules td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  .legend {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
+
   <table>
     <thead>
       <tr>
