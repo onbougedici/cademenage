@@ -94,16 +94,17 @@
       }
     }
 
-    header {
-      background: url('demenagement.jpg') center/cover no-repeat;
-      padding: 4rem 1rem;
-      text-align: center;
-      color: white;
-      position: relative;
-      width: 100%;
-      object-fit: cover;
-      height: 100px;
-    }
+header {
+  background: url('demenagement.jpg') center/cover no-repeat;
+  height: 100vh; /* ou remplace par ex. 300px si tu veux une hauteur fixe */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
 
     header::after {
       content: '';
