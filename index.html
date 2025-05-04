@@ -241,7 +241,29 @@
       position: absolute;
       animation: moveCamion 5s ease-in-out forwards;
     }
+    #formules table {
+  width: 100%; /* S'assurer que le tableau prend toute la largeur disponible */
+  table-layout: auto; /* Laisser la taille des colonnes s'ajuster automatiquement */
+  margin: 0 auto;
+  border-collapse: collapse; /* Pour éviter l'espace entre les cellules */
+}
 
+/* Ajouter un conteneur pour éviter que le tableau dépasse */
+#formules {
+  overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 600px) {
+  #formules table {
+    width: 100%; /* Assurer que le tableau prend 100% de la largeur du conteneur */
+  }
+
+  #formules th, #formules td {
+    font-size: 0.9rem; /* Réduire la taille de la police pour les petits écrans */
+    padding: 8px; /* Ajuster l'espacement des cellules */
+    white-space: nowrap; /* Empêche le texte de se couper et crée un défilement horizontal si nécessaire */
+  }
     .logo {
       width: 150px;
       height: auto;
