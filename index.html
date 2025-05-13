@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <style>
-  .menu-cartons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-  }
-
-  .carton-btn {
-    background: #d2b48c; /* couleur carton kraft */
-    border: 2px solid #a97c50;
-    box-shadow: 4px 4px 0 #a97c50;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    color: #4b3621;
-    font-weight: bold;
-    border-radius: 4px;
-    font-family: 'Segoe UI', sans-serif;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-    position: relative;
-  }
-
-  .carton-btn:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 #a97c50;
-    background: #c49b74;
-  }
-</style>
   <meta name="google-site-verification" content="dPGnufRThyoFgX9Z4Dl5d2VNHqg29OBq5_rnoltfRxI" />
   <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png" />
   <meta charset="UTF-8">
@@ -360,34 +331,34 @@
 #formules {
   overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
 }
-    <div class="overflow-x-auto">
-  <table class="min-w-[600px] border-collapse border border-gray-300 text-sm">
+    <div className="overflow-x-auto">
+  <table className="min-w-[600px] border-collapse border border-gray-300 text-sm">
     <thead>
       <tr>
-        <th class="border border-gray-300 p-2">Formule</th>
-        <th class="border border-gray-300 p-2">Chargement</th>
-        <th class="border border-gray-300 p-2">Transport</th>
-        <th class="border border-gray-300 p-2">Déchargement</th>
+        <th className="border border-gray-300 p-2">Formule</th>
+        <th className="border border-gray-300 p-2">Chargement</th>
+        <th className="border border-gray-300 p-2">Transport</th>
+        <th className="border border-gray-300 p-2">Déchargement</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="border border-gray-300 p-2">Éco</td>
-        <td class="border border-gray-300 p-2">Client</td>
-        <td class="border border-gray-300 p-2">Chauffeur</td>
-        <td class="border border-gray-300 p-2">Client</td>
+        <td className="border border-gray-300 p-2">Éco</td>
+        <td className="border border-gray-300 p-2">Client</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Client</td>
       </tr>
       <tr>
-        <td class="border border-gray-300 p-2">Standard</td>
-        <td class="border border-gray-300 p-2">Chauffeur</td>
-        <td class="border border-gray-300 p-2">Chauffeur</td>
-        <td class="border border-gray-300 p-2">Client</td>
+        <td className="border border-gray-300 p-2">Standard</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Client</td>
       </tr>
       <tr>
-        <td class="border border-gray-300 p-2">Premium</td>
-        <td class="border border-gray-300 p-2">Équipe</td>
-        <td class="border border-gray-300 p-2">Chauffeur</td>
-        <td class="border border-gray-300 p-2">Équipe</td>
+        <td className="border border-gray-300 p-2">Premium</td>
+        <td className="border border-gray-300 p-2">Équipe</td>
+        <td className="border border-gray-300 p-2">Chauffeur</td>
+        <td className="border border-gray-300 p-2">Équipe</td>
       </tr>
     </tbody>
   </table>
@@ -421,13 +392,11 @@
   </div>
   <br><br><br>
   <br>
-<nav class="menu-cartons">
-  <a class="carton-btn" href="#services">Nos services</a>
-  <a class="carton-btn" href="#formules">Nos formules</a>
-  <a class="carton-btn" href="#zone">Zone d’intervention</a>
+  <a class="btn" href="#services">Nos services</a>
+  <a class="btn" href="#formules">Nos Formules</a>
+  <a class="btn" href="#zone">Zone d’intervention</a>
   <br>
-  <a class="carton-btn" href="#devis">Demander un devis</a>  
-</nav>
+  <a class="btn" href="#devis">Demander un devis</a>
 </header>
 
 <main>
