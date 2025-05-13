@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <style>
+  .menu-cartons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .carton-btn {
+    background: #d2b48c; /* couleur carton kraft */
+    border: 2px solid #a97c50;
+    box-shadow: 4px 4px 0 #a97c50;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #4b3621;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: 'Segoe UI', sans-serif;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    position: relative;
+  }
+
+  .carton-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #a97c50;
+    background: #c49b74;
+  }
+</style>
   <meta name="google-site-verification" content="dPGnufRThyoFgX9Z4Dl5d2VNHqg29OBq5_rnoltfRxI" />
   <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png" />
   <meta charset="UTF-8">
@@ -8,9 +37,10 @@
   <meta name="description" content="Alliance Déménagement : déménagements professionnels partout en France et en Europe, avec des solutions adaptées à tous les budgets.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <style>
     body {
       margin: 0;
@@ -18,6 +48,82 @@
       background-color: #f9f9f9;
       color: #000000;
     }
+    #formules {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+
+    #formules table {
+      width: 100%;
+      table-layout: auto;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    #formules th, #formules td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    #formules thead {
+      background-color: #444;
+      color: white;
+    }
+
+    #formules tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .legend {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* Responsivité : gestion de l'affichage sur mobile */
+    @media (max-width: 768px) {
+      #formules table {
+        font-size: 0.8rem;
+      }
+
+      #formules th, #formules td {
+        padding: 8px;
+        display: table-cell;  /* Assurez-vous que les cellules sont toujours traitées comme des cellules de tableau */
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+      }
+
+      #formules th {
+        background-color: #444;
+        color: white;
+        text-align: left;
+      }
+
+      /* On cache les en-têtes de tableau et on affiche un titre avant chaque cellule */
+      #formules td {
+        position: relative;
+        text-align: left;
+      }
+
+      #formules td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      .legend {
+        font-size: 12px;
+        margin-top: 15px;
+      }
+    }
+
     header {
       background: url('demenagement.jpg') center/cover no-repeat;
       padding: 4rem 1rem 4rem 0;
@@ -28,6 +134,7 @@
       object-fit: cover;
       height: auto;
     }
+
     header::after {
       content: '';
       position: absolute;
@@ -36,59 +143,132 @@
       background: rgba(0, 0, 0, 0.4);
       z-index: 0;
     }
+
     header h1, header p, header .btn {
       position: relative;
       text-align: center;
       z-index: 1;
     }
-    .menu-cartons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 2rem 0;
-    }
-    .carton-btn {
-      background: #d2b48c; /* couleur carton kraft */
-      border: 2px solid #a97c50;
-      box-shadow: 4px 4px 0 #a97c50;
-      padding: 1rem 1.5rem;
-      text-decoration: none;
-      color: #4b3621;
-      font-weight: bold;
-      border-radius: 4px;
-      font-family: 'Segoe UI', sans-serif;
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
-      position: relative;
-    }
-    .carton-btn:hover {
-      transform: translate(2px, 2px);
-      box-shadow: 2px 2px 0 #a97c50;
-      background: #c49b74;
-    }
-    .formules {
-      overflow-x: auto;
-      margin: 20px 0;
-    }
-    table {
-      width: 100%;
-      table-layout: auto;
-      margin: 0 auto;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #ccc;
+
+    header h1 {
+      font-size: 2.8rem;
       text-align: center;
+      margin-bottom: 0.5rem;
     }
-    thead {
-      background-color: #444;
+
+    header p {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      margin: 0.3rem;
+      background-color: #ffffffcc;
+      color: #000000;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #f9f9f9;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #000000;
+    }
+
+    .logo {
+      max-width: 100px;
+      display: block;
+      margin: auto;
+    }
+
+    .testimonials {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .testimonials p {
+      font-style: italic;
+      margin: 0.8rem 0;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: #000000;
       color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
+
+    .submit-btn:hover {
+      background-color: #000000;
     }
+
+    footer {
+      background-color: #000000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
     .whatsapp {
       position: fixed;
       bottom: 20px;
@@ -101,9 +281,139 @@
       text-decoration: none;
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
+
+    @media (min-width: 768px) {
+      main {
+        padding: 3rem 2rem;
+      }
+
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .testimonials {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .logo {
+        max-width: 200px;
+      }
+
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes moveCamion {
+      0% {
+        transform: translateX(-100vw);
+      }
+      50% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(0); /* S'arrête au milieu */
+      }
+    }
+
+    .camion-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -50px;
+      position: relative;
+    }
+
+    .camion {
+      width: 200px; /* Taille du camion */
+      height: auto;
+      position: absolute;
+      animation: moveCamion 5s ease-in-out forwards;
+    }
+    #formules table {
+  width: 100%; /* S'assurer que le tableau prend toute la largeur disponible */
+  table-layout: auto; /* Laisser la taille des colonnes s'ajuster automatiquement */
+  margin: 0 auto;
+  border-collapse: collapse; /* Pour éviter l'espace entre les cellules */
+}
+
+/* Ajouter un conteneur pour éviter que le tableau dépasse */
+#formules {
+  overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+}
+    <div class="overflow-x-auto">
+  <table class="min-w-[600px] border-collapse border border-gray-300 text-sm">
+    <thead>
+      <tr>
+        <th class="border border-gray-300 p-2">Formule</th>
+        <th class="border border-gray-300 p-2">Chargement</th>
+        <th class="border border-gray-300 p-2">Transport</th>
+        <th class="border border-gray-300 p-2">Déchargement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-gray-300 p-2">Éco</td>
+        <td class="border border-gray-300 p-2">Client</td>
+        <td class="border border-gray-300 p-2">Chauffeur</td>
+        <td class="border border-gray-300 p-2">Client</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 p-2">Standard</td>
+        <td class="border border-gray-300 p-2">Chauffeur</td>
+        <td class="border border-gray-300 p-2">Chauffeur</td>
+        <td class="border border-gray-300 p-2">Client</td>
+      </tr>
+      <tr>
+        <td class="border border-gray-300 p-2">Premium</td>
+        <td class="border border-gray-300 p-2">Équipe</td>
+        <td class="border border-gray-300 p-2">Chauffeur</td>
+        <td class="border border-gray-300 p-2">Équipe</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 600px) {
+  #formules table {
+    width: 100%; /* Assurer que le tableau prend 100% de la largeur du conteneur */
+  }
+
+  #formules th, #formules td {
+    font-size: 0.6rem; /* Réduire la taille de la police pour les petits écrans */
+    padding: 8px; /* Ajuster l'espacement des cellules */
+    white-space: nowrap; /* Empêche le texte de se couper et crée un défilement horizontal si nécessaire */
+  }
+    .logo {
+      width: 150px;
+      height: auto;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      animation: slideLoop 5s linear infinite;
+    }
   </style>
-</head>
-<body>
+  
 <header>
   <br><br><br>
   <div class="camion-container">
@@ -111,18 +421,24 @@
   </div>
   <br><br><br>
   <br>
-  <nav class="menu-cartons">
-    <a href="#services" class="carton-btn">Nos services</a>
-    <a href="#formules" class="carton-btn">Nos formules</a>
-    <a href="#devis" class="carton-btn">Demander un devis</a>
-    <a href="#zone" class="carton-btn">Zone d’intervention</a>
-  </nav>
+<nav class="menu-cartons">
+  <a href="#services" class="carton-btn">Nos services</a>
+  <a href="#formules" class="carton-btn">Nos formules</a>
+  <a href="#devis" class="carton-btn">Demander un devis</a>
+  <a href="#zone" class="carton-btn">Zone d’intervention</a>
+</nav>
 </header>
 
 <main>
   <section id="about">
     <h2>À propos d'Alliance Déménagement</h2>
-    <p>Chez Alliance Déménagement, nous sommes spécialisés dans le déménagement professionnel partout en France. Que vous soyez un particulier ou une entreprise, notre service de déménagement clé en main vous accompagne à chaque étape pour garantir un déménagement rapide, sécurisé et sans stress.</p>
+    <p>Chez Alliance Déménagement, nous sommes spécialisés dans le déménagement professionnel partout en France. <p>Que vous soyez un particulier ou une entreprise, notre service de déménagement clé en main vous accompagne à chaque étape pour garantir un déménagement rapide, sécurisé et sans stress.</p>
+<p>Notre équipe de déménageurs expérimentés intervient dans toutes les régions françaises, que vous ayez besoin d’un déménagement local, national ou d’un déménagement longue distance.</p> 
+    <p>Nous mettons à votre disposition des solutions adaptées à vos besoins spécifiques, avec des tarifs compétitifs et des devis personnalisés.</p>
+<p>Grâce à nos services de déménagement sur mesure, nous prenons en charge l'emballage, le transport, le déballage et l’installation de vos biens. Nous nous engageons à offrir un service de qualité qui respecte les délais et la sécurité de vos effets personnels.</p>
+<p>Notre service de déménagement pas cher est conçu pour offrir un rapport qualité/prix imbattable, sans sacrifier la sécurité de vos biens. Avec Alliance Déménagement, vous bénéficiez d’un déménagement efficace et économique, quel que soit le volume ou la distance à parcourir.</p>
+
+<p>Alliance déménagement, la maîtrise du changement !</p>
   </section>
 
   <section id="services">
@@ -139,55 +455,248 @@
     </ul>
     <p>🧑‍💼 Professionnels à l'écoute, nous proposons des solutions adaptées à tous les budgets.</p>
   </section>
-
   <section id="formules">
-    <h2>Nos formules</h2>
-    <div class="formules">
-      <table>
-        <thead>
-          <tr>
-            <th>Formule</th>
-            <th>Chargement</th>
-            <th>Transport</th>
-            <th>Déchargement</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Éco</td>
-            <td>Client</td>
-            <td>Chauffeur</td>
-            <td>Client</td>
-          </tr>
-          <tr>
-            <td>Standard</td>
-            <td>Chauffeur</td>
-            <td>Chauffeur</td>
-            <td>Client</td>
-          </tr>
-          <tr>
-            <td>Premium</td>
-            <td>Équipe</td>
-            <td>Chauffeur</td>
-            <td>Équipe</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-</main>
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    thead {
+      background-color: #444;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .legend {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="table-wrapper">
+  <table>
+    <!-- Ton tableau ici -->
+  </table>
+<div style="font-family: sans-serif; padding: 16px; max-width: 480px; margin: auto;">
+  <h2 style="text align:center; margin-bottom: 24px;">Nos formules de déménagement</h2>
+<!-- Formule Transport -->
+<div style="border: 1px solid #ccc; border-radius: 12px; padding: 16px; margin-bottom: 16px; background-color: #f9f9f9;">
+  <h3 style="margin-top: 0; color: #17a2b8;">Formule Transport</h3>
+  <ul style="padding-left: 20px; margin: 0;">
+    <li>✔ Transport</li>
+  </ul>
+</div>
 
-<footer>
-  <p>&copy; 2025 Alliance Déménagement - Tous droits réservés.</p>
-</footer>
+  <!-- Formule Économique -->
+  <div style="border: 1px solid #ccc; border-radius: 12px; padding: 16px; margin-bottom: 16px; background-color: #f9f9f9;">
+    <h3 style="margin-top: 0; color: #007BFF;">Formule Économique</h3>
+    <ul style="padding-left: 20px; margin: 0;">
+      <li>✔ Chargement</li>
+      <li>✔ Transport</li>
+      <li>✔ Déchargement</li>
+    </ul>
+  </div>
+
+  <!-- Formule Standard -->
+  <div style="border: 1px solid #ccc; border-radius: 12px; padding: 16px; margin-bottom: 16px; background-color: #f9f9f9;">
+    <h3 style="margin-top: 0; color: #28a745;">Formule Standard</h3>
+    <ul style="padding-left: 20px; margin: 0;">
+      <li>✔ Démontage des meubles</li>
+      <li>✔ Protection du mobilier</li>
+      <li>✔ Chargement</li>
+      <li>✔ Transport</li>
+      <li>✔ Déchargement</li>
+      <li>✔ Remontage des meubles</li>
+    </ul>
+  </div>
+
+  <!-- Formule Confort -->
+  <div style="border: 1px solid #ccc; border-radius: 12px; padding: 16px; margin-bottom: 16px; background-color: #f9f9f9;">
+    <h3 style="margin-top: 0; color: #ffc107;">Formule Confort</h3>
+    <ul style="padding-left: 20px; margin: 0;">
+      <li>✔ Fourniture des cartons</li>
+      <li>✔ Emballage des objets fragiles</li>
+      <li>✔ Démontage des meubles</li>
+      <li>✔ Protection du mobilier</li>
+      <li>✔ Chargement</li>
+      <li>️✔ Transport</li>
+      <li>✔ Déchargement</li>
+      <li>✔ Remontage des meubles</li>
+    </ul>
+  </div>
+
+  <!-- Formule Luxe -->
+  <div style="border: 1px solid #ccc; border-radius: 12px; padding: 16px; margin-bottom: 16px; background-color: #f9f9f9;">
+    <h3 style="margin-top: 0; color: #6f42c1;">Formule Luxe</h3>
+    <ul style="padding-left: 20px; margin: 0;">
+      <li>✔ Emballage de tous les objets</li>
+      <li>✔ Fourniture de tout le matériel</li>
+      <li>✔ Démontage des meubles</li>
+      <li>✔ Protection du mobilier</li>
+      <li>✔ Chargement</li>
+      <li>️✔ Transport</li>
+      <li>️✔ Déchargement</li>
+      <li>️✔ Remontage des meubles</li>
+      <li>️✔ Remise en place à l’identique</li>
+    </ul>
+  </div>
+</div>
+</head>
+<body>
 
 </body>
 </html>
 
 
+<section id="zone">
+  <h2 style="text-align: center;">Zone d’intervention</h2>
+  <p>📍 Zones d’intervention : Basée en France, Alliance Déménagement intervient dans toutes les régions : </p>
+  <p>Île-de-France, Rhône-Alpes, PACA, Grand Est, Hauts-de-France, Nouvelle-Aquitaine, Occitanie, Bretagne, Normandie… </p>
+  <p>et même au-delà des frontières françaises pour vos déménagements en Belgique, Suisse, Espagne, Italie, Allemagne, Luxembourg, etc.</p>
+  <div id="map" style="width: 100%; height: 400px; margin: 0 auto;"></div> <!-- Carte interactive -->
+</section>
 
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  // Création de la carte
+  var map = L.map('map').setView([46.603354, 1.888334], 6); // Centre de la carte sur la France
 
+  // Ajout du tile layer (carte de base)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
 
+  // Définition des villes et de leurs coordonnées
+  var cities = [
+    { name: "Saint-Etienne", lat: 45.4397, lon: 4.3872 },
+    { name: "Toulon", lat: 43.1242, lon: 5.9280 },
+    { name: "Annemasse", lat: 46.1957, lon: 6.2383 },
+    { name: "Lausanne", lat: 46.5197, lon: 6.6323 },
+    { name: "Geneve", lat: 46.2044, lon: 6.1432 },
+    { name: "Besancon", lat: 47.2378, lon: 6.0241 },
+    { name: "Avignon", lat: 43.9483, lon: 4.8055 },
+    { name: "Valence", lat: 44.9333, lon: 4.8913 },
+    { name: "Sète", lat: 43.4083, lon: 3.6953 },
+    { name: "Perpignan", lat: 42.6987, lon: 2.8956 },
+    { name: "Barcelone", lat: 41.9028, lon: 2.1900 },
+    { name: "Nantes", lat: 47.2184, lon: -1.5536 },
+    { name: "Toulouse", lat: 43.6047, lon: 1.4442 },
+    { name: "Metz", lat: 49.1193, lon: 6.1757 },
+    { name: "Lille", lat: 50.6292, lon: 3.0573 },
+    { name: "Clermont Ferrand", lat: 45.7797, lon: 3.0857 },
+    { name: "Paris", lat: 48.8566, lon: 2.3522 },
+    { name: "Bordeaux", lat: 44.8378, lon: -0.5792 },
+    { name: "Marseille", lat: 43.2965, lon: 5.3698 },
+    { name: "Rouen", lat: 49.4144, lon: 1.0890 },
+    { name: "Bâle", lat: 47.5596, lon: 7.5886 },
+    { name: "Dax", lat: 43.7101, lon: -1.0574 },
+    { name: "Poitiers", lat: 46.5802, lon: 0.3404 },
+    { name: "Limoges", lat: 45.8336, lon: 1.2611 },
+    { name: "Dijon", lat: 47.3220, lon: 5.0415 },
+    { name: "Reims", lat: 49.2583, lon: 4.0317 },
+    { name: "Zurich", lat: 47.3769, lon: 8.5417 },
+    { name: "Pau", lat: 43.2951, lon: -0.3708 },
+    { name: "Lyon", lat: 45.7640, lon: 4.8357 },
+    { name: "Grenoble", lat: 45.1885, lon: 5.7245 },
+    { name: "Orléans", lat: 47.9029, lon: 1.9093 },
+    { name: "Nancy", lat: 48.6921, lon: 6.1844 },
+    { name: "Strasbourg", lat: 48.5734, lon: 7.7521 },
+    { name: "Annecy", lat: 45.8992, lon: 6.1294 },
+    { name: "Le Puy-en-Velay", lat: 45.0445, lon: 3.8840 },
+    { name: "Montélimar", lat: 44.5584, lon: 4.7503 },
+    { name: "Nice", lat: 43.7102, lon: 7.2620 },
+    { name: "Moulins", lat: 46.5667, lon: 3.3333 },
+    { name: "Le Creusot", lat: 46.8074, lon: 4.4283 },
+  ];
 
+  // Ajout des marqueurs pour chaque ville
+  cities.forEach(function(city) {
+    L.marker([city.lat, city.lon])
+      .addTo(map)
+      .bindPopup("<b>" + city.name + "</b>");
+  });
+</script>
 
+  <section id="avis">
+    <h2>Avis clients</h2>
+    <div class="testimonials">
+      <p>⭐⭐⭐⭐⭐ "Équipe efficace et très sympathique. Mon déménagement s'est super bien passé." – Julie (Lyon)</p>
+      <p>⭐⭐⭐⭐⭐ "Rapides, organisés et à l'écoute. Merci pour le service." – Sylvie (Paris-Aix)</p>
+      <p>⭐⭐⭐⭐⭐ "Rien à redire, tout était parfait du devis à la livraison." – Chloé (Nice)</p>
+      <p>⭐⭐⭐⭐⭐ "Good Job!" – Fred</p>
+    </div>
+  </section>
 
+  <section id="faq">
+    <h2>FAQ</h2>
+    <h4>Quels sont vos délais d'intervention ?</h4>
+    <p>⚡48 à 72h pour la France, 96h pour l'Europe.</p>
+    <h4>Fournissez-vous du matériel de déménagement ?</h4>
+    <p>Oui, en option : 📦 cartons, 🏷️ adhésif, 🛏️ couvertures...</p>
+    <h4>Mes biens sont-ils assurés ?</h4>
+    <p>Oui, 🛡️ une assurance est incluse. Possibilité d'extension.</p>
+  </section>
+
+<section id="devis">
+  <h2>Demande de devis</h2>
+  <form action="https://formspree.io/f/xwpokdkp" method="post" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 300px;">
+    <div class="form-group">
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+    </div>
+    <div class="form-group">
+      <label for="ville_depart">Ville de départ :</label>
+      <input type="text" id="ville_depart" name="Ville de départ" required />
+    </div>
+    <div class="form-group">
+      <label for="ville_arrivee">Ville d'arrivée :</label>
+      <input type="text" id="ville_arrivee" name="Ville d'arrivée" required />
+    </div>
+    <div class="form-group">
+      <label for="date_dem">Date souhaitée :</label>
+      <input type="date" id="date_dem" name="Date" />
+    </div>
+    <div class="form-group">
+      <label for="volume">Volume (m³) :</label>
+      <input type="number" id="volume" name="Volume" placeholder="Ex. : 20" />
+    </div>
+    <div class="form-group">
+      <label for="message">Détails ou contraintes :</label>
+      <textarea id="message" name="Message" rows="4" placeholder="Indiquez tout détail utile (ascenseur, accès difficile, etc.)"></textarea>
+    </div>
+    <button type="submit" class="submit-btn" style="align-self: center; margin-top: 10px;">Envoyer votre demande</button>
+  </form>
+</section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 Discuter sur WhatsApp</a>
+
+<footer>
+  <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
+  <p><a href="mailto:contact@alliance-demenagement.eu">contact@alliance-demenagement.eu</a></p>
+</footer>
+
+</body>
+</html>
