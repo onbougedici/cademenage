@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <style>
+  .menu-cartons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .carton-btn {
+    background: #d2b48c; /* couleur carton kraft */
+    border: 2px solid #a97c50;
+    box-shadow: 4px 4px 0 #a97c50;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #4b3621;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: 'Segoe UI', sans-serif;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    position: relative;
+  }
+
+  .carton-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #a97c50;
+    background: #c49b74;
+  }
+</style>
   <meta name="google-site-verification" content="dPGnufRThyoFgX9Z4Dl5d2VNHqg29OBq5_rnoltfRxI" />
   <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png" />
   <meta charset="UTF-8">
