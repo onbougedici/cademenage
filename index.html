@@ -491,31 +491,64 @@
       margin-top: 10px;
     }
   </style>
+<head>
+  <style>
+    /* Style pour la section des formules */
+    .formules {
+      background: url('demenagement.jpg') center/cover no-repeat;
+      padding: 4rem 1rem 4rem 0;
+      text-align: center;
+      color: white;
+      position: relative;
+      width: 100%;
+      object-fit: cover;
+      height: auto;
+    }
+
+    /* Style pour la section des formules (autres éléments) */
+    .formules-container {
+      font-family: sans-serif;
+      padding: 16px;
+      max-width: 480px;
+      margin: auto;
+    }
+
+    .formules h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .formule-box {
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      background-color: #f9f9f9;
+    }
+
+    .formule-box h3 {
+      margin-top: 0;
+      color: #17a2b8;
+    }
+  </style>
 </head>
 <body>
   <div class="table-wrapper">
-  <table>
-    <!-- Ton tableau ici -->
-  </table>
-<div style="font-family: sans-serif; padding: 16px; max-width: 480px; margin: auto;">
-  <h2 style="text align:center; margin-bottom: 24px;">Nos formules de déménagement</h2>
-  .formules {
-  background: url('demenagement.jpg') center/cover no-repeat;
-  padding: 4rem 1rem 4rem 0;
-  text-align: center;
-  color: white;
-  position: relative;
-  width: 100%;
-  object-fit: cover;
-  height: auto;  /* Si tu veux que la hauteur s'ajuste automatiquement en fonction du contenu */
-}
-<!-- Formule Transport -->
-<div style="border: 1px solid #ccc; border-radius: 12px; padding: 16px; margin-bottom: 16px; background-color: #f9f9f9;">
-  <h3 style="margin-top: 0; color: #17a2b8;">Formule Transport</h3>
-  <ul style="padding-left: 20px; margin: 0;">
-    <li>✔ Transport</li>
-  </ul>
-</div>
+    <table>
+      <!-- Ton tableau ici -->
+    </table>
+  </div>
+
+  <!-- Section des formules -->
+  <div class="formules">
+    <div class="formules-container">
+      <h2>Nos formules de déménagement</h2>
+
+      <!-- Formule Transport -->
+      <div class="formule-box">
+        <h3>Formule Transport</h3>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li>✔ Transport</li>
 
   <!-- Formule Économique -->
   <div style="border: 1px solid #ccc; border-radius: 12px; padding: 16px; margin-bottom: 16px; background-color: #f9f9f9;">
