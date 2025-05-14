@@ -26,28 +26,37 @@
 <!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <style>
-    .formules-wrapper {
+.formules {
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.formules h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formules-wrapper {
   position: relative;
-  max-width: 100%;
+  max-width: 480px;
+  margin: auto;
   overflow: hidden;
-  padding: 1rem;
 }
 
 .formules-scroll {
   display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 1rem;
+  transition: transform 0.5s ease;
+  width: 100%;
 }
 
 .formule-box {
-  min-width: 280px;
-  flex-shrink: 0;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 12px;
-  padding: 16px;
-  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .scroll-btn {
@@ -60,17 +69,18 @@
   font-size: 24px;
   padding: 10px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 10;
   border-radius: 50%;
 }
 
 .scroll-btn.left {
-  left: 0;
+  left: -10px;
 }
 
 .scroll-btn.right {
-  right: 0;
+  right: -10px;
 }
+
 
     body {
       margin: 0;
