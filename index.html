@@ -28,7 +28,7 @@
   <style>
     body {
       margin: 0;
-      font-family: 'malgun gothic', sans-serif;
+      font-family: 'Lato', sans-serif;
       background-color: #f9f9f9;
       color: #000000;
     }
@@ -42,7 +42,7 @@
       table-layout: auto;
       margin: 0 auto;
       border-collapse: collapse;
-      font-size: 0.9rem;
+      -size: 0.9rem;
     }
 
     #formules th, #formules td {
@@ -63,14 +63,14 @@
 
     .legend {
       text-align: center;
-      font-size: 14px;
+      -size: 14px;
       margin-top: 10px;
     }
 
     /* Responsivité : gestion de l'affichage sur mobile */
     @media (max-width: 768px) {
       #formules table {
-        font-size: 0.8rem;
+        -size: 0.8rem;
       }
 
       #formules th, #formules td {
@@ -94,16 +94,16 @@
 
       #formules td::before {
         content: attr(data-label);
-        font-weight: bold;
+        -weight: bold;
         position: absolute;
         left: 10px;
         top: 10px;
         text-transform: uppercase;
-        font-size: 0.8rem;
+        -size: 0.8rem;
       }
 
       .legend {
-        font-size: 12px;
+        -size: 12px;
         margin-top: 15px;
       }
     }
@@ -135,13 +135,13 @@
     }
 
     header h1 {
-      font-size: 2.8rem;
+      -size: 2.8rem;
       text-align: center;
       margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.1rem;
+      -size: 1.1rem;
       text-align: center;
       margin-bottom: 1.5rem;
     }
@@ -153,8 +153,8 @@
       background-color: #ffffffcc;
       color: #000000;
       text-align: center;
-      font-size: 0.95rem;
-      font-weight: 600;
+      -size: 0.95rem;
+      -weight: 600;
       text-decoration: none;
       border-radius: 6px;
       transition: background-color 0.3s, transform 0.3s;
@@ -176,7 +176,7 @@
     }
 
     h2 {
-      font-size: 1.8rem;
+      -size: 1.8rem;
       margin-bottom: 1rem;
       text-align: center;
       color: #000000;
@@ -196,7 +196,7 @@
     }
 
     .testimonials p {
-      font-style: italic;
+      -style: italic;
       margin: 0.8rem 0;
     }
 
@@ -205,7 +205,7 @@
     }
 
     label {
-      font-weight: 600;
+      -weight: 600;
       display: block;
       margin-bottom: 0.3rem;
     }
@@ -213,7 +213,7 @@
     input, textarea {
       width: 100%;
       padding: 0.8rem;
-      font-size: 1rem;
+      -size: 1rem;
       text-align: center;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -229,8 +229,8 @@
       color: white;
       border: none;
       padding: 0.8rem 1.2rem;
-      font-size: 1rem;
-      font-weight: 600;
+      -size: 1rem;
+      -weight: 600;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -259,7 +259,7 @@
       right: 20px;
       background: #25d366;
       color: white;
-      font-size: 16px;
+      -size: 16px;
       padding: 10px 14px;
       border-radius: 30px;
       text-decoration: none;
@@ -273,7 +273,7 @@
 
       .btn {
         padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
+        -size: 1.1rem;
       }
 
       .testimonials {
@@ -285,15 +285,15 @@
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        -size: 2rem;
       }
 
       header p {
-        font-size: 1rem;
+        -size: 1rem;
       }
 
       .btn {
-        font-size: 0.85rem;
+        -size: 0.85rem;
         padding: 0.5rem 1rem;
       }
 
@@ -384,7 +384,7 @@
   }
 
   #formules th, #formules td {
-    font-size: 0.6rem; /* Réduire la taille de la police pour les petits écrans */
+    -size: 0.6rem; /* Réduire la taille de la police pour les petits écrans */
     padding: 8px; /* Ajuster l'espacement des cellules */
     white-space: nowrap; /* Empêche le texte de se couper et crée un défilement horizontal si nécessaire */
   }
@@ -415,8 +415,8 @@
 <main>
 <section id="a-propos" style="padding: 2rem; background-color: #f9f9f9;">
   <div style="max-width: 800px; margin: auto;">
-    <h2 style="font-size: 2rem; margin-bottom: 1rem; text-align: center;">À propos d’Alliance Déménagement</h2>
-    <p style="font-style: italic; text-align: center; font-size: 1.2rem;">
+    <h2 style="-size: 2rem; margin-bottom: 1rem; text-align: center;">À propos d’Alliance Déménagement</h2>
+    <p style="-style: italic; text-align: center; -size: 1.2rem;">
       "Alliance Déménagement, la maîtrise du changement."
     </p>
     <p style="margin-top: 1.5rem;">
