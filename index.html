@@ -777,11 +777,32 @@
   <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
   <p><a href="mailto:contact@alliance-demenagement.eu">contact@alliance-demenagement.eu</a></p>
 </footer>
-  <script>
+<script>
   const scrollContainer = document.querySelector('.formules-scroll');
-  document.querySelector('.scroll-btn.left').onclick = () => scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
-  document.querySelector('.scroll-btn.right').onclick = () => scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+  const formules = document.querySelectorAll('.formule-box');
+  const btnLeft = document.querySelector('.scroll-btn.left');
+  const btnRight = document.querySelector('.scroll-btn.right');
+  let currentIndex = 0;
+
+  function updateScroll() {
+    scrollContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  btnLeft.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateScroll();
+    }
+  });
+
+  btnRight.addEventListener('click', () => {
+    if (currentIndex < formules.length - 1) {
+      currentIndex++;
+      updateScroll();
+    }
+  });
 </script>
+
 
 </body>
 </html>
