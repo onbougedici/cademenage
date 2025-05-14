@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /admin/
+Allow: /logo_camion_slogan-removebg-preview.png
