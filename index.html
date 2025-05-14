@@ -777,6 +777,11 @@
   <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
   <p><a href="mailto:contact@alliance-demenagement.eu">contact@alliance-demenagement.eu</a></p>
 </footer>
+  <script>
+  const scrollContainer = document.querySelector('.formules-scroll');
+  document.querySelector('.scroll-btn.left').onclick = () => scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+  document.querySelector('.scroll-btn.right').onclick = () => scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+</script>
 
 </body>
 </html>
