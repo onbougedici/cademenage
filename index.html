@@ -58,6 +58,14 @@
   border-radius: 0;         /* supprime les arrondis */
   box-shadow: none;         /* supprime l'ombre */
 }
+.formules-container {
+  display: flex;
+  overflow-x: auto; /* défilement horizontal */
+  justify-content: center; /* centre les éléments horizontalement */
+  gap: 16px; /* espace entre les formules, optionnel */
+  padding: 16px 0; /* un peu d’espace en haut et bas */
+  scroll-snap-type: x mandatory; /* si tu utilises scroll snap, optionnel */
+}
 
 .scroll-btn {
   position: absolute;
