@@ -72,9 +72,9 @@
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
-  color: #b0b0b0; /* gris clair un peu plus foncé */
+  color: #b0b0b0;
   border: none;
-  font-size: 28px; /* un peu plus grand pour épaisseur */
+  font-size: 28px;
   padding: 10px;
   cursor: pointer;
   z-index: 10;
@@ -83,9 +83,16 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  user-select: none; /* empêche la sélection accidentelle */
-  font-weight: 900; /* rendre la flèche plus épaisse */
+  user-select: none;
+
+  font-weight: 900;
+  font-family: monospace, Arial, sans-serif;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .scroll-btn.left {
   left: -10px;
 }
@@ -93,7 +100,6 @@
 .scroll-btn.right {
   right: -10px;
 }
-
 
     body {
       margin: 0;
