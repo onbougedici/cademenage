@@ -1,100 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <style>
-  @keyframes rouler {
-    0% { transform: translateX(-200px); }
-    100% { transform: translateX(50vw); }
-  }
-
-  .camion-anim {
-    animation: rouler 6s ease-in-out forwards;
-  }
-</style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alliance Déménagement</title>
-  <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #3B2F2F; /* marron foncé lisible */
+    }
+    header {
+      background-color: #8B4513; /* marron foncé */
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      color: white;
+      text-align: center;
+      margin: 0;
+      font-size: 2rem;
+    }
+    .camion {
+      position: absolute;
+      top: 10px;
+      left: -200px;
+      width: 150px;
+      animation: rouler 5s linear forwards;
+    }
+    @keyframes rouler {
+      to {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #A0522D;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+    }
+    .formulaire {
+      background-color: #F5F5F5;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #8B4513;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #3B2F2F;
+      color: white;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <!-- Header -->
-  <header class="bg-[#8B5E3C] relative overflow-hidden p-6 shadow-md h-40 sm:h-48">
-    <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between h-full z-10 relative">
-      <h1 class="text-2xl font-bold text-white">Alliance Déménagement</h1>
-      <nav class="mt-2 sm:mt-0">
-        <ul class="flex space-x-4">
-          <li><a href="#services" class="text-white hover:underline">Services</a></li>
-          <li><a href="#formulaire" class="text-white hover:underline">Devis</a></li>
-          <li><a href="#contact" class="text-white hover:underline">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Camion animé -->
-    <div class="absolute bottom-0 left-0 camion-anim z-0">
-      <img src="logo_camion_slogan-removebg-preview.png" alt="Camion Alliance" class="h-16 sm:h-20">
-    </div>
+<body>
+  <header>
+    <img src="logo_camion_slogan-removebg-preview.png" alt="Camion" class="camion">
+    <h1>Alliance Déménagement</h1>
   </header>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#formulaire">Demande de devis</a>
+    <a href="https://wa.me/33612345678">WhatsApp</a>
+  </nav>
+  <div class="container">
+    <h2 id="services">Nos services</h2>
+    <ul>
+      <li>Déménagement local et national</li>
+      <li>Transport d’objets volumineux</li>
+      <li>Service de monte-meuble</li>
+      <li>Location de camion avec chauffeur</li>
+      <li>Services aux particuliers et professionnels</li>
+    </ul>
 
-  <!-- Hero section -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-4">Déménagez Sereinement Partout en France</h2>
-      <p class="mb-6">Particuliers ou professionnels, nous organisons votre déménagement de A à Z avec soin et sérénité.</p>
-      <a href="#formulaire" class="bg-[#8B5E3C] text-white font-bold py-2 px-4 rounded hover:bg-[#6f462c]">Demander un devis</a>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="py-12 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <h3 class="text-3xl font-bold text-center mb-8">Nos Services</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="text-xl font-bold mb-2">Déménagement particulier</h4>
-          <p>Un service adapté à votre logement, de l’emballage au transport.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="text-xl font-bold mb-2">Déménagement professionnel</h4>
-          <p>Transfert d’entreprise, bureaux, entrepôts, avec un minimum d’interruption d’activité.</p>
-        </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="text-xl font-bold mb-2">Location de monte-meubles</h4>
-          <p>Solution pratique pour les accès difficiles et les charges lourdes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Formulaire de devis -->
-  <section id="formulaire" class="py-12 bg-white">
-    <div class="container mx-auto px-6 max-w-2xl">
-      <h3 class="text-3xl font-bold text-center mb-6">Demandez votre devis gratuit</h3>
-      <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4">
-        <input type="text" name="nom" placeholder="Nom" required class="w-full border border-gray-300 p-2 rounded">
-        <input type="email" name="email" placeholder="Email" required class="w-full border border-gray-300 p-2 rounded">
-        <input type="tel" name="telephone" placeholder="Téléphone" required class="w-full border border-gray-300 p-2 rounded">
-        <textarea name="message" placeholder="Décrivez votre besoin..." required class="w-full border border-gray-300 p-2 rounded"></textarea>
-        <button type="submit" class="bg-[#8B5E3C] text-white py-2 px-4 rounded hover:bg-[#6f462c]">Envoyer</button>
+    <div class="formulaire" id="formulaire">
+      <h3>Demande de devis</h3>
+      <form action="mailto:contact@alliance-demenagement.eu" method="post" enctype="text/plain">
+        <input type="text" name="Nom" placeholder="Votre nom" required>
+        <input type="email" name="Email" placeholder="Votre email" required>
+        <input type="tel" name="Téléphone" placeholder="Votre téléphone">
+        <textarea name="Message" rows="5" placeholder="Décrivez votre demande"></textarea>
+        <button type="submit">Envoyer</button>
       </form>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <footer id="contact" class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
-    </div>
+  </div>
+  <footer>
+    © 2025 Alliance Déménagement - Tous droits réservés
   </footer>
-
-  <!-- Bouton WhatsApp -->
-  <a href="https://wa.me/33651323494" class="fixed bottom-4 right-4 bg-green-500 p-4 rounded-full shadow-lg text-white" target="_blank" aria-label="Contact WhatsApp">
-    <i class="fab fa-whatsapp fa-2x"></i>
-  </a>
 </body>
 </html>
+
 
 
 
