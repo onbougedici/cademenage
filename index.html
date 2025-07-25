@@ -74,28 +74,34 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Header -->
-  <header class="bg-[#5A3E1B] relative overflow-hidden p-6 shadow-md h-40 sm:h-48">
-    <div
-      class="container mx-auto flex flex-col sm:flex-row items-center justify-between h-full z-10 relative"
-    >
+<header class="bg-[#5A3E1B] relative overflow-hidden p-6 shadow-md h-40 sm:h-48">
+  <div class="container mx-auto flex flex-col items-center relative z-10">
+    <!-- Menu mobile en haut -->
+    <nav class="w-full mb-4 block sm:hidden">
+      <ul class="flex justify-center space-x-6">
+        <li><a href="#services" class="text-black hover:underline">Services</a></li>
+        <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between w-full">
       <h1 class="text-2xl font-bold text-black">Alliance Déménagement</h1>
-      <nav class="mt-2 sm:mt-0">
+
+      <!-- Menu desktop en bas / droite -->
+      <nav class="mt-2 sm:mt-0 hidden sm:block">
         <ul class="flex space-x-4">
           <li><a href="#services" class="text-black hover:underline">Services</a></li>
           <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
         </ul>
       </nav>
     </div>
+  </div>
 
-    <!-- Camion animé -->
-    <div class="absolute bottom-0 left-0 camion-anim z-0">
-      <img
-        src="logo_camion_slogan-removebg-preview.png"
-        alt="Camion Alliance"
-        class="h-16 sm:h-20"
-      />
-    </div>
-  </header>
+  <!-- Camion animé -->
+  <div class="absolute bottom-0 left-0 camion-anim z-0">
+    <img src="logo_camion_slogan-removebg-preview.png" alt="Camion Alliance" class="h-16 sm:h-20" />
+  </div>
+</header>
 
   <!-- Hero section -->
   <section class="bg-white py-12">
