@@ -1,133 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alliance Déménagement</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      color: #333;
-      background-color: #f8f8f8;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
     }
     header {
-      background-color: #462714;
+      background-color: #5D4037;
       color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 20px;
+      text-align: center;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .hero {
+    .banner {
       background-image: url('banniere-camion.jpg');
       background-size: cover;
       background-position: center;
-      padding: 6rem 2rem;
-      text-align: center;
-      color: white;
+      height: 200px;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .content {
+      padding: 20px;
     }
-    .hero button {
-      background-color: #ffcb05;
-      border: none;
-      padding: 1rem 2rem;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
+    .section {
+      margin-bottom: 30px;
     }
-    .services, .why, .testimonials {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .services h2, .why h2, .testimonials h2 {
-      margin-bottom: 2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .section h2 {
+      color: #5D4037;
     }
     footer {
-      background: #333;
+      background-color: #333;
       color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 10px;
+    }
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .note {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Alliance Déménagement</h1>
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Particuliers</a>
-      <a href="#">Professionnels</a>
-      <a href="#">Devis</a>
-      <a href="#">Contact</a>
-    </nav>
+    <p>Déménagements pour particuliers et professionnels dans toute la France</p>
   </header>
 
-  <section class="hero">
-    <h1>Déménagez l'esprit léger, partout en France</h1>
-    <button>Obtenir un devis gratuit</button>
-  </section>
+  <div class="banner"></div>
 
-  <section class="services">
-    <h2>Nos Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Déménagement Particuliers</h3>
-        <p>Accompagnement complet pour votre changement de domicile.</p>
-      </div>
-      <div class="card">
-        <h3>Déménagement Professionnels</h3>
-        <p>Transfert d'entreprise, bureaux et mobilier avec assurance.</p>
-      </div>
-      <div class="card">
-        <h3>Garde-Meubles Sécurisés</h3>
-        <p>Stockage de courte ou longue durée dans des boxs sécurisés.</p>
-      </div>
+  <div class="content">
+    <div class="section">
+      <h2>Nos Services</h2>
+      <ul>
+        <li>Déménagement local et national</li>
+        <li>Transport de meubles</li>
+        <li>Location de camion avec chauffeur</li>
+        <li>Formule économique ou complète</li>
+      </ul>
     </div>
-  </section>
 
-  <section class="why">
-    <h2>Pourquoi nous choisir ?</h2>
-    <div class="grid">
-      <div class="card">✅ Ponctualité</div>
-      <div class="card">✅ Assurance incluse</div>
-      <div class="card">✅ Service clé en main</div>
-      <div class="card">✅ Équipe professionnelle</div>
+    <div class="section">
+      <h2>Pourquoi nous choisir ?</h2>
+      <p>Rapidité, efficacité, sécurité, prix transparents. Nous nous occupons de tout pour vous simplifier la vie.</p>
     </div>
-  </section>
 
-  <section class="testimonials">
-    <h2>Ce que disent nos clients</h2>
-    <div class="card">
-      <p>"Tout s’est bien passé, super réactif et rapide !"</p>
-      <strong>– Karim M. (Lyon)</strong>
+    <div class="section">
+      <h2>Contact</h2>
+      <p>Appelez-nous au <strong>06 51 32 34 94</strong> ou écrivez-nous sur WhatsApp.</p>
     </div>
-  </section>
+
+    <div class="note">
+      <strong>Bloc Note :</strong> pensez à noter ici vos demandes ou informations spécifiques à transmettre à nos équipes. (ex : objets fragiles, accès difficile, étage...)
+    </div>
+  </div>
+
+  <a href="https://wa.me/33651323494" class="whatsapp" target="_blank">📱</a>
 
   <footer>
-    <p>&copy; 2025 Alliance Déménagement - Mentions légales - Politique de confidentialité</p>
+    <p>&copy; 2025 Alliance Déménagement. Tous droits réservés.</p>
   </footer>
 </body>
 </html>
+
