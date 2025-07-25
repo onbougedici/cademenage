@@ -1,773 +1,133 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Alliance Déménagement",
-  "url": "https://alliance-demenagement.eu",
-  "logo": "https://alliance-demenagement.eu/logo_camion_slogan-removebg-preview.png",
-  "sameAs": [
-    "https://www.facebook.com/alliance.demenagement",
-    "https://www.instagram.com/alliance.demenagement"
-  ]
-}
-</script>
-  <meta name="google-site-verification" content="dPGnufRThyoFgX9Z4Dl5d2VNHqg29OBq5_rnoltfRxI" />
-  <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alliance Déménagement : déménagements professionnels partout en France et en Europe, avec des solutions adaptées à tous les budgets.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <title>Alliance Déménagement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-.formules {
-  padding: 2rem 1rem;
-  background-color: #f9f9f9;
-}
-
-.formules h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.formules-wrapper {
-  position: relative;
-  max-width: 480px;
-  margin: auto;
-  overflow: hidden;
-}
-
-.formules-scroll {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
-}
-
-.formule-box {
-  min-width: 100%;
-  box-sizing: border-box;
-  padding: 0;               /* supprime le padding */
-  background-color: transparent; /* supprime le fond blanc */
-  border: none;             /* supprime la bordure */
-  border-radius: 0;         /* supprime les arrondis */
-  box-shadow: none;         /* supprime l'ombre */
-}
-.formules-container {
-  display: flex;
-  overflow-x: auto; /* défilement horizontal */
-  justify-content: center; /* centre les éléments horizontalement */
-  gap: 16px; /* espace entre les formules, optionnel */
-  padding: 16px 0; /* un peu d’espace en haut et bas */
-  scroll-snap-type: x mandatory; /* si tu utilises scroll snap, optionnel */
-}
-
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  color: #b0b0b0;
-  border: none;
-  font-size: 28px;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  user-select: none;
-
-  font-weight: 900;
-  font-family: monospace, Arial, sans-serif;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.scroll-btn.left {
-  left: -10px;
-}
-
-.scroll-btn.right {
-  right: -10px;
-}
-    <button class="scroll-btn left" aria-label="Défilement gauche">←</button>
-<button class="scroll-btn right" aria-label="Défilement droite">→</button>
-
     body {
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      font-family: 'Lato', sans-serif;
-      background-color: #f9f9f9;
-      color: #000000;
+      padding: 0;
+      color: #333;
+      background-color: #f8f8f8;
     }
-    #formules {
-      overflow-x: auto;
-      margin: 20px 0;
-    }
-
-    #formules table {
-      width: 100%;
-      table-layout: auto;
-      margin: 0 auto;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-
-    #formules th, #formules td {
-      padding: 12px;
-      border: 1px solid #ccc;
-      text-align: center;
-      word-wrap: break-word;
-    }
-
-    #formules thead {
-      background-color: #444;
-      color: white;
-    }
-
-    #formules tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    .legend {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    /* Responsivité : gestion de l'affichage sur mobile */
-    @media (max-width: 768px) {
-      #formules table {
-        font-size: 0.8rem;
-      }
-
-      #formules th, #formules td {
-        padding: 8px;
-        display: table-cell;  /* Assurez-vous que les cellules sont toujours traitées comme des cellules de tableau */
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-      }
-
-      #formules th {
-        background-color: #444;
-        color: white;
-        text-align: left;
-      }
-
-      /* On cache les en-têtes de tableau et on affiche un titre avant chaque cellule */
-      #formules td {
-        position: relative;
-        text-align: left;
-      }
-
-      #formules td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-      }
-
-      .legend {
-        font-size: 12px;
-        margin-top: 15px;
-      }
-    }
-
     header {
-      background: url('demenagement.jpg') center/cover no-repeat;
-      padding: 4rem 1rem 4rem 0;
-      text-align: center;
+      background-color: #462714;
       color: white;
-      position: relative;
-      width: 100%;
-      object-fit: cover;
-      height: auto;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      text-align: center;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    header h1, header p, header .btn {
-      position: relative;
-      text-align: center;
-      z-index: 1;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      margin: 0.3rem;
-      background-color: #ffffffcc;
-      color: #000000;
-      text-align: center;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #f9f9f9;
-      transform: scale(1.05);
-    }
-
-    main {
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #000000;
-    }
-
-    .logo {
-      max-width: 100px;
-      display: block;
-      margin: auto;
-    }
-
-    .testimonials {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-
-    .testimonials p {
-      font-style: italic;
-      margin: 0.8rem 0;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1rem;
-      text-align: center;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    textarea {
-      resize: vertical;
-    }
-
-    .submit-btn {
-      background-color: #000000;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .submit-btn:hover {
-      background-color: #000000;
-    }
-
-    footer {
-      background-color: #000000;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      font-size: 16px;
-      padding: 10px 14px;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-
-    @media (min-width: 768px) {
-      main {
-        padding: 3rem 2rem;
-      }
-
-      .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
-      }
-
-      .testimonials {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
-      }
-
-      .logo {
-        max-width: 200px;
-      }
-
-      .testimonials {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @keyframes moveCamion {
-      0% {
-        transform: translateX(-100vw);
-      }
-      50% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(0); /* S'arrête au milieu */
-      }
-    }
-
-    .camion-container {
-      width: 100%;
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      margin-top: -50px;
-      position: relative;
     }
-
-    .camion {
-      width: 200px; /* Taille du camion */
-      height: auto;
-      position: absolute;
-      animation: moveCamion 5s ease-in-out forwards;
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
     }
-    #formules {
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-#formules table {
-  min-width: 600px;
-  margin: auto;
-}
-
-/* Responsive : petite taille d’écran */
-@media (max-width: 600px) {
-  #formules table {
-    font-size: 0.8rem;
-  }
-
-  #formules th,
-  #formules td {
-    padding: 6px;
-    white-space: nowrap;
-  }
-}
-    #formules table {
-  width: 100%; /* S'assurer que le tableau prend toute la largeur disponible */
-  table-layout: auto; /* Laisser la taille des colonnes s'ajuster automatiquement */
-  margin: 0 auto;
-  border-collapse: collapse; /* Pour éviter l'espace entre les cellules */
-}
-
-/* Ajouter un conteneur pour éviter que le tableau dépasse */
-#formules {
-  overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
-}
-    <div className="overflow-x-auto">
-  <table className="min-w-[600px] border-collapse border border-gray-300 text-sm">
-    <thead>
-      <tr>
-
-/* Responsivité pour les petits écrans */
-@media (max-width: 600px) {
-  #formules table {
-    width: 100%; /* Assurer que le tableau prend 100% de la largeur du conteneur */
-  }
-
-  #formules th, #formules td {
-    -size: 0.6rem; /* Réduire la taille de la police pour les petits écrans */
-    padding: 8px; /* Ajuster l'espacement des cellules */
-    white-space: nowrap; /* Empêche le texte de se couper et crée un défilement horizontal si nécessaire */
-  }
-    .logo {
-      width: 150px;
-      height: auto;
-      position: absolute;
-      top: 20px;
-      left: 0;
-      animation: slideLoop 5s linear infinite;
+    .hero {
+      background-image: url('banniere-camion.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 6rem 2rem;
+      text-align: center;
+      color: white;
     }
-.formules-wrapper {
-  position: relative;
-}
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero button {
+      background-color: #ffcb05;
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .services, .why, .testimonials {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .services h2, .why h2, .testimonials h2 {
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #333;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Alliance Déménagement</h1>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Particuliers</a>
+      <a href="#">Professionnels</a>
+      <a href="#">Devis</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-.scroll-btn {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.scroll-btn.left {
-  left: 0;
-}
-
-.scroll-btn.right {
-  right: 0;
-}
-
-.formules-wrapper:hover .scroll-btn {
-  opacity: 0.4;
-}
-  </style>  
-<header>
-  <br><br><br>
-  <div class="camion-container">
-    <img src="logo_camion_slogan-removebg-preview.png" alt="Camion Alliance Déménagement" class="camion">
-  </div>
-  <br><br><br>
-  <br>
-  <a class="btn" href="#services">Nos services</a>
-  <a class="btn" href="#formules">Nos Formules</a>
-  <a class="btn" href="#zone">Zone d’intervention</a>
-  <br>
-  <a class="btn" href="#devis">Demander un devis</a>
-</header>
-
-<main>
-<section id="a-propos" style="padding: 2rem; background-color: #f9f9f9;">
-  <div style="max-width: 800px; margin: auto;">
-    <h2 style="font-size: 2rem; margin-bottom: 1rem; text-align: center;">Alliance Déménagement, la maîtrise du changement.</h2>
-    <p style="-style: italic; text-align: center; font-size: 1.2rem;">
-    </p>
-    <p style="margin-top: 1.5rem;">
-      Plus qu’un slogan, c’est notre engagement au quotidien.
-    </p>
-    <p>
-      Spécialisés dans les <strong>déménagements nationaux</strong> et <strong>longue distance</strong>, nous vous accompagnons dans tous vos projets en <strong>France</strong> et en <strong>Europe</strong>. Que vous changiez de région ou de pays, notre mission est de vous offrir un service fiable, professionnel et parfaitement organisé.
-    </p>
-    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-      <li>✔️ Un <strong>accompagnement personnalisé</strong></li>
-      <li>✔️ Une <strong>logistique claire et efficace</strong></li>
-      <li>✔️ Un <strong>transport sécurisé avec assurance</strong></li>
-      <li>✔️ Le <strong>respect total des délais</strong></li>
-    </ul>
-    <p>
-      Que vous partiez de Paris pour Bordeaux, de Lyon pour Lille ou de Marseille pour Genève, nous mettons tout en œuvre pour que votre déménagement se déroule <strong>sans stress</strong> et <strong>en toute confiance</strong>.
-    </p>
-    <p style="margin-top: 1rem;">
-      Avec <strong>Alliance Déménagement</strong>, vous choisissez un partenaire qui allie <strong>sérieux</strong>, <strong>souplesse</strong> et <strong>maîtrise du changement</strong>.
-    </p>
-  </div>
-</section>
-
-  <section id="services">
-    <h2>Nos services</h2>
-    <ul style="text-align: center; list-style: none; padding: 0;">
-      <li>🌍 Déménagement national & international</li>
-      <li>👥 Déménagement pour particuliers et professionnels</li>
-      <li>📝 Assistance pour les démarches administratives</li>
-      <li>🚚 Transport longue distance</li>
-      <li>📦 Fourniture de cartons et matériels</li>
-      <li>🏢 Option garde-meubles</li>
-      <li>☂️ Assurance incluse, options étendues disponibles</li>
-      <li>🗓️💰 Facilités de paiement</li>
-    </ul>
-    <p style="text-align: center;">🧑‍💼 Professionnels à l'écoute, nous proposons des solutions adaptées à tous les budgets.</p>
+  <section class="hero">
+    <h1>Déménagez l'esprit léger, partout en France</h1>
+    <button>Obtenir un devis gratuit</button>
   </section>
 
-<section id="formules">
-  <h2>Nos formules</h2>
-  <div class="formules-wrapper">
-    <button class="scroll-btn left">&#8592;</button>
-
-    <div class="formules-scroll">
-      <div class="formule-box">
-        <h3 style="color: #007BFF;">Formule Transport</h3>
-        <ul><li style="color: #000000;">✔ Transport</li></ul>
+  <section class="services">
+    <h2>Nos Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Déménagement Particuliers</h3>
+        <p>Accompagnement complet pour votre changement de domicile.</p>
       </div>
-
-      <div class="formule-box">
-        <h3 style="color: #007BFF;">Formule Économique</h3>
-        <ul>
-          <li style="color: #000000;">✔ Chargement</li>
-          <li style="color: #000000;">✔ Transport</li>
-          <li style="color: #000000;">✔ Déchargement</li>
-        </ul>
+      <div class="card">
+        <h3>Déménagement Professionnels</h3>
+        <p>Transfert d'entreprise, bureaux et mobilier avec assurance.</p>
       </div>
-
-      <div class="formule-box">
-        <h3 style="color: #28a745;">Formule Standard</h3>
-        <ul>
-          <li style="color: #000000;">✔ Démontage des meubles</li>
-          <li style="color: #000000;">✔ Protection du mobilier</li>
-          <li style="color: #000000;">✔ Chargement</li>
-          <li style="color: #000000;">✔ Transport</li>
-          <li style="color: #000000;">✔ Déchargement</li>
-          <li style="color: #000000;">✔ Remontage des meubles</li>
-        </ul>
+      <div class="card">
+        <h3>Garde-Meubles Sécurisés</h3>
+        <p>Stockage de courte ou longue durée dans des boxs sécurisés.</p>
       </div>
-
-      <div class="formule-box">
-        <h3 style="color: #ffc107;">Formule Confort</h3>
-        <ul>
-          <li style="color: #000000;">✔ Fourniture des cartons</li>
-          <li style="color: #000000;">✔ Emballage des objets fragiles</li>
-          <li style="color: #000000;">✔ Démontage des meubles</li>
-          <li style="color: #000000;">✔ Protection du mobilier</li>
-          <li style="color: #000000;">✔ Chargement</li>
-          <li style="color: #000000;">✔ Transport</li>
-          <li style="color: #000000;">✔ Déchargement</li>
-          <li style="color: #000000;">✔ Remontage des meubles</li>
-        </ul>
-      </div>
-
-      <div class="formule-box">
-        <h3 style="color: #6f42c1;">Formule Luxe</h3>
-        <ul>
-          <li style="color: #000000;">✔ Emballage de tous les objets</li>
-          <li style="color: #000000;">✔ Fourniture de tout le matériel</li>
-          <li style="color: #000000;">✔ Démontage des meubles</li>
-          <li style="color: #000000;">✔ Protection du mobilier</li>
-          <li style="color: #000000;">✔ Chargement</li>
-          <li style="color: #000000;">✔ Transport</li>
-          <li style="color: #000000;">✔ Déchargement</li>
-          <li style="color: #000000;">✔ Remontage des meubles</li>
-          <li style="color: #000000;">✔ Remise en place à l'identique</li>
-        </ul>
-      </div>
-    </div>
-
-    <button class="scroll-btn right">&#8594;</button>
-  </div>
-</section>
-
-<section id="zone">
-  <h2 style="text-align: center;">Zone d’intervention</h2>
-  <p style="text-align: center;">📍 Zones d’intervention : Basée en France, Alliance Déménagement intervient dans toutes les régions : </p>
-  <p style="text-align: center;">Île-de-France, Rhône-Alpes, PACA, Grand Est, Hauts-de-France, Nouvelle-Aquitaine, Occitanie, Bretagne, Normandie… </p>
-  <p style="text-align: center;">et même au-delà des frontières françaises pour vos déménagements en Belgique, Suisse, Espagne, Italie, Allemagne, Luxembourg, etc.</p>
-  <div id="map" style="width: 100%; height: 400px; margin: 0 auto;"></div> <!-- Carte interactive -->
-</section>
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script>
-  // Création de la carte
-  var map = L.map('map').setView([46.603354, 1.888334], 6); // Centre de la carte sur la France
-
-  // Ajout du tile layer (carte de base)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  // Définition des villes et de leurs coordonnées
-  var cities = [
-    { name: "Saint-Etienne", lat: 45.4397, lon: 4.3872 },
-    { name: "Toulon", lat: 43.1242, lon: 5.9280 },
-    { name: "Annemasse", lat: 46.1957, lon: 6.2383 },
-    { name: "Lausanne", lat: 46.5197, lon: 6.6323 },
-    { name: "Geneve", lat: 46.2044, lon: 6.1432 },
-    { name: "Besancon", lat: 47.2378, lon: 6.0241 },
-    { name: "Avignon", lat: 43.9483, lon: 4.8055 },
-    { name: "Valence", lat: 44.9333, lon: 4.8913 },
-    { name: "Sète", lat: 43.4083, lon: 3.6953 },
-    { name: "Perpignan", lat: 42.6987, lon: 2.8956 },
-    { name: "Barcelone", lat: 41.9028, lon: 2.1900 },
-    { name: "Nantes", lat: 47.2184, lon: -1.5536 },
-    { name: "Toulouse", lat: 43.6047, lon: 1.4442 },
-    { name: "Metz", lat: 49.1193, lon: 6.1757 },
-    { name: "Lille", lat: 50.6292, lon: 3.0573 },
-    { name: "Clermont Ferrand", lat: 45.7797, lon: 3.0857 },
-    { name: "Paris", lat: 48.8566, lon: 2.3522 },
-    { name: "Bordeaux", lat: 44.8378, lon: -0.5792 },
-    { name: "Marseille", lat: 43.2965, lon: 5.3698 },
-    { name: "Rouen", lat: 49.4144, lon: 1.0890 },
-    { name: "Bâle", lat: 47.5596, lon: 7.5886 },
-    { name: "Dax", lat: 43.7101, lon: -1.0574 },
-    { name: "Poitiers", lat: 46.5802, lon: 0.3404 },
-    { name: "Limoges", lat: 45.8336, lon: 1.2611 },
-    { name: "Dijon", lat: 47.3220, lon: 5.0415 },
-    { name: "Reims", lat: 49.2583, lon: 4.0317 },
-    { name: "Zurich", lat: 47.3769, lon: 8.5417 },
-    { name: "Pau", lat: 43.2951, lon: -0.3708 },
-    { name: "Lyon", lat: 45.7640, lon: 4.8357 },
-    { name: "Grenoble", lat: 45.1885, lon: 5.7245 },
-    { name: "Orléans", lat: 47.9029, lon: 1.9093 },
-    { name: "Nancy", lat: 48.6921, lon: 6.1844 },
-    { name: "Strasbourg", lat: 48.5734, lon: 7.7521 },
-    { name: "Annecy", lat: 45.8992, lon: 6.1294 },
-    { name: "Le Puy-en-Velay", lat: 45.0445, lon: 3.8840 },
-    { name: "Montélimar", lat: 44.5584, lon: 4.7503 },
-    { name: "Nice", lat: 43.7102, lon: 7.2620 },
-    { name: "Moulins", lat: 46.5667, lon: 3.3333 },
-    { name: "Le Creusot", lat: 46.8074, lon: 4.4283 },
-  ];
-
-  // Ajout des marqueurs pour chaque ville
-  cities.forEach(function(city) {
-    L.marker([city.lat, city.lon])
-      .addTo(map)
-      .bindPopup("<b>" + city.name + "</b>");
-  });
-</script>
-
-  <section id="avis">
-    <h2>Avis clients</h2>
-    <div class="testimonials">
-      <p>⭐⭐⭐⭐⭐ "Équipe efficace et très sympathique. Mon déménagement s'est super bien passé." – Julie (Lyon)</p>
-      <p>⭐⭐⭐⭐⭐ "Rapides, organisés et à l'écoute. Merci pour le service." – Sylvie (Paris-Aix)</p>
-      <p>⭐⭐⭐⭐⭐ "Rien à redire, tout était parfait du devis à la livraison." – Chloé (Nice)</p>
-      <p>⭐⭐⭐⭐⭐ "Good Job!" – Fred</p>
     </div>
   </section>
 
-  <section id="faq">
-    <h2>FAQ</h2>
-    <h4>Quels sont vos délais d'intervention ?</h4>
-    <p>⚡48 à 72h pour la France, 96h pour l'Europe.</p>
-    <h4>Fournissez-vous du matériel de déménagement ?</h4>
-    <p>Oui, en option : 📦 cartons, 🏷️ adhésif, 🛏️ couvertures...</p>
-    <h4>Mes biens sont-ils assurés ?</h4>
-    <p>Oui, 🛡️ une assurance est incluse. Possibilité d'extension.</p>
+  <section class="why">
+    <h2>Pourquoi nous choisir ?</h2>
+    <div class="grid">
+      <div class="card">✅ Ponctualité</div>
+      <div class="card">✅ Assurance incluse</div>
+      <div class="card">✅ Service clé en main</div>
+      <div class="card">✅ Équipe professionnelle</div>
+    </div>
   </section>
 
-<section id="devis">
-  <h2>Demande de devis</h2>
-  <form action="https://formspree.io/f/xwpokdkp" method="post" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 300px;">
-    <div class="form-group">
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required placeholder="exemple@domaine.com" />
+  <section class="testimonials">
+    <h2>Ce que disent nos clients</h2>
+    <div class="card">
+      <p>"Tout s’est bien passé, super réactif et rapide !"</p>
+      <strong>– Karim M. (Lyon)</strong>
     </div>
-    <div class="form-group">
-      <label for="ville_depart">Ville de départ :</label>
-      <input type="text" id="ville_depart" name="Ville de départ" required />
-    </div>
-    <div class="form-group">
-      <label for="ville_arrivee">Ville d'arrivée :</label>
-      <input type="text" id="ville_arrivee" name="Ville d'arrivée" required />
-    </div>
-    <div class="form-group">
-      <label for="date_dem">Date souhaitée :</label>
-      <input type="date" id="date_dem" name="Date" />
-    </div>
-    <div class="form-group">
-      <label for="volume">Volume (m³) :</label>
-      <input type="number" id="volume" name="Volume" placeholder="Ex. : 20" />
-    </div>
-    <div class="form-group">
-      <label for="message">Détails ou contraintes :</label>
-      <textarea id="message" name="Message" rows="4" placeholder="Indiquez tout détail utile (ascenseur, accès difficile, etc.)"></textarea>
-    </div>
-    <button type="submit" class="submit-btn" style="align-self: center; margin-top: 10px;">Envoyer votre demande</button>
-  </form>
-</section>
-</main>
+  </section>
 
-<a class="whatsapp" href="https://wa.me/33651323494" target="_blank">📱 Discuter sur WhatsApp</a>
-
-<footer>
-  <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
-  <p><a href="mailto:contact@alliance-demenagement.eu">contact@alliance-demenagement.eu</a></p>
-</footer>
-<script>
-  const scrollContainer = document.querySelector('.formules-scroll');
-  const formules = document.querySelectorAll('.formule-box');
-  const btnLeft = document.querySelector('.scroll-btn.left');
-  const btnRight = document.querySelector('.scroll-btn.right');
-  let currentIndex = 0;
-
-  function updateScroll() {
-    scrollContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  btnLeft.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateScroll();
-    }
-  });
-
-  btnRight.addEventListener('click', () => {
-    if (currentIndex < formules.length - 1) {
-      currentIndex++;
-      updateScroll();
-    }
-  });
-</script>
-
-
+  <footer>
+    <p>&copy; 2025 Alliance Déménagement - Mentions légales - Politique de confidentialité</p>
+  </footer>
 </body>
 </html>
