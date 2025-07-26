@@ -32,6 +32,15 @@
     a.bg-[#CFC3B7]:hover, button.bg-[#CFC3B7]:hover {
       box-shadow: 0 4px 10px rgba(0,0,0,0.25);
     }
+
+    /* Ajout pour menu mobile clair */
+    #menu-mobile ul li a {
+      color: #F5E9E0; /* beige clair */
+    }
+    #menu-mobile ul li a:hover {
+      color: #B4884F; /* marron clair */
+    }
+
     @media (max-width: 640px) {
       header div.container {
         flex-direction: column;
@@ -76,10 +85,10 @@
           <i class="fas fa-bars"></i>
         </button>
       </div>
-      <nav id="menu-mobile" class="hidden w-full sm:hidden">
+      <nav id="menu-mobile" class="hidden w-full sm:hidden text-white">
         <ul class="flex flex-col items-center space-y-2">
-          <li><a href="#services" class="text-black hover:underline">Services</a></li>
-          <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
+          <li><a href="#services" class="hover:underline">Services</a></li>
+          <li><a href="#formulaire" class="hover:underline">Devis</a></li>
         </ul>
       </nav>
       <div class="flex flex-col sm:flex-row items-center justify-between w-full">
