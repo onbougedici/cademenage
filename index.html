@@ -127,18 +127,15 @@
        inset -3px -3px 6px #fff9d5;">
   Demander un devis
 </a>
-    </a>
   </div>
 </section>
-
 
 <section id="services" class="py-12 bg-gray-100">
   <div class="container mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-8 text-[#5A3E1B]">Nos Services</h3>
     <div class="grid md:grid-cols-3 gap-6">
-      <a
-        href="#detail-particulier"
-        class="p-6 rounded-lg cursor-pointer block text-[#5A3E1B]"
+      <a href="#detail-particulier"
+        class="block p-6 rounded-lg cursor-pointer text-center"
         style="
           background: linear-gradient(145deg, #e6d5b8, #c9b37a);
           box-shadow:
@@ -147,15 +144,17 @@
             inset 3px 3px 6px #b29555,
             inset -3px -3px 6px #fff9d5;
           text-decoration: none;
+          color: #5A3E1B;
+          transition: box-shadow 0.3s ease;
         "
+        onmouseover="this.style.boxShadow='8px 8px 15px #b09558, -8px -8px 15px #fff8d4, inset 4px 4px 8px #b29555, inset -4px -4px 8px #fff9d5';"
+        onmouseout="this.style.boxShadow='6px 6px 12px #b09558, -6px -6px 12px #fff8d4, inset 3px 3px 6px #b29555, inset -3px -3px 6px #fff9d5';"
       >
         <h4 class="text-xl font-bold mb-2">Déménagement particulier</h4>
         <p>Un service adapté à votre logement, de l’emballage au transport.</p>
       </a>
-
-      <a
-        href="#detail-professionnel"
-        class="p-6 rounded-lg cursor-pointer block text-[#5A3E1B]"
+      <a href="#detail-professionnel"
+        class="block p-6 rounded-lg cursor-pointer text-center"
         style="
           background: linear-gradient(145deg, #e6d5b8, #c9b37a);
           box-shadow:
@@ -164,15 +163,17 @@
             inset 3px 3px 6px #b29555,
             inset -3px -3px 6px #fff9d5;
           text-decoration: none;
+          color: #5A3E1B;
+          transition: box-shadow 0.3s ease;
         "
+        onmouseover="this.style.boxShadow='8px 8px 15px #b09558, -8px -8px 15px #fff8d4, inset 4px 4px 8px #b29555, inset -4px -4px 8px #fff9d5';"
+        onmouseout="this.style.boxShadow='6px 6px 12px #b09558, -6px -6px 12px #fff8d4, inset 3px 3px 6px #b29555, inset -3px -3px 6px #fff9d5';"
       >
         <h4 class="text-xl font-bold mb-2">Déménagement professionnel</h4>
         <p>Transfert d’entreprise, bureaux, entrepôts, avec un minimum d’interruption d’activité.</p>
       </a>
-
-      <a
-        href="#detail-monte-meubles"
-        class="p-6 rounded-lg cursor-pointer block text-[#5A3E1B]"
+      <a href="#detail-monte-meubles"
+        class="block p-6 rounded-lg cursor-pointer text-center"
         style="
           background: linear-gradient(145deg, #e6d5b8, #c9b37a);
           box-shadow:
@@ -181,7 +182,11 @@
             inset 3px 3px 6px #b29555,
             inset -3px -3px 6px #fff9d5;
           text-decoration: none;
+          color: #5A3E1B;
+          transition: box-shadow 0.3s ease;
         "
+        onmouseover="this.style.boxShadow='8px 8px 15px #b09558, -8px -8px 15px #fff8d4, inset 4px 4px 8px #b29555, inset -4px -4px 8px #fff9d5';"
+        onmouseout="this.style.boxShadow='6px 6px 12px #b09558, -6px -6px 12px #fff8d4, inset 3px 3px 6px #b29555, inset -3px -3px 6px #fff9d5';"
       >
         <h4 class="text-xl font-bold mb-2">Location de monte-meubles</h4>
         <p>Solution pratique pour les accès difficiles et les charges lourdes.</p>
@@ -190,60 +195,89 @@
   </div>
 </section>
 
+<!-- Sections détails cachées -->
+<section id="detail-particulier" class="hidden max-w-3xl mx-auto p-6 bg-white rounded shadow my-8">
+  <h3 class="text-2xl font-bold mb-4 text-[#5A3E1B]">Déménagement particulier</h3>
+  <p>
+    Nous vous accompagnons pour votre déménagement personnel, de l’emballage au transport, avec soin et flexibilité. Notre équipe s’adapte à votre logement, quelle que soit sa taille.
+  </p>
+  <p>
+    Nous proposons également des services d’emballage professionnels, la location de matériel et un accompagnement personnalisé pour vous faciliter la vie.
+  </p>
+</section>
 
+<section id="detail-professionnel" class="hidden max-w-3xl mx-auto p-6 bg-white rounded shadow my-8">
+  <h3 class="text-2xl font-bold mb-4 text-[#5A3E1B]">Déménagement professionnel</h3>
+  <p>
+    Transfert rapide et organisé de bureaux, entrepôts et entreprises, avec un minimum d’interruption pour votre activité. Nous garantissons discrétion et efficacité.
+  </p>
+  <p>
+    Nos équipes spécialisées travaillent avec vous pour planifier chaque étape et s’adaptent à vos besoins spécifiques.
+  </p>
+</section>
 
-  <!-- Section avis clients -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto px-6">
-      <h3 class="text-3xl font-bold text-center mb-8">Ils nous ont fait confiance</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-100 p-4 rounded shadow text-sm">
-          <p class="italic">"Un service rapide et efficace. Je recommande sans hésiter !"</p>
-          <p class="text-right mt-2 font-semibold">- Mme Lefort, Lyon</p>
-        </div>
-        <div class="bg-gray-100 p-4 rounded shadow text-sm">
-          <p class="italic">"Organisation impeccable, déménagement sans stress. Merci !"</p>
-          <p class="text-right mt-2 font-semibold">- M. Benaissa, Marseille</p>
-        </div>
-        <div class="bg-gray-100 p-4 rounded shadow text-sm">
-          <p class="italic">"Des pros, tout simplement. Travail propre et ponctuel."</p>
-          <p class="text-right mt-2 font-semibold">- Mme Garcia, Annecy</p>
-        </div>
+<section id="detail-monte-meubles" class="hidden max-w-3xl mx-auto p-6 bg-white rounded shadow my-8">
+  <h3 class="text-2xl font-bold mb-4 text-[#5A3E1B]">Location de monte-meubles</h3>
+  <p>
+    Notre service de location de monte-meubles facilite le transport des charges lourdes et les accès difficiles. Économisez temps et efforts en toute sécurité.
+  </p>
+  <p>
+    Nous proposons une assistance complète, de la livraison à la manipulation, pour que votre déménagement soit un succès.
+  </p>
+</section>
+
+<!-- Section avis clients -->
+<section class="bg-white py-12">
+  <div class="container mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-8">Ils nous ont fait confiance</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-100 p-4 rounded shadow text-sm">
+        <p class="italic">"Un service rapide et efficace. Je recommande sans hésiter !"</p>
+        <p class="text-right mt-2 font-semibold">- Mme Lefort, Lyon</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-sm">
+        <p class="italic">"Organisation impeccable, déménagement sans stress. Merci !"</p>
+        <p class="text-right mt-2 font-semibold">- M. Benaissa, Marseille</p>
+      </div>
+      <div class="bg-gray-100 p-4 rounded shadow text-sm">
+        <p class="italic">"Des pros, tout simplement. Travail propre et ponctuel."</p>
+        <p class="text-right mt-2 font-semibold">- Mme Garcia, Annecy</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Formulaire de devis -->
-  <section id="formulaire" class="py-12 bg-white">
-    <div class="container mx-auto px-6 max-w-2xl">
-      <h3 class="text-3xl font-bold text-center mb-6">Demandez votre devis gratuit</h3>
-      <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4">
-        <input type="text" name="nom" placeholder="Nom" required class="w-full border border-gray-300 p-2 rounded" />
-        <input type="email" name="email" placeholder="Email" required class="w-full border border-gray-300 p-2 rounded" />
-        <input type="tel" name="telephone" placeholder="Téléphone" required class="w-full border border-gray-300 p-2 rounded" />
-        <textarea name="message" placeholder="Décrivez votre besoin..." required class="w-full border border-gray-300 p-2 rounded"></textarea>
-<button type="submit"
-   class="font-semibold py-3 px-6 rounded-lg transition duration-300 text-[#5A3E1B]"
-   style="
-     background: linear-gradient(145deg, #e6d5b8, #c9b37a);
-     box-shadow:
-       6px 6px 12px #b09558,
-       -6px -6px 12px #fff8d4,
-       inset 3px 3px 6px #b29555,
-       inset -3px -3px 6px #fff9d5;">
-  Envoyer
-</button>
-      </form>
-    </div>
-  </section>
+<!-- Formulaire de devis -->
+<section id="formulaire" class="py-12 bg-white">
+  <div class="container mx-auto px-6 max-w-2xl">
+    <h3 class="text-3xl font-bold text-center mb-6">Demandez votre devis gratuit</h3>
+    <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4">
+      <input type="text" name="nom" placeholder="Nom" required class="w-full border border-gray-300 p-2 rounded" />
+      <input type="email" name="email" placeholder="Email" required class="w-full border border-gray-300 p-2 rounded" />
+      <input type="tel" name="telephone" placeholder="Téléphone" required class="w-full border border-gray-300 p-2 rounded" />
+      <textarea name="message" placeholder="Décrivez votre besoin..." required class="w-full border border-gray-300 p-2 rounded"></textarea>
+      <button type="submit"
+        class="font-semibold py-3 px-6 rounded-lg transition duration-300 text-[#5A3E1B]"
+        style="
+          background: linear-gradient(145deg, #e6d5b8, #c9b37a);
+          box-shadow:
+            6px 6px 12px #b09558,
+            -6px -6px 12px #fff8d4,
+            inset 3px 3px 6px #b29555,
+            inset -3px -3px 6px #fff9d5;">
+        Envoyer
+      </button>
+    </form>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <footer id="contact" class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>contact@alliance-demenagement.eu</p>
-      <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
-    </div>
-  </footer>
+<!-- Contact -->
+<footer id="contact" class="bg-gray-800 text-white py-6">
+  <div class="container mx-auto text-center">
+    <p>contact@alliance-demenagement.eu</p>
+    <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
+  </div>
+</footer>
 
 <a href="https://wa.me/33651323494" target="_blank" class="fixed bottom-6 right-6 z-50">
   <img
@@ -253,15 +287,41 @@
   />
 </a>
 
-  <!-- Script pour le menu burger -->
-  <script>
-    document.getElementById('burger').addEventListener('click', function () {
-      const menu = document.getElementById('menu-mobile');
-      menu.classList.toggle('hidden');
+<!-- Script pour le menu burger -->
+<script>
+  document.getElementById('burger').addEventListener('click', function () {
+    const menu = document.getElementById('menu-mobile');
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Script affichage détails services -->
+<script>
+  document.querySelectorAll('#services a').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      
+      // Cache toutes les sections détails
+      document.querySelectorAll('section[id^="detail-"]').forEach(section => {
+        section.classList.add('hidden');
+      });
+      
+      // Affiche la section ciblée
+      const cible = this.getAttribute('href');
+      if (cible) {
+        const section = document.querySelector(cible);
+        if (section) {
+          section.classList.remove('hidden');
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
