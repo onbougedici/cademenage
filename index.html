@@ -1,122 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <style>
-  @keyframes rouler {
-    0% { transform: translateX(-200px); }
-    100% { transform: translateX(50vw); }
-  }
-
-  .camion-anim {
-    animation: rouler 6s ease-in-out forwards;
-  }
-
-  /* Hover plus visible sur liens dans le header */
-  nav ul li a:hover {
-    color: #B4884F; /* marron clair */
-  }
-
-  /* Box-shadow subtil sur boutons */
-  a.bg-[#CFC3B7], button.bg-[#CFC3B7] {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  a.bg-[#CFC3B7]:hover, button.bg-[#CFC3B7]:hover {
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  }
-
-  /* Adaptation mobile améliorée */
-  @media (max-width: 640px) {
-    header div.container {
-      flex-direction: column;
-      gap: 1rem;
-      text-align: center;
-    }
-    nav ul {
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    nav ul li {
-      list-style: none;
-    }
-    h1 {
-      font-size: 1.5rem !important;
-    }
-    /* Ajustements dans hero */
-    section.bg-white h2 {
-      font-size: 2rem !important;
-    }
-    section.bg-white p {
-      font-size: 1rem !important;
-    }
-    /* Formulaire plus compact */
-    form input, form textarea {
-      font-size: 0.9rem;
-    }
-  }
-  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    rel="icon"
-    href="logo_camion_slogan-removebg-preview.png"
-    type="image/png"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-  />
-  <script
-    src="https://kit.fontawesome.com/a076d05399.js"
-    crossorigin="anonymous"
-  ></script>
+  <title>Alliance Déménagement - Déménagement Partout en France</title>
+  <meta name="description" content="Déménagements particuliers et professionnels partout en France avec Alliance Déménagement. Devis rapide, service fiable." />
+  <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    @keyframes rouler {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(50vw); }
+    }
+    .camion-anim {
+      animation: rouler 6s ease-in-out forwards;
+    }
+    nav ul li a:hover {
+      color: #B4884F;
+    }
+    a.bg-[#CFC3B7], button.bg-[#CFC3B7] {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    a.bg-[#CFC3B7]:hover, button.bg-[#CFC3B7]:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+    @media (max-width: 640px) {
+      header div.container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      nav ul {
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      nav ul li {
+        list-style: none;
+      }
+      h1 {
+        font-size: 1.5rem !important;
+      }
+      section.bg-white h2 {
+        font-size: 2rem !important;
+      }
+      section.bg-white p {
+        font-size: 1rem !important;
+      }
+      form input, form textarea {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
   <!-- Header -->
-<header class="bg-[#5A3E1B] relative overflow-hidden p-6 shadow-md h-40 sm:h-48">
-  <div class="container mx-auto flex flex-col items-center relative z-10">
-    <!-- Menu mobile en haut -->
-    <nav class="w-full mb-4 block sm:hidden">
-      <ul class="flex justify-center space-x-6">
-        <li><a href="#services" class="text-black hover:underline">Services</a></li>
-        <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
-      </ul>
-    </nav>
-
-    <div class="flex flex-col sm:flex-row items-center justify-between w-full">
-   
-
-      <!-- Menu desktop en bas / droite -->
-      <nav class="mt-2 sm:mt-0 hidden sm:block">
-        <ul class="flex space-x-4">
-          <li><a href="#services" class="text-black hover:underline">Services</a></li>
-          <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
-        </ul>
-      </nav>
+  <header class="bg-[#5A3E1B] relative overflow-hidden p-6 shadow-md h-40 sm:h-48">
+    <div class="container mx-auto flex flex-col items-center relative z-10">
+      <!-- Menu mobile -->
+      <div class="w-full mb-4 sm:hidden flex justify-between items-center">
+        <button id="burger" class="text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="menu-mobile" class="hidden w-full mt-2">
+          <ul class="flex flex-col items-center space-y-2">
+            <li><a href="#services" class="text-black hover:underline">Services</a></li>
+            <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between w-full">
+        <!-- Menu desktop -->
+        <nav class="mt-2 sm:mt-0 hidden sm:block">
+          <ul class="flex space-x-4">
+            <li><a href="#services" class="text-black hover:underline">Services</a></li>
+            <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-  </div>
-
-  <!-- Camion animé -->
-  <div class="absolute bottom-0 left-0 camion-anim z-0">
-    <img src="logo_camion_slogan-removebg-preview.png" class="h-24 sm:h-28"/>
-  </div>
-</header>
+    <!-- Camion animé -->
+    <div class="absolute bottom-0 left-0 camion-anim z-0">
+      <img src="logo_camion_slogan-removebg-preview.png" alt="Camion Alliance Déménagement" class="h-24 sm:h-28"/>
+    </div>
+  </header>
 
   <!-- Hero section -->
   <section class="bg-white py-12">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-4">
-        Déménagez Sereinement Partout en France
-      </h2>
-      <p class="mb-6">
-        Particuliers ou professionnels, nous organisons votre déménagement de A
-        à Z avec soin et sérénité.
-      </p>
-      <a
-        href="#formulaire"
-        class="bg-[#CFC3B7] text-gray-900 font-bold py-2 px-4 rounded hover:bg-[#B7AB9F]"
-        >Demander un devis</a
-      >
+      <h2 class="text-4xl font-bold mb-4">Déménagez Sereinement Partout en France</h2>
+      <p class="mb-6">Particuliers ou professionnels, nous organisons votre déménagement de A à Z avec soin et sérénité.</p>
+      <a href="#formulaire" class="bg-[#CFC3B7] text-gray-900 font-bold py-2 px-4 rounded hover:bg-[#B7AB9F]">Demander un devis</a>
     </div>
   </section>
 
@@ -131,14 +106,32 @@
         </div>
         <div class="bg-white p-6 rounded shadow">
           <h4 class="text-xl font-bold mb-2">Déménagement professionnel</h4>
-          <p>
-            Transfert d’entreprise, bureaux, entrepôts, avec un minimum
-            d’interruption d’activité.
-          </p>
+          <p>Transfert d’entreprise, bureaux, entrepôts, avec un minimum d’interruption d’activité.</p>
         </div>
         <div class="bg-white p-6 rounded shadow">
           <h4 class="text-xl font-bold mb-2">Location de monte-meubles</h4>
           <p>Solution pratique pour les accès difficiles et les charges lourdes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section avis clients -->
+  <section class="bg-white py-12">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-8">Ils nous ont fait confiance</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-100 p-4 rounded shadow text-sm">
+          <p class="italic">"Un service rapide et efficace. Je recommande sans hésiter !"</p>
+          <p class="text-right mt-2 font-semibold">- Mme Lefort, Lyon</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-sm">
+          <p class="italic">"Organisation impeccable, déménagement sans stress. Merci !"</p>
+          <p class="text-right mt-2 font-semibold">- M. Benaissa, Marseille</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded shadow text-sm">
+          <p class="italic">"Des pros, tout simplement. Travail propre et ponctuel."</p>
+          <p class="text-right mt-2 font-semibold">- Mme Garcia, Annecy</p>
         </div>
       </div>
     </div>
@@ -149,39 +142,11 @@
     <div class="container mx-auto px-6 max-w-2xl">
       <h3 class="text-3xl font-bold text-center mb-6">Demandez votre devis gratuit</h3>
       <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4">
-        <input
-          type="text"
-          name="nom"
-          placeholder="Nom"
-          required
-          class="w-full border border-gray-300 p-2 rounded"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          class="w-full border border-gray-300 p-2 rounded"
-        />
-        <input
-          type="tel"
-          name="telephone"
-          placeholder="Téléphone"
-          required
-          class="w-full border border-gray-300 p-2 rounded"
-        />
-        <textarea
-          name="message"
-          placeholder="Décrivez votre besoin..."
-          required
-          class="w-full border border-gray-300 p-2 rounded"
-        ></textarea>
-        <button
-          type="submit"
-          class="bg-[#CFC3B7] text-gray-900 py-2 px-4 rounded hover:bg-[#B7AB9F]"
-        >
-          Envoyer
-        </button>
+        <input type="text" name="nom" placeholder="Nom" required class="w-full border border-gray-300 p-2 rounded" />
+        <input type="email" name="email" placeholder="Email" required class="w-full border border-gray-300 p-2 rounded" />
+        <input type="tel" name="telephone" placeholder="Téléphone" required class="w-full border border-gray-300 p-2 rounded" />
+        <textarea name="message" placeholder="Décrivez votre besoin..." required class="w-full border border-gray-300 p-2 rounded"></textarea>
+        <button type="submit" class="bg-[#CFC3B7] text-gray-900 py-2 px-4 rounded hover:bg-[#B7AB9F]">Envoyer</button>
       </form>
     </div>
   </section>
@@ -194,16 +159,20 @@
   </footer>
 
   <!-- Bouton WhatsApp -->
-  <a
-    href="https://wa.me/33651323494"
-    class="fixed bottom-4 right-4 bg-green-500 p-4 rounded-full shadow-lg text-white"
-    target="_blank"
-    aria-label="Contact WhatsApp"
-  >
+  <a href="https://wa.me/33651323494" class="fixed bottom-4 right-4 bg-green-500 p-4 rounded-full shadow-lg text-white" target="_blank" aria-label="Contact WhatsApp">
     <i class="fab fa-whatsapp fa-2x"></i>
   </a>
+
+  <!-- Script pour le menu burger -->
+  <script>
+    document.getElementById('burger').addEventListener('click', function () {
+      const menu = document.getElementById('menu-mobile');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
+
 
 
 
