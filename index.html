@@ -333,26 +333,75 @@
 </script>
 
 
-<!-- Section avis clients -->
+<!-- Section Avis Clients - Slider -->
 <section class="bg-white py-12">
   <div class="container mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-8">Ils nous ont fait confiance</h3>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-gray-100 p-4 rounded shadow text-sm">
-        <p class="italic">"Un service rapide et efficace. Je recommande sans hésiter !"</p>
-        <p class="text-right mt-2 font-semibold">- Mme Lefort, Lyon</p>
+    
+    <div class="relative max-w-xl mx-auto">
+      <!-- Slides container -->
+      <div id="testimonial-slider" class="overflow-hidden relative h-40">
+        <div class="flex transition-transform duration-700 ease-in-out" id="testimonial-track">
+          <!-- Slide 1 -->
+          <div class="min-w-full px-4">
+            <div class="bg-gray-100 p-6 rounded shadow text-sm h-full flex flex-col justify-between">
+              <p class="italic">"Un service rapide et efficace. Je recommande sans hésiter !"</p>
+              <p class="text-right mt-4 font-semibold">- Mme Lefort, Lyon</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="min-w-full px-4">
+            <div class="bg-gray-100 p-6 rounded shadow text-sm h-full flex flex-col justify-between">
+              <p class="italic">"Organisation impeccable, déménagement sans stress. Merci !"</p>
+              <p class="text-right mt-4 font-semibold">- M. Benaissa, Marseille</p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="min-w-full px-4">
+            <div class="bg-gray-100 p-6 rounded shadow text-sm h-full flex flex-col justify-between">
+              <p class="italic">"Des pros, tout simplement. Travail propre et ponctuel."</p>
+              <p class="text-right mt-4 font-semibold">- Mme Garcia, Annecy</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="bg-gray-100 p-4 rounded shadow text-sm">
-        <p class="italic">"Organisation impeccable, déménagement sans stress. Merci !"</p>
-        <p class="text-right mt-2 font-semibold">- M. Benaissa, Marseille</p>
-      </div>
-      <div class="bg-gray-100 p-4 rounded shadow text-sm">
-        <p class="italic">"Des pros, tout simplement. Travail propre et ponctuel."</p>
-        <p class="text-right mt-2 font-semibold">- Mme Garcia, Annecy</p>
-      </div>
+
+      <!-- Navigation buttons -->
+      <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded-l">
+        ‹
+      </button>
+      <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 px-3 py-1 rounded-r">
+        ›
+      </button>
     </div>
   </div>
 </section>
+
+<script>
+  const track = document.getElementById("testimonial-track");
+  const slides = track.children.length;
+  let currentIndex = 0;
+
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % slides;
+    updateSlider();
+  });
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + slides) % slides;
+    updateSlider();
+  });
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides;
+    updateSlider();
+  }, 5000); // auto-scroll every 5 seconds
+</script>
+
 
 <!-- Formulaire de devis -->
 <section id="formulaire" class="py-12 bg-white">
