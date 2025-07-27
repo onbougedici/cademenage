@@ -366,16 +366,20 @@
         </div>
       </div>
 
-<!-- Flèches de navigation plus discrètes -->
-<button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-gray-200 text-gray-600 px-2 py-1 text-xl rounded-full shadow-sm transition">
-  ←
-</button>
-<button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-gray-200 text-gray-600 px-2 py-1 text-xl rounded-full shadow-sm transition">
-  →
-</button>
-    </div>
-  </div>
-</section>
+<!-- Conteneur avec groupe pour effet hover -->
+<div class="relative group overflow-hidden">
+  <div id="testimonialCarousel" class="flex transition-transform duration-500"></div>
+
+  <!-- Flèches très discrètes, visibles uniquement au survol -->
+  <button id="prevBtn"
+    class="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-gray-400 hover:text-gray-600">
+    ←
+  </button>
+  <button id="nextBtn"
+    class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-gray-400 hover:text-gray-600">
+    →
+  </button>
+</div>
 
 <script>
   const track = document.getElementById("testimonial-track");
