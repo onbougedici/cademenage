@@ -1,484 +1,171 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alliance Déménagement - Déménagement Partout en France</title>
-  <meta name="description" content="Déménagements particuliers et professionnels partout en France avec Alliance Déménagement. Devis rapide, service fiable." />
-  <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alliance Déménagement - Votre déménagement partout en France</title>
+  <meta name="description" content="Déménagements particuliers et professionnels partout en France. Devis gratuit, service rapide et fiable avec Alliance Déménagement.">
+  <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    .header-camion {
-      position: relative;
-      overflow: hidden;
-    }
-    .camion-anim {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-150%);
-      animation: rouler 2s ease-in-out forwards;
-    }
-    @keyframes rouler {
-      to { transform: translateX(-50%); }
-    }
-    nav ul li a:hover {
-      color: #B4884F;
-    }
-    a.bg-[#CFC3B7], button.bg-[#CFC3B7] {
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    a.bg-[#CFC3B7]:hover, button.bg-[#CFC3B7]:hover {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    }
-
-    /* Ajout pour menu mobile clair */
-    #menu-mobile ul li a {
-      color: #F5E9E0; /* beige clair */
-    }
-    #menu-mobile ul li a:hover {
-      color: #B4884F; /* marron clair */
-    }
-
-    @media (max-width: 640px) {
-      header div.container {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-      nav ul {
-        justify-content: center;
-        gap: 1.5rem;
-        flex-direction: column;
-        display: flex;
-      }
-      nav ul li {
-        list-style: none;
-      }
-      nav ul li a {
-        display: block;
-        padding: 0.5rem 0;
-      }
-      h1 {
-        font-size: 1.5rem !important;
-      }
-      section.bg-white h2 {
-        font-size: 2rem !important;
-      }
-      section.bg-white p {
-        font-size: 1rem !important;
-      }
-      form input, form textarea {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+
+<body class="bg-gray-50 text-gray-800">
+
   <!-- Header -->
-  <header class="bg-[#b09558] relative overflow-hidden p-6 shadow-md h-40 sm:h-48">
-    <div class="container mx-auto flex flex-col items-center relative z-10">
-      <!-- Menu mobile -->
-      <div class="w-full mb-4 sm:hidden flex justify-between items-center">
-        <button id="burger" class="text-white text-2xl focus:outline-none">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <nav id="menu-mobile" class="hidden w-full sm:hidden text-white">
-        <ul class="flex flex-col items-center space-y-2">
-          <li><a href="#services" class="hover:underline">Services</a></li>
-          <li><a href="#formulaire" class="hover:underline">Devis</a></li>
-        </ul>
+
+  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <img src="logo_camion_slogan-removebg-preview.png" alt="Logo Alliance Déménagement" class="h-12">
+      <nav class="hidden md:flex space-x-6 font-semibold">
+        <a href="#about" class="hover:text-[#b09558]">À propos</a>
+        <a href="#services" class="hover:text-[#b09558]">Services</a>
+        <a href="#faq" class="hover:text-[#b09558]">FAQ</a>
+        <a href="#formulaire" class="hover:text-[#b09558]">Devis</a>
       </nav>
-      <div class="flex flex-col sm:flex-row items-center justify-between w-full">
-        <!-- Menu desktop -->
-        <nav class="mt-2 sm:mt-0 hidden sm:block">
-          <ul class="flex space-x-4">
-            <li><a href="#services" class="text-black hover:underline">Services</a></li>
-            <li><a href="#formulaire" class="text-black hover:underline">Devis</a></li>
-          </ul>
-        </nav>
-      </div>
+      <button id="burger" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
     </div>
-    <!-- Camion animé -->
-    <div class="absolute bottom-0 left-0 camion-anim z-0">
-      <img src="logo_camion_slogan-removebg-preview.png" alt="Camion Alliance Déménagement" class="h-32 sm:h-36"/>
-    </div>
+    <!-- Menu mobile -->
+    <nav id="menu-mobile" class="hidden bg-white shadow-md md:hidden">
+      <ul class="flex flex-col text-center py-4 space-y-3">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#formulaire">Devis</a></li>
+      </ul>
+    </nav>
   </header>
-    <!-- Section À propos -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-      <h3 class="text-3xl font-bold mb-4 text-[#5A3E1B]">Qui sommes-nous ?</h3>
-      <p class="text-gray-700 text-lg mb-6">
-        Alliance Déménagement est née de la volonté de proposer un service de qualité, humain et accessible partout en France.
-        Nous mettons un point d'honneur à accompagner chaque client avec écoute, rigueur et transparence.
-      </p>
-        Nous intervenons à l'échelle nationale et internationale avec des équipes locales de confiance. Notre objectif : rendre votre déménagement le plus fluide possible.
-      </p>
+
+  <!-- Hero -->
+
+  <section class="h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
+           style="background-image: url('demenagement-bg.jpg');">
+    <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Votre déménagement en toute sérénité</h1>
+      <p class="mb-6 text-lg md:text-xl">Particuliers & professionnels – partout en France</p>
+      <a href="#formulaire" class="bg-[#b09558] hover:bg-[#8a6f35] text-white py-3 px-6 rounded-lg font-semibold">
+        Demander un devis gratuit
+      </a>
     </div>
   </section>
-  
-<!-- Hero section -->
-<section class="bg-white py-12">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold mb-4 text-gray-800">
-      Votre déménagement partout en toute sérénité
-    </h2>
-    <p class="mb-6 text-lg text-gray-700">
-      Que vous soyez particulier ou professionnel, notre équipe prend en charge votre déménagement de A à Z, avec fiabilité et efficacité.
-    </p>
-<a href="#formulaire"
-   class="font-semibold py-3 px-6 rounded-lg transition duration-300 text-[#5A3E1B]"
-   style="
-     background: linear-gradient(145deg, #e6d5b8, #c9b37a);
-     box-shadow:
-       6px 6px 12px #b09558,
-       -6px -6px 12px #fff8d4,
-       inset 3px 3px 6px #b29555,
-       inset -3px -3px 6px #fff9d5;">
-  Demander un devis
-</a>
-  </div>
-</section>
 
-<section id="services" class="py-12 bg-gray-100">
-  <div class="container mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center mb-8 text-[#5A3E1B]">Nos Services</h3>
-    <div class="grid md:grid-cols-3 gap-6">
-      <a href="#detail-particulier"
-        class="block p-6 rounded-lg cursor-pointer text-center"
-        style="
-          background: linear-gradient(145deg, #e6d5b8, #c9b37a);
-          box-shadow:
-            6px 6px 12px #b09558,
-            -6px -6px 12px #fff8d4,
-            inset 3px 3px 6px #b29555,
-            inset -3px -3px 6px #fff9d5;
-          text-decoration: none;
-          color: #5A3E1B;
-          transition: box-shadow 0.3s ease;
-        "
-        onmouseover="this.style.boxShadow='8px 8px 15px #b09558, -8px -8px 15px #fff8d4, inset 4px 4px 8px #b29555, inset -4px -4px 8px #fff9d5';"
-        onmouseout="this.style.boxShadow='6px 6px 12px #b09558, -6px -6px 12px #fff8d4, inset 3px 3px 6px #b29555, inset -3px -3px 6px #fff9d5';"
-      >
-        <h4 class="text-xl font-bold mb-2">Déménagement particulier</h4>
-      </a>
-      <a href="#detail-professionnel"
-        class="block p-6 rounded-lg cursor-pointer text-center"
-        style="
-          background: linear-gradient(145deg, #e6d5b8, #c9b37a);
-          box-shadow:
-            6px 6px 12px #b09558,
-            -6px -6px 12px #fff8d4,
-            inset 3px 3px 6px #b29555,
-            inset -3px -3px 6px #fff9d5;
-          text-decoration: none;
-          color: #5A3E1B;
-          transition: box-shadow 0.3s ease;
-        "
-        onmouseover="this.style.boxShadow='8px 8px 15px #b09558, -8px -8px 15px #fff8d4, inset 4px 4px 8px #b29555, inset -4px -4px 8px #fff9d5';"
-        onmouseout="this.style.boxShadow='6px 6px 12px #b09558, -6px -6px 12px #fff8d4, inset 3px 3px 6px #b29555, inset -3px -3px 6px #fff9d5';"
-      >
-        <h4 class="text-xl font-bold mb-2">Déménagement professionnel</h4
-      </a>
-      <a href="#detail-monte-meubles"
-        class="block p-6 rounded-lg cursor-pointer text-center"
-        style="
-          background: linear-gradient(145deg, #e6d5b8, #c9b37a);
-          box-shadow:
-            6px 6px 12px #b09558,
-            -6px -6px 12px #fff8d4,
-            inset 3px 3px 6px #b29555,
-            inset -3px -3px 6px #fff9d5;
-          text-decoration: none;
-          color: #5A3E1B;
-          transition: box-shadow 0.3s ease;
-        "
-        onmouseover="this.style.boxShadow='8px 8px 15px #b09558, -8px -8px 15px #fff8d4, inset 4px 4px 8px #b29555, inset -4px -4px 8px #fff9d5';"
-        onmouseout="this.style.boxShadow='6px 6px 12px #b09558, -6px -6px 12px #fff8d4, inset 3px 3px 6px #b29555, inset -3px -3px 6px #fff9d5';"
-      >
-        <h4 class="text-xl font-bold mb-2">Location de monte-meubles</h4>
-      </a>
+  <!-- À propos -->
+
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
+      <img src="camion.jpg" alt="Camion de déménagement" class="w-full md:w-1/2 rounded-lg shadow">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold mb-4 text-[#5A3E1B]">Qui sommes-nous ?</h2>
+        <p class="text-gray-700 mb-4">Alliance Déménagement, c’est une équipe dédiée à rendre votre déménagement simple et sans stress.</p>
+        <p class="text-gray-700">Nous intervenons en France et à l’international, avec des solutions adaptées à chaque besoin.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Sections détails cachées des services -->
-<section id="details-services" class="container mx-auto px-6 py-12 max-w-5xl">
+  <!-- Services -->
 
-  <!-- Déménagement Particulier -->
-  <div id="detail-particulier" class="hidden bg-[#e6d5b8] rounded-lg shadow-lg p-6 mb-8 transition-all duration-500">
-    <h3 class="text-2xl font-bold mb-4 text-[#5A3E1B]">Déménagement Particulier — Votre sérénité, notre priorité</h3>
-    <p class="mb-4 text-[#5A3E1B]">
-      Que vous déménagiez un studio, un appartement ou une maison, nous assurons un service sur-mesure pour un déménagement sans stress.
-    </p>
-    <h4 class="font-semibold text-[#5A3E1B] mb-2">Nos prestations :</h4>
-    <ul class="list-disc list-inside mb-4 text-[#5A3E1B] space-y-1">
-      <li>Évaluation personnalisée avec visite ou échange téléphonique.</li>
-      <li>Emballage professionnel : cartons adaptés et protection renforcée des objets fragiles.</li>
-      <li>Démontage et remontage minutieux de vos meubles.</li>
-      <li>Transport sécurisé avec camions adaptés et équipe expérimentée.</li>
-      <li>Assurance complète pour une tranquillité d’esprit.</li>
-      <li>Services complémentaires : nettoyage, garde-meubles, déménagement express.</li>
-    </ul>
-    <h4 class="font-semibold text-[#5A3E1B] mb-2">Pourquoi nous choisir ?</h4>
-    <p class="mb-2 text-[#5A3E1B]">
-      Une équipe locale réactive, respect des délais, tarifs transparents et suivi personnalisé tout au long de votre projet.
-    </p>
-  </div>
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-10 text-[#5A3E1B]">Nos Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-home text-4xl text-[#b09558] mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Particuliers</h3>
+          <p class="text-gray-600">Déménagement d’appartement, maison ou studio en toute sécurité.</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-building text-4xl text-[#b09558] mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Professionnels</h3>
+          <p class="text-gray-600">Transfert d’entreprise avec une organisation sans faille.</p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
+          <i class="fas fa-truck-loading text-4xl text-[#b09558] mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Monte-meubles</h3>
+          <p class="text-gray-600">Facilitez votre déménagement avec notre matériel spécialisé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Déménagement Professionnel -->
-  <div id="detail-professionnel" class="hidden bg-[#e6d5b8] rounded-lg shadow-lg p-6 mb-8 transition-all duration-500">
-    <h3 class="text-2xl font-bold mb-4 text-[#5A3E1B]">Déménagement Professionnel — Minimisez vos interruptions</h3>
-    <p class="mb-4 text-[#5A3E1B]">
-      Transfert d’entreprise, bureaux ou entrepôts avec une organisation optimisée pour réduire au maximum l’interruption de votre activité.
-    </p>
-    <h4 class="font-semibold text-[#5A3E1B] mb-2">Nos services dédiés :</h4>
-    <ul class="list-disc list-inside mb-4 text-[#5A3E1B] space-y-1">
-      <li>Planification détaillée et coordination avec vos équipes.</li>
-      <li>Démontage et remontage de mobilier de bureau et équipements IT.</li>
-      <li>Emballage spécifique pour matériel informatique et documents sensibles.</li>
-      <li>Transport sécurisé avec véhicules adaptés et assurance dédiée.</li>
-      <li>Gestion des déchets et déménagement écologique possible.</li>
-      <li>Possibilité de stockage temporaire ou prolongé dans nos garde-meubles.</li>
-    </ul>
-    <h4 class="font-semibold text-[#5A3E1B] mb-2">Nos atouts :</h4>
-    <p class="mb-2 text-[#5A3E1B]">
-      Expertise dans les déménagements d’entreprise, flexibilité horaire (week-end ou nuit), respect strict des délais, et interlocuteur unique dédié.
-    </p>
-  </div>
+  <!-- FAQ -->
 
-  <!-- Location de monte-meubles -->
-  <div id="detail-monte-meubles" class="hidden bg-[#e6d5b8] rounded-lg shadow-lg p-6 mb-8 transition-all duration-500">
-    <h3 class="text-2xl font-bold mb-4 text-[#5A3E1B]">Location de Monte-Meubles — Simplifiez l’accès</h3>
-    <p class="mb-4 text-[#5A3E1B]">
-      Solution pratique pour les accès difficiles ou les charges lourdes, notre location de monte-meubles facilite votre déménagement.
-    </p>
-    <h4 class="font-semibold text-[#5A3E1B] mb-2">Avantages :</h4>
-    <ul class="list-disc list-inside mb-4 text-[#5A3E1B] space-y-1">
-      <li>Monte-meubles modernes et sécurisés, adaptés à tout type d’immeuble.</li>
-      <li>Utilisation par nos professionnels ou location autonome avec briefing.</li>
-      <li>Gain de temps et réduction des risques de casse ou d’accident.</li>
-      <li>Tarifs compétitifs avec options à la demi-journée ou journée complète.</li>
-      <li>Assistance technique et conseils personnalisés.</li>
-    </ul>
-    <h4 class="font-semibold text-[#5A3E1B] mb-2">Pourquoi louer chez nous ?</h4>
-    <p class="mb-2 text-[#5A3E1B]">
-      Disponibilité rapide, matériel régulièrement entretenu et équipe à votre écoute pour une expérience optimale.
-    </p>
-  </div>
+  <section id="faq" class="py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-3xl">
+      <h2 class="text-3xl font-bold mb-10 text-center text-[#5A3E1B]">Questions fréquentes</h2>
+      <div class="space-y-4">
+        <details class="p-4 bg-gray-100 rounded-lg">
+          <summary class="font-semibold cursor-pointer">Quels sont vos délais d’intervention ?</summary>
+          <p class="mt-2 text-gray-600">En moyenne 3 à 10 jours selon la destination et le volume.</p>
+        </details>
+        <details class="p-4 bg-gray-100 rounded-lg">
+          <summary class="font-semibold cursor-pointer">Proposez-vous un service d’emballage ?</summary>
+          <p class="mt-2 text-gray-600">Oui, avec cartons, protections et options complètes.</p>
+        </details>
+        <details class="p-4 bg-gray-100 rounded-lg">
+          <summary class="font-semibold cursor-pointer">Le devis est-il gratuit ?</summary>
+          <p class="mt-2 text-gray-600">Oui, tous nos devis sont gratuits et sans engagement.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <!-- Avis clients -->
 
-<!-- Script pour afficher/cacher les détails au clic -->
-<script>
-  // Fonction toggle pour montrer/cacher détails
-  function toggleDetails(id) {
-    // Masquer tous les détails
-    const details = document.querySelectorAll('#details-services > div');
-    details.forEach(d => {
-      if (d.id === id) {
-        // Toggle celui sélectionné
-        d.classList.toggle('hidden');
-        // Scroll si visible
-        if (!d.classList.contains('hidden')) {
-          d.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
-      } else {
-        // Masquer les autres
-        d.classList.add('hidden');
-      }
-    });
-  }
-</script>
-    <!-- Section FAQ -->
-  <section class="py-12 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <h3 class="text-3xl font-bold mb-6 text-center text-[#5A3E1B]">Questions Fréquentes</h3>
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 max-w-3xl text-center">
+      <h2 class="text-3xl font-bold mb-10 text-[#5A3E1B]">Ils nous font confiance</h2>
       <div class="space-y-6">
-        <div>
-          <h4 class="font-semibold text-[#5A3E1B]">Quels sont vos délais d'intervention ?</h4>
-          <p class="text-gray-700">Nous intervenons sous 3 à 10 jours selon la destination et le volume. En cas d'urgence, une formule express est possible.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold text-[#5A3E1B]">Proposez-vous un service d'emballage ?</h4>
-          <p class="text-gray-700">Oui, nous proposons plusieurs options d'emballage, incluant cartons, papier bulle, housses pour matelas, etc.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold text-[#5A3E1B]">Est-ce que le devis est gratuit ?</h4>
-          <p class="text-gray-700">Oui, tous nos devis sont gratuits et sans engagement. Vous pouvez les demander en ligne ou par téléphone.</p>
-        </div>
+        <blockquote class="bg-white p-6 rounded-lg shadow italic">"Service rapide et efficace. Merci !"</blockquote>
+        <blockquote class="bg-white p-6 rounded-lg shadow italic">"Organisation impeccable, zéro stress."</blockquote>
+        <blockquote class="bg-white p-6 rounded-lg shadow italic">"Des pros, ponctuels et fiables."</blockquote>
       </div>
     </div>
   </section>
 
-  <!-- Section Conseils (blog) -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <h3 class="text-3xl font-bold text-center text-[#5A3E1B] mb-8">Conseils pour bien déménager</h3>
-      <div class="space-y-6">
-        <div class="bg-gray-100 p-4 rounded shadow">
-          <h4 class="font-semibold text-[#5A3E1B] mb-2">Comment bien préparer ses cartons ?</h4>
-          <p class="text-gray-700">Commencez par les objets les moins utilisés, étiquetez chaque carton et évitez de trop les charger pour faciliter la manutention.</p>
-        </div>
-        <div class="bg-gray-100 p-4 rounded shadow">
-          <h4 class="font-semibold text-[#5A3E1B] mb-2">Que faire avant le jour J ?</h4>
-          <p class="text-gray-700">Prévoyez une liste de contrôle, informez vos fournisseurs d'énergie, et assurez-vous que les accès au logement sont libres.</p>
-        </div>
-      </div>
+  <!-- Formulaire -->
+
+  <section id="formulaire" class="py-16 bg-white">
+    <div class="container mx-auto px-6 max-w-2xl">
+      <h2 class="text-3xl font-bold text-center mb-6">Demandez votre devis gratuit</h2>
+      <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4">
+        <input type="text" name="nom" placeholder="Nom" required class="w-full border p-3 rounded">
+        <input type="email" name="email" placeholder="Email" required class="w-full border p-3 rounded">
+        <input type="tel" name="telephone" placeholder="Téléphone" required class="w-full border p-3 rounded">
+        <textarea name="message" placeholder="Décrivez votre besoin..." required class="w-full border p-3 rounded"></textarea>
+        <button type="submit" class="w-full bg-[#b09558] hover:bg-[#8a6f35] text-white py-3 rounded font-semibold">Envoyer</button>
+      </form>
     </div>
   </section>
 
+  <!-- Footer -->
 
-<!-- Section Avis Clients - Slider -->
-<section class="bg-white py-12">
-  <div class="container mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center mb-8">Ils nous ont fait confiance</h3>
-    
-    <div class="relative max-w-xl mx-auto">
-      <!-- Slides container -->
-      <div id="testimonial-slider" class="overflow-hidden relative h-40">
-        <div class="flex transition-transform duration-700 ease-in-out" id="testimonial-track">
-          <!-- Slide 1 -->
-          <div class="min-w-full px-4">
-            <div class="bg-gray-100 p-6 rounded shadow text-sm h-full flex flex-col justify-between">
-              <p class="italic">"Un service rapide et efficace. Je recommande sans hésiter !"</p>
-              <p class="text-right mt-4 font-semibold">- Mme Lefort, Lyon</p>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="min-w-full px-4">
-            <div class="bg-gray-100 p-6 rounded shadow text-sm h-full flex flex-col justify-between">
-              <p class="italic">"Organisation impeccable, déménagement sans stress. Merci !"</p>
-              <p class="text-right mt-4 font-semibold">- M. Benaissa, Marseille</p>
-            </div>
-          </div>
-          <!-- Slide 3 -->
-          <div class="min-w-full px-4">
-            <div class="bg-gray-100 p-6 rounded shadow text-sm h-full flex flex-col justify-between">
-              <p class="italic">"Des pros, tout simplement. Travail propre et ponctuel."</p>
-              <p class="text-right mt-4 font-semibold">- Mme Garcia, Annecy</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>📧 contact@alliance-demenagement.eu</p>
+      <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
+    </div>
+  </footer>
 
-<!-- Conteneur avec groupe pour effet hover -->
-<div class="relative group overflow-hidden">
-  <div id="testimonialCarousel" class="flex transition-transform duration-500"></div>
+  <!-- WhatsApp bouton -->
 
-  <!-- Flèches très discrètes, visibles uniquement au survol -->
-  <button id="prevBtn"
-    class="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-gray-400 hover:text-gray-600">
-    ←
-  </button>
-  <button id="nextBtn"
-    class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-gray-400 hover:text-gray-600">
-    →
-  </button>
-</div>
+  <a href="https://wa.me/33651323494" target="_blank" class="fixed bottom-6 right-6 z-50">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contact WhatsApp"
+         class="w-14 h-14 hover:scale-110 transition-transform duration-300">
+  </a>
 
-<script>
-  const track = document.getElementById("testimonial-track");
-  const slides = track.children.length;
-  let currentIndex = 0;
+  <!-- Script menu -->
 
-  function updateSlider() {
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-
-  document.getElementById("nextBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % slides;
-    updateSlider();
-  });
-
-  document.getElementById("prevBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + slides) % slides;
-    updateSlider();
-  });
-
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides;
-    updateSlider();
-  }, 5000); // auto-scroll every 5 seconds
-</script>
-
-
-<!-- Formulaire de devis -->
-<section id="formulaire" class="py-12 bg-white">
-  <div class="container mx-auto px-6 max-w-2xl">
-    <h3 class="text-3xl font-bold text-center mb-6">Demandez votre devis gratuit</h3>
-    <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4">
-      <input type="text" name="nom" placeholder="Nom" required class="w-full border border-gray-300 p-2 rounded" />
-      <input type="email" name="email" placeholder="Email" required class="w-full border border-gray-300 p-2 rounded" />
-      <input type="tel" name="telephone" placeholder="Téléphone" required class="w-full border border-gray-300 p-2 rounded" />
-      <textarea name="message" placeholder="Décrivez votre besoin..." required class="w-full border border-gray-300 p-2 rounded"></textarea>
-      <button type="submit"
-        class="font-semibold py-3 px-6 rounded-lg transition duration-300 text-[#5A3E1B]"
-        style="
-          background: linear-gradient(145deg, #e6d5b8, #c9b37a);
-          box-shadow:
-            6px 6px 12px #b09558,
-            -6px -6px 12px #fff8d4,
-            inset 3px 3px 6px #b29555,
-            inset -3px -3px 6px #fff9d5;">
-        Envoyer
-      </button>
-    </form>
-  </div>
-</section>
-
-<!-- Contact -->
-<footer id="contact" class="bg-gray-800 text-white py-6">
-  <div class="container mx-auto text-center">
-    <p>contact@alliance-demenagement.eu</p>
-    <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
-  </div>
-</footer>
-
-<a href="https://wa.me/33651323494" target="_blank" class="fixed bottom-6 right-6 z-50">
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-    alt="Contact WhatsApp"
-    class="w-14 h-14 hover:scale-110 transition-transform duration-300"
-  />
-</a>
-
-<!-- Script pour le menu burger -->
-<script>
-  document.getElementById('burger').addEventListener('click', function () {
-    const menu = document.getElementById('menu-mobile');
-    menu.classList.toggle('hidden');
-  });
-</script>
-
-<!-- Script affichage détails services -->
-<script>
-  document.querySelectorAll('#services a').forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      
-      // Cache toutes les sections détails
-      document.querySelectorAll('section[id^="detail-"]').forEach(section => {
-        section.classList.add('hidden');
-      });
-      
-      // Affiche la section ciblée
-      const cible = this.getAttribute('href');
-      if (cible) {
-        const section = document.querySelector(cible);
-        if (section) {
-          section.classList.remove('hidden');
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+  <script>
+    document.getElementById("burger").addEventListener("click", () => {
+      document.getElementById("menu-mobile").classList.toggle("hidden");
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
+
+
 
 
 
