@@ -14,7 +14,7 @@ body { font-family: 'Inter', sans-serif; background-color: #F5E9E0; color: #5A3E
 h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
 a { transition: all 0.3s ease; }
 header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
-.camion-anim { position: absolute; bottom: 0; left: -25%; width: 200px; animation: rouler 5s ease forwards; }
+.camion-anim { position: absolute; bottom: 0; left: -25%; width: 150px; max-width: 150px; animation: rouler 5s ease forwards; }
 @keyframes rouler { 0% { left: -25%; } 50% { left: 50%; transform: translateX(-50%); } 100% { left: 50%; transform: translateX(-50%); } }
 .separator { width: 80px; height: 4px; background: #B4884F; margin: 2rem auto; border-radius: 2px; }
 </style>
@@ -22,10 +22,10 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 <body class="overflow-x-hidden">
 
 <!-- Header -->
-<header class="fixed w-full z-50 shadow-md">
-  <div class="container mx-auto flex justify-between items-center px-6 py-4">
-    <img src="logo_camion_slogan-removebg-preview.png" alt="Logo" class="h-16">
-    <nav class="hidden md:flex space-x-6 font-semibold">
+<header class="fixed w-full z-50 shadow-md px-4 sm:px-6">
+  <div class="container mx-auto flex justify-between items-center py-4">
+    <img src="logo_camion_slogan-removebg-preview.png" alt="Logo" class="h-12 sm:h-16 max-w-[120px] sm:max-w-[150px]">
+    <nav class="hidden md:flex space-x-6 font-semibold text-sm sm:text-base">
       <a href="#about" class="hover:text-[#B4884F]">À propos</a>
       <a href="#services" class="hover:text-[#B4884F]">Services</a>
       <a href="#faq" class="hover:text-[#B4884F]">FAQ</a>
@@ -34,7 +34,7 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
     <button id="burger" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
   </div>
   <nav id="menu-mobile" class="hidden md:hidden bg-[#E6D5B8]">
-    <ul class="flex flex-col text-center py-4 space-y-3 font-semibold">
+    <ul class="flex flex-col text-center py-4 space-y-3 font-semibold text-base">
       <li><a href="#about">À propos</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -47,33 +47,33 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 <section class="relative h-screen flex items-center justify-center text-center overflow-hidden" style="background-image:url('https://images.unsplash.com/photo-1598100716401-19f37d2a9cfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bW92ZW1lbnR8fHx8fHwxNjk3OTkyOTM4&ixlib=rb-4.0.3&q=80&w=1080'); background-size:cover; background-position:center;">
   <div class="absolute inset-0 bg-black bg-opacity-40"></div>
   <img src="logo_camion_slogan-removebg-preview.png" alt="Camion" class="camion-anim z-10">
-  <div class="relative z-20 px-6 max-w-3xl text-white">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Un déménagement simple et serein</h1>
-    <p class="mb-6 text-lg md:text-xl drop-shadow-md">Particuliers et professionnels – partout en France</p>
-    <a href="#formulaire" class="inline-block bg-gradient-to-r from-[#E6D5B8] to-[#B4884F] hover:from-[#B4884F] hover:to-[#8A6F35] text-white py-3 px-6 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition">Demander un devis gratuit</a>
+  <div class="relative z-20 px-4 sm:px-6 max-w-3xl text-white">
+    <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Un déménagement simple et serein</h1>
+    <p class="mb-6 text-base sm:text-lg md:text-xl drop-shadow-md">Particuliers et professionnels – partout en France</p>
+    <a href="#formulaire" class="inline-block bg-gradient-to-r from-[#E6D5B8] to-[#B4884F] hover:from-[#B4884F] hover:to-[#8A6F35] text-white py-3 px-4 sm:px-6 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition">Demander un devis gratuit</a>
   </div>
 </section>
 
 <!-- À propos -->
-<section id="about" class="py-20 bg-[#F5E9E0]">
-  <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
-    <img src="maison-demenagement.png" alt="Camion" class="w-full md:w-1/2 rounded-lg shadow-md">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Qui sommes-nous ?</h2>
+<section id="about" class="py-16 sm:py-20 bg-[#F5E9E0]">
+  <div class="container mx-auto flex flex-col md:flex-row items-center gap-8 px-4 sm:px-6">
+    <img src="maison-demenagement.png" alt="Camion" class="w-full sm:w-1/2 rounded-lg shadow-md max-w-[300px] sm:max-w-[400px]">
+    <div class="sm:w-1/2 text-center md:text-left">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Qui sommes-nous ?</h2>
       <div class="separator"></div>
-      <p class="mb-3">Alliance Déménagement accompagne chaque client avec écoute, rigueur et transparence.</p>
-      <p class="mb-3">Nous intervenons partout en France avec des équipes locales expérimentées pour un déménagement fluide et sécurisé.</p>
+      <p class="mb-2">Alliance Déménagement accompagne chaque client avec écoute, rigueur et transparence.</p>
+      <p class="mb-2">Nous intervenons partout en France avec des équipes locales expérimentées pour un déménagement fluide et sécurisé.</p>
       <p>Nous garantissons : devis gratuit, respect des délais, assurance complète, service personnalisé.</p>
     </div>
   </div>
 </section>
 
 <!-- Services -->
-<section id="services" class="py-20 bg-[#E6D5B8]">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Nos Services</h2>
+<section id="services" class="py-16 sm:py-20 bg-[#E6D5B8]">
+  <div class="container mx-auto px-4 sm:px-6 text-center">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Nos Services</h2>
     <div class="separator"></div>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-6 md:mt-10">
       <div class="bg-[#F5E9E0] p-6 rounded-lg shadow hover:shadow-lg transition">
         <img src="demenagement-perso.png" class="mx-auto w-16 h-16 mb-4">
         <h3 class="text-xl font-semibold mb-2">Déménagement Particulier</h3>
@@ -94,34 +94,34 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 </section>
 
 <!-- Comment ça marche -->
-<section class="py-20 bg-[#F5E9E0]">
-  <div class="container mx-auto px-6 max-w-4xl text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Comment ça marche ?</h2>
+<section class="py-16 sm:py-20 bg-[#F5E9E0]">
+  <div class="container mx-auto px-4 sm:px-6 max-w-4xl text-center">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Comment ça marche ?</h2>
     <div class="separator"></div>
-    <div class="space-y-12 mt-12">
-      <div class="flex items-start gap-6">
-        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center">1</div>
+    <div class="space-y-8 sm:space-y-12 mt-8 sm:mt-12">
+      <div class="flex flex-col sm:flex-row items-start sm:gap-6">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center mb-2 sm:mb-0">1</div>
         <div class="text-left">
           <h4 class="font-semibold mb-2">Demande de devis</h4>
           <p>Remplissez le formulaire pour une estimation rapide et gratuite.</p>
         </div>
       </div>
-      <div class="flex items-start gap-6">
-        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center">2</div>
+      <div class="flex flex-col sm:flex-row items-start sm:gap-6">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center mb-2 sm:mb-0">2</div>
         <div class="text-left">
           <h4 class="font-semibold mb-2">Planification</h4>
           <p>Nous coordonnons votre déménagement avec précision et professionnalisme.</p>
         </div>
       </div>
-      <div class="flex items-start gap-6">
-        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center">3</div>
+      <div class="flex flex-col sm:flex-row items-start sm:gap-6">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center mb-2 sm:mb-0">3</div>
         <div class="text-left">
           <h4 class="font-semibold mb-2">Emballage & transport</h4>
           <p>Emballage professionnel et transport sécurisé par nos équipes expérimentées.</p>
         </div>
       </div>
-      <div class="flex items-start gap-6">
-        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center">4</div>
+      <div class="flex flex-col sm:flex-row items-start sm:gap-6">
+        <div class="flex-shrink-0 w-12 h-12 bg-[#B4884F] text-white rounded-full flex items-center justify-center mb-2 sm:mb-0">4</div>
         <div class="text-left">
           <h4 class="font-semibold mb-2">Livraison & satisfaction</h4>
           <p>Nous livrons vos biens en toute sécurité et garantissons votre satisfaction.</p>
@@ -132,11 +132,11 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="py-20 bg-[#E6D5B8]">
-  <div class="container mx-auto px-6 max-w-3xl">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Questions fréquentes</h2>
+<section id="faq" class="py-16 sm:py-20 bg-[#E6D5B8]">
+  <div class="container mx-auto px-4 sm:px-6 max-w-3xl">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center">Questions fréquentes</h2>
     <div class="separator"></div>
-    <div class="space-y-6 mt-6">
+    <div class="space-y-4 sm:space-y-6 mt-6">
       <details class="p-4 bg-[#F5E9E0] rounded-lg">
         <summary class="font-semibold cursor-pointer">Quels sont vos délais d’intervention ?</summary>
         <p class="mt-2">En moyenne 3 à 10 jours selon la destination et le volume.</p>
@@ -154,11 +154,11 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 </section>
 
 <!-- Avis clients -->
-<section class="py-20 bg-[#F5E9E0]">
-  <div class="container mx-auto px-6 max-w-4xl text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Avis de nos clients</h2>
+<section class="py-16 sm:py-20 bg-[#F5E9E0]">
+  <div class="container mx-auto px-4 sm:px-6 max-w-4xl text-center">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Avis de nos clients</h2>
     <div class="separator"></div>
-    <div class="grid md:grid-cols-3 gap-8 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-6 md:mt-10">
       <div class="bg-[#E6D5B8] p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
         <div class="flex justify-center mb-4 text-yellow-500">
           <i class="fas fa-star"></i>
@@ -196,11 +196,10 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
   </div>
 </section>
 
-
 <!-- Formulaire -->
-<section id="formulaire" class="py-20 bg-[#E6D5B8]">
-  <div class="container mx-auto px-6 max-w-2xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Demandez votre devis gratuit</h2>
+<section id="formulaire" class="py-16 sm:py-20 bg-[#E6D5B8]">
+  <div class="container mx-auto px-4 sm:px-6 max-w-2xl">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6">Demandez votre devis gratuit</h2>
     <div class="separator"></div>
     <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4 mt-6">
       <input type="text" name="nom" placeholder="Nom" required class="w-full border p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#B4884F]">
@@ -213,8 +212,8 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#5A3E1B] text-white py-6">
-  <div class="container mx-auto text-center">
+<footer class="bg-[#5A3E1B] text-white py-6 px-4 sm:px-6 text-center">
+  <div class="container mx-auto">
     <p class="mb-2">📧 contact@alliance-demenagement.eu</p>
     <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
   </div>
@@ -234,6 +233,8 @@ document.getElementById("burger").addEventListener("click", () => {
 
 </body>
 </html>
+
+
 
 
 
