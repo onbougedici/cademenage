@@ -14,7 +14,22 @@ body { font-family: 'Inter', sans-serif; background-color: #F5E9E0; color: #5A3E
 h1,h2,h3,h4,h5,h6 { font-family: 'Roboto Slab', serif; }
 a { transition: all 0.3s ease; }
 header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
-.camion-anim { position: absolute; bottom: 0; left: -25%; width: 150px; max-width: 150px; animation: rouler 5s ease forwards; }
+.camion-anim {
+  position: absolute;
+  bottom: 20%; /* remonte le camion pour qu'on le voie sur mobile */
+  left: -25%;
+  width: 120px; /* réduit la taille pour mobile */
+  max-width: 120px;
+  animation: rouler 5s ease forwards;
+}
+
+@media (min-width: 768px) {
+  .camion-anim {
+    bottom: 0; /* pour desktop, reste en bas comme avant */
+    width: 200px;
+    max-width: 200px;
+  }
+}
 @keyframes rouler { 0% { left: -25%; } 50% { left: 50%; transform: translateX(-50%); } 100% { left: 50%; transform: translateX(-50%); } }
 .separator { width: 80px; height: 4px; background: #B4884F; margin: 2rem auto; border-radius: 2px; }
 </style>
@@ -233,6 +248,7 @@ document.getElementById("burger").addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
