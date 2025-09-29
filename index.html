@@ -155,16 +155,47 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 
 <!-- Avis clients -->
 <section class="py-20 bg-[#F5E9E0]">
-  <div class="container mx-auto px-6 max-w-3xl text-center">
+  <div class="container mx-auto px-6 max-w-4xl text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-6">Avis de nos clients</h2>
     <div class="separator"></div>
-    <div class="space-y-6 mt-6">
-      <blockquote class="bg-[#E6D5B8] p-6 rounded-lg shadow italic">"Service impeccable, déménagement sans stress."</blockquote>
-      <blockquote class="bg-[#E6D5B8] p-6 rounded-lg shadow italic">"Rapidité et professionnalisme, je recommande."</blockquote>
-      <blockquote class="bg-[#E6D5B8] p-6 rounded-lg shadow italic">"Ponctuels et soigneux avec nos meubles."</blockquote>
+    <div class="grid md:grid-cols-3 gap-8 mt-10">
+      <div class="bg-[#E6D5B8] p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="flex justify-center mb-4 text-yellow-500">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <p class="italic">"Service impeccable, déménagement sans stress. Très professionnel et ponctuel."</p>
+        <p class="mt-4 font-semibold text-sm text-gray-700">– Marie L.</p>
+      </div>
+      <div class="bg-[#E6D5B8] p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="flex justify-center mb-4 text-yellow-500">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="italic">"Rapidité et professionnalisme, je recommande vivement Alliance Déménagement."</p>
+        <p class="mt-4 font-semibold text-sm text-gray-700">– Julien P.</p>
+      </div>
+      <div class="bg-[#E6D5B8] p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="flex justify-center mb-4 text-yellow-500">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <p class="italic">"Ponctuels et soigneux avec nos meubles, très satisfait du service."</p>
+        <p class="mt-4 font-semibold text-sm text-gray-700">– Sophie R.</p>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- Formulaire -->
 <section id="formulaire" class="py-20 bg-[#E6D5B8]">
@@ -203,6 +234,7 @@ document.getElementById("burger").addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
