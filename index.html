@@ -4,29 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alliance Déménagement - Déménagement partout en France</title>
+  <title>Alliance Déménagement - Partout en France</title>
   <meta name="description" content="Déménagements particuliers et professionnels partout en France. Devis gratuit et service fiable avec Alliance Déménagement.">
   <link rel="icon" href="logo_camion_slogan-removebg-preview.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #FDF7F1; }
-    h1,h2,h3,h4,h5,h6 { color: #4A2F18; }
+    body { font-family: 'Inter', sans-serif; background-color: #FCF5ED; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; color: #3D2517; }
     a { transition: all 0.3s ease; }
+    .separator { width: 80px; height: 4px; background: linear-gradient(to right,#D6A95D,#8A6F35); margin: 20px auto; border-radius: 2px; }
     .camion-anim {
-      position: absolute; 
-      left: -25%; 
-      bottom: 10px; 
-      height: 160px; 
-      animation: rouler 12s linear infinite; 
-      z-index: 1; 
-      opacity: 0.9;
+      position: absolute;
+      left: -25%;
+      bottom: 20px;
+      height: 160px;
+      animation: rouler 10s ease-out forwards;
+      z-index: 1;
     }
-    @keyframes rouler { 
-      0% { left: -25%; } 
-      50% { left: 50%; } 
-      100% { left: 110%; } 
+    @keyframes rouler {
+      0% { left: -25%; }
+      60% { left: 50%; transform: translateX(-50%); }
+      100% { left: 50%; transform: translateX(-50%); }
     }
   </style>
 </head>
@@ -34,19 +33,19 @@
 
 <!-- Header -->
 
-<header class="fixed top-0 left-0 w-full bg-[#EADBC8] shadow-md z-50">
+<header class="fixed top-0 left-0 w-full bg-[#E8D5C4] shadow-md z-50">
   <div class="container mx-auto flex items-center justify-between px-6 py-4">
     <img src="logo_camion_slogan-removebg-preview.png" alt="Logo Alliance Déménagement" class="h-14 relative z-10">
-    <nav class="hidden md:flex space-x-6 font-semibold text-[#4A2F18] z-10 relative">
+    <nav class="hidden md:flex space-x-6 font-semibold text-[#3D2517]">
       <a href="#about" class="hover:text-[#B4884F]">À propos</a>
       <a href="#services" class="hover:text-[#B4884F]">Services</a>
       <a href="#faq" class="hover:text-[#B4884F]">FAQ</a>
       <a href="#formulaire" class="hover:text-[#B4884F]">Devis</a>
     </nav>
-    <button id="burger" class="md:hidden text-2xl text-[#4A2F18]"><i class="fas fa-bars"></i></button>
+    <button id="burger" class="md:hidden text-2xl text-[#3D2517]"><i class="fas fa-bars"></i></button>
   </div>
-  <nav id="menu-mobile" class="hidden bg-[#EADBC8] md:hidden">
-    <ul class="flex flex-col text-center py-4 space-y-3 font-semibold text-[#4A2F18]">
+  <nav id="menu-mobile" class="hidden bg-[#E8D5C4] md:hidden">
+    <ul class="flex flex-col text-center py-4 space-y-3 font-semibold text-[#3D2517]">
       <li><a href="#about">À propos</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -61,7 +60,8 @@
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
   <img src="logo_camion_slogan-removebg-preview.png" alt="Camion Alliance Déménagement" class="camion-anim">
   <div class="relative z-10 max-w-3xl px-6">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">Votre déménagement, simple et serein</h1>
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">Un déménagement sans stress</h1>
+    <div class="separator"></div>
     <p class="mb-6 text-lg md:text-xl text-[#FDE9C9]">Particuliers & professionnels – partout en France</p>
     <a href="#formulaire" class="inline-block bg-gradient-to-r from-[#D6A95D] to-[#8A6F35] hover:opacity-90 text-white py-3 px-6 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition">Demander un devis gratuit</a>
   </div>
@@ -69,36 +69,43 @@
 
 <!-- À propos -->
 
-<section id="about" class="py-20 bg-[#FDF7F1]">
+<section id="about" class="py-20 bg-[#FCF5ED]">
   <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 px-6">
-    <img src="camion.jpg" alt="Camion de déménagement" class="w-full md:w-1/2 rounded-lg shadow-lg">
+    <img src="camion.jpg" alt="Camion de déménagement" class="w-full md:w-1/2 rounded-xl shadow-lg">
     <div class="md:w-1/2">
       <h2 class="text-3xl font-bold mb-4">Qui sommes-nous ?</h2>
+      <div class="separator"></div>
       <p class="text-gray-700 mb-3">Alliance Déménagement accompagne chaque client avec écoute, rigueur et transparence.</p>
       <p class="text-gray-700 mb-3">Nous intervenons partout en France avec des équipes locales expérimentées, pour un déménagement fluide et sécurisé.</p>
-      <p class="text-gray-700 font-semibold">Nos garanties : devis gratuit, respect des délais, assurance complète, service personnalisé.</p>
+      <ul class="space-y-2 text-gray-700">
+        <li>✅ Devis gratuit</li>
+        <li>✅ Respect des délais</li>
+        <li>✅ Assurance complète</li>
+        <li>✅ Service personnalisé</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- Services -->
 
-<section id="services" class="py-20 bg-[#EADBC8]">
+<section id="services" class="py-20 bg-[#E8D5C4]">
   <div class="container mx-auto px-6 text-center">
     <h2 class="text-3xl font-bold mb-12">Nos Services</h2>
-    <div class="grid md:grid-cols-3 gap-10">
+    <div class="separator"></div>
+    <div class="grid md:grid-cols-3 gap-10 mt-10">
       <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition">
-        <i class="fas fa-home text-4xl text-[#B4884F] mb-4"></i>
+        <img src="icone-particulier.svg" alt="Particulier" class="w-12 mx-auto mb-4">
         <h3 class="text-xl font-semibold mb-3">Déménagement Particulier</h3>
         <p class="text-gray-700">Appartements, maisons ou studios, nous assurons un déménagement sécurisé et efficace.</p>
       </div>
       <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition">
-        <i class="fas fa-building text-4xl text-[#B4884F] mb-4"></i>
+        <img src="icone-pro.svg" alt="Professionnel" class="w-12 mx-auto mb-4">
         <h3 class="text-xl font-semibold mb-3">Déménagement Professionnel</h3>
         <p class="text-gray-700">Transfert d’entreprise, bureaux ou commerces avec planification et efficacité.</p>
       </div>
       <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-xl transition">
-        <i class="fas fa-truck-loading text-4xl text-[#B4884F] mb-4"></i>
+        <img src="icone-monte.svg" alt="Monte-meubles" class="w-12 mx-auto mb-4">
         <h3 class="text-xl font-semibold mb-3">Location de Monte-Meubles</h3>
         <p class="text-gray-700">Solution pratique pour les accès difficiles et charges lourdes, simplifie votre déménagement.</p>
       </div>
@@ -108,20 +115,21 @@
 
 <!-- Pourquoi nous choisir -->
 
-<section class="py-20 bg-[#FDF7F1]">
+<section class="py-20 bg-[#FCF5ED]">
   <div class="container mx-auto px-6 max-w-5xl text-center">
     <h2 class="text-3xl font-bold mb-12">Pourquoi nous choisir ?</h2>
-    <div class="grid md:grid-cols-3 gap-8 text-left">
+    <div class="separator"></div>
+    <div class="grid md:grid-cols-3 gap-8 text-left mt-10">
       <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="font-semibold mb-2">Équipe expérimentée</h4>
+        <h4 class="font-semibold mb-2">👷‍♂️ Équipe expérimentée</h4>
         <p>Des professionnels qualifiés pour un déménagement sans stress.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="font-semibold mb-2">Assurance complète</h4>
+        <h4 class="font-semibold mb-2">🛡️ Assurance complète</h4>
         <p>Vos biens sont protégés, transport sécurisé garanti.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow">
-        <h4 class="font-semibold mb-2">Respect des délais</h4>
+        <h4 class="font-semibold mb-2">⏱️ Respect des délais</h4>
         <p>Planification efficace pour que votre déménagement se passe parfaitement.</p>
       </div>
     </div>
@@ -130,10 +138,11 @@
 
 <!-- FAQ -->
 
-<section id="faq" class="py-20 bg-[#EADBC8]">
+<section id="faq" class="py-20 bg-[#E8D5C4]">
   <div class="container mx-auto px-6 max-w-3xl">
     <h2 class="text-3xl font-bold mb-10 text-center">Questions fréquentes</h2>
-    <div class="space-y-4">
+    <div class="separator"></div>
+    <div class="space-y-4 mt-10">
       <details class="p-4 bg-white rounded-lg shadow">
         <summary class="font-semibold cursor-pointer">Quels sont vos délais d’intervention ?</summary>
         <p class="mt-2 text-gray-700">En moyenne 3 à 10 jours selon la destination et le volume.</p>
@@ -150,25 +159,27 @@
   </div>
 </section>
 
-<!-- Avis clients -->
+<!-- Avis -->
 
-<section class="py-20 bg-[#FDF7F1]">
+<section class="py-20 bg-[#FCF5ED]">
   <div class="container mx-auto px-6 max-w-3xl text-center">
     <h2 class="text-3xl font-bold mb-10">Avis de nos clients</h2>
-    <div class="space-y-6">
-      <blockquote class="bg-[#EADBC8] p-6 rounded-lg shadow italic">"Service impeccable, déménagement sans stress."</blockquote>
-      <blockquote class="bg-[#EADBC8] p-6 rounded-lg shadow italic">"Rapidité et professionnalisme, je recommande."</blockquote>
-      <blockquote class="bg-[#EADBC8] p-6 rounded-lg shadow italic">"Ponctuels et soigneux avec nos meubles."</blockquote>
+    <div class="separator"></div>
+    <div class="space-y-6 mt-10">
+      <blockquote class="bg-[#E8D5C4] p-6 rounded-lg shadow italic">"Service impeccable, déménagement sans stress."</blockquote>
+      <blockquote class="bg-[#E8D5C4] p-6 rounded-lg shadow italic">"Rapidité et professionnalisme, je recommande."</blockquote>
+      <blockquote class="bg-[#E8D5C4] p-6 rounded-lg shadow italic">"Ponctuels et soigneux avec nos meubles."</blockquote>
     </div>
   </div>
 </section>
 
 <!-- Formulaire -->
 
-<section id="formulaire" class="py-20 bg-[#EADBC8]">
+<section id="formulaire" class="py-20 bg-[#E8D5C4]">
   <div class="container mx-auto px-6 max-w-2xl">
     <h2 class="text-3xl font-bold text-center mb-6">Demandez votre devis gratuit</h2>
-    <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4">
+    <div class="separator"></div>
+    <form action="https://formspree.io/f/xvgakkzq" method="POST" class="space-y-4 mt-8">
       <input type="text" name="nom" placeholder="Nom" required class="w-full border p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#B4884F]">
       <input type="email" name="email" placeholder="Email" required class="w-full border p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#B4884F]">
       <input type="tel" name="telephone" placeholder="Téléphone" required class="w-full border p-3 rounded focus:outline-none focus:ring-2 focus:ring-[#B4884F]">
@@ -180,7 +191,7 @@
 
 <!-- Footer -->
 
-<footer class="bg-[#4A2F18] text-white py-6">
+<footer class="bg-[#3D2517] text-white py-6">
   <div class="container mx-auto text-center">
     <p class="mb-2">📧 contact@alliance-demenagement.eu</p>
     <p>&copy; 2025 Alliance Déménagement - Tous droits réservés</p>
@@ -193,7 +204,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contact WhatsApp" class="w-14 h-14 hover:scale-110 transition-transform duration-300">
 </a>
 
-<!-- Script menu -->
+<!-- Script -->
 
 <script>
   document.getElementById("burger").addEventListener("click", () => {
@@ -203,6 +214,9 @@
 
 </body>
 </html>
+
+
+
 
 
 
