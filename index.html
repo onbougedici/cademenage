@@ -36,9 +36,10 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
 </head>
 <body class="overflow-x-hidden">
 
-<!-- Header -->
-<header class="fixed w-full z-50 shadow-md px-4 sm:px-6">
-  <div class="container mx-auto flex justify-between items-center py-4">
+<!-- Header (remplace l'ancien header) -->
+<header class="site-header fixed w-full z-50 shadow-md px-4 sm:px-6"
+        style="--header-h:64px;">
+  <div class="container mx-auto flex justify-between items-center py-4" style="height:var(--header-h);">
     <img src="logo_camion_slogan-removebg-preview.png" alt="Logo" class="h-12 sm:h-16 max-w-[120px] sm:max-w-[150px]">
     <nav class="hidden md:flex space-x-6 font-semibold text-sm sm:text-base">
       <a href="#about" class="hover:text-[#B4884F]">À propos</a>
@@ -58,22 +59,68 @@ header { background: rgba(230, 213, 184, 0.95); backdrop-filter: blur(6px); }
   </nav>
 </header>
 
-<!-- Hero -->
-<section class="relative h-[90vh] sm:h-[95vh] flex flex-col justify-center text-center overflow-hidden pt-20" 
-  style="background-image:url('https://images.unsplash.com/photo-1598100716401-19f37d2a9cfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bW92ZW1lbnR8fHx8fHwxNjk3OTkyOTM4&ixlib=rb-4.0.3&q=80&w=1080'); 
-  background-size:cover; background-position:center;">
-  
-  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+<!-- Hero (remplace l'ancienne section Hero) -->
+<style>
+  /* Variables responsive pour la hauteur du header */
+  :root { --header-h: 64px; }
+  @media (max-width: 767px){ :root { --header-h: 56px; } }
 
-  <!-- Camion repositionné plus bas -->
-  <img src="logo_camion_slogan-removebg-preview.png" alt="Camion" 
-       class="camion-anim z-10 mt-12 sm:mt-20">
+  .hero-section{
+    position:relative;
+    background-size:cover;
+    background-position:center;
+    min-height: calc(100vh - var(--header-h)); /* exclut le header */
+    overflow:hidden;
+  }
 
-  <div class="relative z-20 px-4 sm:px-6 max-w-2xl text-white mt-8 sm:mt-12">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">
-      Un déménagement simple et serein
-    </h1>
-    <a href="#formulaire" class="inline-block bg-gradient-to-r from-[#E6D5B8] to-[#B4884F] hover:from-[#B4884F] hover:to-[#8A6F35] text-white py-3 px-4 sm:px-6 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition">
+  .hero-overlay{ position:absolute; inset:0; background:rgba(0,0,0,0.42); z-index:20; }
+
+  .hero-inner{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:40;
+    width:90%;
+    max-width:760px;
+    text-align:center;
+  }
+
+  .camion-anim{
+    position:absolute;
+    left:-30%;
+    bottom:6%;                /* toujours visible au-dessus du footer et loin du header */
+    width:140px;
+    max-width:140px;
+    z-index:30;
+    animation: rouler 5.5s cubic-bezier(.2,.9,.2,1) forwards;
+    will-change: left, transform;
+  }
+  @media(min-width:768px){
+    .camion-anim{ bottom:3%; width:200px; max-width:200px; left:-35%; }
+  }
+
+  @keyframes rouler{
+    0%   { left:-35%; transform:translateX(0%) scale(.95); opacity:0.95; }
+    65%  { left:50%; transform:translateX(-50%) scale(1.02); opacity:1; }
+    100% { left:50%; transform:translateX(-50%) scale(1); }
+  }
+</style>
+
+<section class="hero-section" style="background-image:url('https://images.unsplash.com/photo-1598100716401-19f37d2a9cfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080');">
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- camion animé (veiller à utiliser une image avec fond transparent ou svg) -->
+  <img src="logo_camion_slogan-removebg-preview.png" alt="Camion" class="camion-anim" />
+
+  <!-- Contenu centré verticalement et horizontalement -->
+  <div class="hero-inner text-white">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Un déménagement simple et serein</h1>
+
+    <p class="mb-6 text-base sm:text-lg md:text-xl drop-shadow-md">Particuliers et professionnels – partout en France</p>
+
+    <a href="#formulaire"
+       class="inline-block bg-gradient-to-r from-[#E6D5B8] to-[#B4884F] hover:from-[#B4884F] hover:to-[#8A6F35] text-white py-3 px-4 sm:px-6 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition">
       Demander un devis gratuit
     </a>
   </div>
@@ -288,6 +335,7 @@ document.getElementById("burger").addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
